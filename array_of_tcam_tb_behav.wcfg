@@ -12,15 +12,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="790267176fs"></ZoomEndTime>
-      <Cursor1Time time="1009998000fs"></Cursor1Time>
+      <ZoomStartTime time="14829072201fs"></ZoomStartTime>
+      <ZoomEndTime time="14854185560fs"></ZoomEndTime>
+      <Cursor1Time time="14836697000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="192"></NameColumnWidth>
-      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+      <ValueColumnWidth column_width="416"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="4" />
    <wvobject type="logic" fp_name="/array_of_tcam_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -33,11 +33,104 @@
    <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT">
       <obj_property name="ElementShortName">DATA_OUT[9:0][999:0]</obj_property>
       <obj_property name="ObjectShortName">DATA_OUT[9:0][999:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[9]">
+         <obj_property name="ElementShortName">[9][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[8]">
+         <obj_property name="ElementShortName">[8][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[7]">
+         <obj_property name="ElementShortName">[7][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[6]">
+         <obj_property name="ElementShortName">[6][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[5]">
+         <obj_property name="ElementShortName">[5][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[4]">
+         <obj_property name="ElementShortName">[4][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[3]">
+         <obj_property name="ElementShortName">[3][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[2]">
+         <obj_property name="ElementShortName">[2][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[1]">
+         <obj_property name="ElementShortName">[1][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[0]">
+         <obj_property name="ElementShortName">[0][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[9]">
+         <obj_property name="ElementShortName">[9][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[8]">
+         <obj_property name="ElementShortName">[8][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[7]">
+         <obj_property name="ElementShortName">[7][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[6]">
+         <obj_property name="ElementShortName">[6][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[5]">
+         <obj_property name="ElementShortName">[5][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[4]">
+         <obj_property name="ElementShortName">[4][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[3]">
+         <obj_property name="ElementShortName">[3][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[2]">
+         <obj_property name="ElementShortName">[2][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[1]">
+         <obj_property name="ElementShortName">[1][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[0]">
+         <obj_property name="ElementShortName">[0][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(0)\/TCAM_INST/MEM_CONTENT">
       <obj_property name="ElementShortName">MEM_CONTENT[999:0][31:0]</obj_property>
       <obj_property name="ObjectShortName">MEM_CONTENT[999:0][31:0]</obj_property>
       <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(0)\/TCAM_INST/MEM_CONTENT[999]">
          <obj_property name="ElementShortName">[999][31:0]</obj_property>
          <obj_property name="ObjectShortName">[999][31:0]</obj_property>
@@ -5037,57 +5130,6 @@
          <obj_property name="ElementShortName">[0][31:0]</obj_property>
          <obj_property name="ObjectShortName">[0][31:0]</obj_property>
          <obj_property name="Radix">BINARYRADIX</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_IN">
-      <obj_property name="ElementShortName">DATA_IN[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_IN[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT">
-      <obj_property name="ElementShortName">DATA_OUT[9:0][999:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_OUT[9:0][999:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[9]">
-         <obj_property name="ElementShortName">[9][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[8]">
-         <obj_property name="ElementShortName">[8][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[7]">
-         <obj_property name="ElementShortName">[7][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[6]">
-         <obj_property name="ElementShortName">[6][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[5]">
-         <obj_property name="ElementShortName">[5][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[4]">
-         <obj_property name="ElementShortName">[4][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[3]">
-         <obj_property name="ElementShortName">[3][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[2]">
-         <obj_property name="ElementShortName">[2][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[1]">
-         <obj_property name="ElementShortName">[1][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/uut/DATA_OUT[0]">
-         <obj_property name="ElementShortName">[0][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

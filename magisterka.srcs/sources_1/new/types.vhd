@@ -20,7 +20,7 @@ package types is
     type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)-1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    
     type TCAM_ENCODER_ARRAY_2D is array (NUMBER_OF_MEMORIES - 1 downto 0) of BASE_TCAM_ENCODER_ARRAY;
     
-    type TCAM is ('0','1','X');
+    type TCAM is ('0','1','Y');
     type TCAM_ARRAY is array(DATA_SIZE-1 downto 0) of TCAM; --TCAM word    
     type TCAM_ARRAY_2D is array(TCAM_MAX_SIZE-1 downto 0) of TCAM_ARRAY; --content of idividual TCAM memeory
     type TCAM_ARRAY_3D is array(TCAM_SIZES'length-1 downto 0) of TCAM_ARRAY_2D; --content of all TCAM memories
@@ -32,7 +32,7 @@ end types;
 package body types is
 function equal (a:TCAM; b: std_logic) return boolean is
 begin
-    if a = 'X' or (a = '1' and b = '1' ) or (a = '0' and b = '0' ) then
+    if a = 'Y' or (a = '1' and b = '1' ) or (a = '0' and b = '0' ) then
         return true;
     else 
         return false;
