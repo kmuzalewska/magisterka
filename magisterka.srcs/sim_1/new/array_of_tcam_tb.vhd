@@ -18,8 +18,7 @@ architecture bench of array_of_tcam_tb is
     file output_buf : text; -- text is keyword
     type test_vectors_type is array (3 downto 0) of std_logic_vector(DATA_SIZE-1 downto 0);
     constant test_vectors : test_vectors_type:= (
-        -- a, b, sum , carry   -- positional method is used below
-        "00000000101000111010101000010000", -- or (a => '0', b => '0', sum => '0', carry => '0')
+        "00000000101000111010101000010000",
         "01111000000100011111010110010010",
         "11011010101110000010000001011011",
         "01101000111010101011000010100111"
@@ -65,9 +64,7 @@ clk_proc: process
             i <= i + 1;
         end if;
         end process;
---    CLK <= not CLK after 1ps;
---    DATA_IN <= "00110011001011111000100100011001";
---    MEM_CONTENT <= MEM_CONTENT;
+
     file_open(output_buf, "counter_data.csv", write_mode);
     
     process(clk)
@@ -86,8 +83,8 @@ clk_proc: process
             -- therefore change into integer or std_logic_vector etc.
              -- following line saves the count in integer format
              for j in DATA_OUT'range loop
-                write(write_col_to_output_buf, DATA_OUT(j)); 
-                writeline(output_buf, write_col_to_output_buf);
+                write(write_col_to_output_buf,to_integer(signed(DATA_OUT(j))) ); 
+--                writeline(output_buf, write_col_to_output_buf);
               end loop;
         end if;
     end process;
