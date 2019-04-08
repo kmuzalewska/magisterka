@@ -52,6 +52,8 @@ take_and_write: process
 variable write_col_to_output_buf : line;
 variable read_col_from_input_buf : line;
 variable test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
+variable prev_test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
+--variable save_data_in: ENCODER_ARRAY;
 begin
   file_open(input_buf, "/home/klara/magisterka/magisterka.srcs/sim_1/new/input.txt", read_mode);
   file_open(output_buf, "/home/klara/magisterka/magisterka.srcs/sim_1/new/output.txt", write_mode);
@@ -63,13 +65,13 @@ begin
         
         DATA_IN <= test_vector;
         wait until rising_edge(clk);
-        write(write_col_to_output_buf, DATA_IN);
+        write(write_col_to_output_buf, prev_test_vector);
         write(write_col_to_output_buf, string'(", ")); 
 --        wait until rising_edge(clk);
         for j in DATA_OUT'range loop
           write(write_col_to_output_buf, to_integer(signed(DATA_OUT(j))));
         end loop;
-        
+        prev_test_vector := test_vector;
         writeline(output_buf, write_col_to_output_buf);
         --file_close(output_buf);
         
