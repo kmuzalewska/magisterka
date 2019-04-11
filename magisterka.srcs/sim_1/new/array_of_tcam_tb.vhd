@@ -4,8 +4,9 @@ use IEEE.Numeric_Std.all;
 library xil_defaultlib;
 use xil_defaultlib.types.all;
 use xil_defaultlib.data_to_tcam.all;
-use std.textio.all;
+use STD.textio.all;
 use ieee.std_logic_textio.all;
+
 
 entity array_of_tcam_tb is
 end;
@@ -53,6 +54,7 @@ variable write_col_to_output_buf : line;
 variable read_col_from_input_buf : line;
 variable test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
 variable prev_test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
+constant data_s : natural := 32;
 --variable save_data_in: ENCODER_ARRAY;
 begin
   file_open(input_buf, "/home/klara/magisterka/magisterka.srcs/sim_1/new/input.txt", read_mode);
@@ -69,9 +71,11 @@ begin
         write(write_col_to_output_buf, string'(", ")); 
 --        wait until rising_edge(clk);
         for j in DATA_OUT'range loop
-          write(write_col_to_output_buf, to_integer(signed(DATA_OUT(j))));
+            write(write_col_to_output_buf, DATA_OUT(j), right, data_s );
+            write(write_col_to_output_buf, string'(" ")); 
         end loop;
         prev_test_vector := test_vector;
+        
         writeline(output_buf, write_col_to_output_buf);
         --file_close(output_buf);
         
