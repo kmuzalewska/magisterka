@@ -4,8 +4,9 @@ use IEEE.Numeric_Std.all;
 library xil_defaultlib;
 use xil_defaultlib.types.all;
 use xil_defaultlib.data_to_tcam.all;
-use std.textio.all;
+use STD.textio.all;
 use ieee.std_logic_textio.all;
+
 
 entity array_of_tcam_tb is
 end;
@@ -38,87 +39,51 @@ begin
                                 DATA_IN     => DATA_IN,
                                 DATA_OUT    => DATA_OUT,
                                 MEM_CONTENT => MEM_CONTENT );
+
 clk_proc: process
   begin
         clk <= '0';
         wait for T/2;
         clk <= '1';
         wait for T/2;
-  end process clk_proc;
+ end process clk_proc;
   
-  read_and_pass: process
-    variable read_col_from_input_buf : line;
-    variable test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
-  begin
-      
-      file_open(input_buf, "files/input.txt", read_mode);
-      file_open(output_buf, "files/output.txt", write_mode);
-
-      while not endfile(input_buf) loop
-        wait for T;
+  
+take_and_write: process
+variable write_col_to_output_buf : line;
+variable read_col_from_input_buf : line;
+variable test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
+variable prev_test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
+constant data_s : natural := 32;
+--variable save_data_in: ENCODER_ARRAY;
+begin
+  file_open(input_buf, "/home/klara/magisterka/magisterka.srcs/sim_1/new/input.txt", read_mode);
+  file_open(output_buf, "/home/klara/magisterka/magisterka.srcs/sim_1/new/output.txt", write_mode);
+   
+    while not endfile(input_buf) loop
+    
         readline(input_buf, read_col_from_input_buf);
         read(read_col_from_input_buf, test_vector);
-
+        
         DATA_IN <= test_vector;
-
-      end loop;
-
+        wait until rising_edge(clk);
+        write(write_col_to_output_buf, prev_test_vector);
+        write(write_col_to_output_buf, string'(", ")); 
+--        wait until rising_edge(clk);
+        for j in DATA_OUT'range loop
+            write(write_col_to_output_buf, DATA_OUT(j), right, data_s );
+            write(write_col_to_output_buf, string'(" ")); 
+        end loop;
+        prev_test_vector := test_vector;
+        
+        writeline(output_buf, write_col_to_output_buf);
+        --file_close(output_buf);
+        
+    end loop;
+--  end if;
       file_close(input_buf);
       file_close(output_buf);
       wait;
-
-  end process read_and_pass;
-
-
-  
-  take_and_write: process(clk)
-    variable write_col_to_output_buf : line;
-    variable test_vector : std_logic_vector(DATA_SIZE-1 downto 0);
-  begin
-      
-      if(clk'event and clk='1') then
-
-        write(write_col_to_output_buf, DATA_IN);
-        write(write_col_to_output_buf, string(", "); 
-
-        for j in DATA_OUT'range loop
-          write(write_col_to_output_buf, to_integer(signed(DATA_OUT(j))));
-        end loop;
-        writeline(output_buf, write_col_to_output_buf);
-        --file_close(output_buf);
-
-        wait;
-      end if;
-
   end process take_and_write;
-
-    --file_open(output_buf, "counter_data.csv", write_mode);
-    
---    process(clk)
---        variable write_col_to_output_buf : line; -- line is keyword
---    begin
---        if(clk'event and clk='1') then  -- avoid reset data
---            -- comment below 'if statement' to avoid header in saved file
---            if (i = 0) then 
---              write(write_col_to_output_buf, string'("data_in,data_out"));
---              writeline(output_buf, write_col_to_output_buf);
---            end if; 
-
---            write(write_col_to_output_buf, DATA_IN);
---            write(write_col_to_output_buf, string'(","));
---            -- Note that unsigned/signed values can not be saved in file, 
---            -- therefore change into integer or std_logic_vector etc.
---             -- following line saves the count in integer format
---             for j in DATA_OUT'range loop
---                write(write_col_to_output_buf,to_integer(signed(DATA_OUT(j))) ); 
-----                writeline(output_buf, write_col_to_output_buf);
---              end loop;
---        end if;
---    end process;
-
-
---    wait;
-  
-
 
 end;
