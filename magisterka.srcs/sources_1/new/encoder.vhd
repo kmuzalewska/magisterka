@@ -25,9 +25,12 @@ architecture Behavioral of encoder is
 begin
 
 FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust clock frequency
-    
+    assert 2<1 report "for memories" & integer'image(i) severity error;
     FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
-        FOR_INDEXES: for pair in 0 to 8 generate --TCAM_MAX_SIZE/2-1 generate        
+        assert 2<1 report "for depth" & integer'image(depth) severity error;
+        FOR_INDEXES: for pair in 0 to 499 generate     --8 generate    TCAM_MAX_SIZE/2-1
+                assert 2<1 report "for pair" & integer'image(pair) severity error;
+
             SEARCH_FOR_INDEX: process(all)
 --            variable depth : integer:= 0;
 --            variable pair : integer:= 0;
@@ -36,7 +39,7 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
                 if depth = 0 then
                     if RESULTS_FROM_TCAMS(i)(pair*2) /= '0' then --moze stworzyc component ktory sie tworzy w locie i wyrzuca on array do kolejnego przeszukania
                      --  wpisac tu do nowego array port nastepny
-                       inst_tcam_encoder_array_2d(i)(pair)(pair) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
+                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
                     elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
 --                       --wpisac tu do nowego array aktualny port
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
@@ -44,7 +47,7 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= "0000000000";  
                     end if;                     
                 else                
-                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= "0" and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania
+                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= "0000000000" and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania
 --                         --wpisac tu do nowego array port nastepny
                          inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair);             
                      else    
