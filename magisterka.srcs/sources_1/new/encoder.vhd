@@ -16,7 +16,6 @@ end encoder;
 
 architecture Behavioral of encoder is
     signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D :=(others => (others => (others => "0000000000")));
---    type file_names is array(NUMBER_OF_MEMORIES-1 downto 0) of String;
     type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
     signal choosen_switch_output : choosen_switch_output_array :=(others => (others => '0'));
     type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE) downto 0) of choosen_switch_output_array;    
@@ -27,42 +26,42 @@ begin
 
 FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust clock frequency
     
-    --FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
-        FOR_INDEXES: for j in 0 to 8 generate --TCAM_MAX_SIZE/2-1 generate        
+    FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
+        FOR_INDEXES: for pair in 0 to 8 generate --TCAM_MAX_SIZE/2-1 generate        
             SEARCH_FOR_INDEX: process(all)
-            variable depth : integer:= 0;
-            variable pair : integer:= 0;
+--            variable depth : integer:= 0;
+--            variable pair : integer:= 0;
                 begin
                 if rising_edge(CLK) then  
                 if depth = 0 then
                     if RESULTS_FROM_TCAMS(i)(pair*2) /= '0' then --moze stworzyc component ktory sie tworzy w locie i wyrzuca on array do kolejnego przeszukania
                      --  wpisac tu do nowego array port nastepny
-                       inst_tcam_encoder_array_2d(i)(j)(j) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
---                    elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
+                       inst_tcam_encoder_array_2d(i)(pair)(pair) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
+                    elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
 --                       --wpisac tu do nowego array aktualny port
---                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
---                    else    
---                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= "0000000000";  
---                    end if;                     
---                else                
---                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= "0" and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania
+                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
+                    else    
+                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= "0000000000";  
+                    end if;                     
+                else                
+                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= "0" and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania
 --                         --wpisac tu do nowego array port nastepny
---                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair);             
---                     else    
---                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair+1);   
+                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair);             
+                     else    
+                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair+1);   
                      end if;
                 end if;
                 end if;                                    
              end process SEARCH_FOR_INDEX;                  
         end generate FOR_INDEXES;
-    --end generate FOR_DEPTH;
+    end generate FOR_DEPTH;
 end generate FOR_MEMORIES;
     
 -- inst_tcam_encoder_array_2d(i)(depth) here at depth position we have results if given i mmemory has positive comaprison
 
 --retrive data from outputs mappin
 GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
-  assert 2<1 report "textaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" & integer'image(i) severity error;
+  assert 2<1 report "texta" & integer'image(i) severity error;
   
   DECODER_OUT_MEM: xpm_memory_spram
    generic map (

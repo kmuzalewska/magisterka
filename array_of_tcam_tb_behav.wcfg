@@ -3,219 +3,40 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="array_of_tcam_tb_behav.wdb" id="1">
+      <db_ref path="encoder_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="array_of_tcam_tb" />
-            <top_module name="data_to_tcam" />
+            <top_module name="encoder_tb" />
+            <top_module name="item_to_encoder" />
             <top_module name="types" />
+            <top_module name="vcomponents" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="95000001fs"></ZoomEndTime>
-      <Cursor1Time time="93333000fs"></Cursor1Time>
+      <ZoomEndTime time="193241472fs"></ZoomEndTime>
+      <Cursor1Time time="100000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="145"></NameColumnWidth>
-      <ValueColumnWidth column_width="201"></ValueColumnWidth>
+      <NameColumnWidth column_width="211"></NameColumnWidth>
+      <ValueColumnWidth column_width="99"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
-   <wvobject type="logic" fp_name="/array_of_tcam_tb/CLK">
+   <WVObjectSize size="4" />
+   <wvobject type="logic" fp_name="/encoder_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_IN">
-      <obj_property name="ElementShortName">DATA_IN[31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_IN[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT">
-      <obj_property name="ElementShortName">DATA_OUT[9:0][999:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_OUT[9:0][999:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS">
+      <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
+      <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[9]">
-         <obj_property name="ElementShortName">[9][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
-         <obj_property name="Radix">BINARYRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[8]">
-         <obj_property name="ElementShortName">[8][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[7]">
-         <obj_property name="ElementShortName">[7][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[6]">
-         <obj_property name="ElementShortName">[6][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[5]">
-         <obj_property name="ElementShortName">[5][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[4]">
-         <obj_property name="ElementShortName">[4][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[3]">
-         <obj_property name="ElementShortName">[3][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[2]">
-         <obj_property name="ElementShortName">[2][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[1]">
-         <obj_property name="ElementShortName">[1][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/array_of_tcam_tb/DATA_OUT[0]">
-         <obj_property name="ElementShortName">[0][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(0)\/TCAM_INST/MEM_CONTENT">
-      <obj_property name="ElementShortName">MEM_CONTENT[999:0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">MEM_CONTENT[999:0][31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <wvobject type="other" fp_name="/encoder_tb/CHOSEN_OUTPUT">
+      <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
+      <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[11]">
-      <obj_property name="ElementShortName">[11][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[11][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[10]">
-      <obj_property name="ElementShortName">[10][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[10][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[9]">
-      <obj_property name="ElementShortName">[9][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[9][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[8]">
-      <obj_property name="ElementShortName">[8][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[8][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[7]">
-      <obj_property name="ElementShortName">[7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[7][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[6]">
-      <obj_property name="ElementShortName">[6][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[6][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[5]">
-      <obj_property name="ElementShortName">[5][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[5][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[4]">
-      <obj_property name="ElementShortName">[4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[3]">
-      <obj_property name="ElementShortName">[3][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[2]">
-      <obj_property name="ElementShortName">[2][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[1]">
-      <obj_property name="ElementShortName">[1][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(9)\/TCAM_INST/MEM_CONTENT[0]">
-      <obj_property name="ElementShortName">[0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[0][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[21]">
-      <obj_property name="ElementShortName">[21][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[21][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[20]">
-      <obj_property name="ElementShortName">[20][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[20][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[19]">
-      <obj_property name="ElementShortName">[19][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[19][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[18]">
-      <obj_property name="ElementShortName">[18][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[18][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[17]">
-      <obj_property name="ElementShortName">[17][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[17][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[16]">
-      <obj_property name="ElementShortName">[16][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[16][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[15]">
-      <obj_property name="ElementShortName">[15][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[15][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[14]">
-      <obj_property name="ElementShortName">[14][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[14][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[13]">
-      <obj_property name="ElementShortName">[13][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[13][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[12]">
-      <obj_property name="ElementShortName">[12][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[12][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[11]">
-      <obj_property name="ElementShortName">[11][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[11][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[10]">
-      <obj_property name="ElementShortName">[10][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[10][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[9]">
-      <obj_property name="ElementShortName">[9][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[9][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[8]">
-      <obj_property name="ElementShortName">[8][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[8][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[7]">
-      <obj_property name="ElementShortName">[7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[7][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[6]">
-      <obj_property name="ElementShortName">[6][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[6][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[5]">
-      <obj_property name="ElementShortName">[5][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[5][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[4]">
-      <obj_property name="ElementShortName">[4][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[4][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[3]">
-      <obj_property name="ElementShortName">[3][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[3][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[2]">
-      <obj_property name="ElementShortName">[2][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[1]">
-      <obj_property name="ElementShortName">[1][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[1][31:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/array_of_tcam_tb/uut/\GEN_TCAM_MEMORIES(8)\/TCAM_INST/MEM_CONTENT[0]">
-      <obj_property name="ElementShortName">[0][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+   <wvobject type="other" fp_name="/encoder_tb/T">
+      <obj_property name="ElementShortName">T</obj_property>
+      <obj_property name="ObjectShortName">T</obj_property>
    </wvobject>
 </wave_config>
