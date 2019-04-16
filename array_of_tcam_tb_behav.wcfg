@@ -13,15 +13,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="193241472fs"></ZoomEndTime>
-      <Cursor1Time time="100000000fs"></Cursor1Time>
+      <ZoomStartTime time="26248000fs"></ZoomStartTime>
+      <ZoomEndTime time="183413355fs"></ZoomEndTime>
+      <Cursor1Time time="47980000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="211"></NameColumnWidth>
-      <ValueColumnWidth column_width="99"></ValueColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
+   <WVObjectSize size="6" />
    <wvobject type="logic" fp_name="/encoder_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -29,7 +29,6 @@
    <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS">
       <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
       <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
    <wvobject type="other" fp_name="/encoder_tb/CHOSEN_OUTPUT">
       <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
@@ -38,5 +37,13 @@
    <wvobject type="other" fp_name="/encoder_tb/T">
       <obj_property name="ElementShortName">T</obj_property>
       <obj_property name="ObjectShortName">T</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output">
+      <obj_property name="ElementShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">choosen_switch_output[9:0][3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb/uut/inst_choosen_switch_output">
+      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
    </wvobject>
 </wave_config>
