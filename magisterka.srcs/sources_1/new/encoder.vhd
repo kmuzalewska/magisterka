@@ -28,7 +28,7 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
     assert 2<1 report "for memories" & integer'image(i) severity error;
     FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
         assert 2<1 report "for depth" & integer'image(depth) severity error;
-        FOR_INDEXES: for pair in 0 to 499 generate     --8 generate    TCAM_MAX_SIZE/2-1
+        FOR_INDEXES: for pair in 0 to TCAM_MAX_SIZE/2-1 generate --499 generate
                 assert 2<1 report "for pair" & integer'image(pair) severity error;
 
             SEARCH_FOR_INDEX: process(all)
@@ -143,10 +143,10 @@ FOR_DEPTH: for depth in 0 to log2_int(NUMBER_OF_MEMORIES)-1 generate
            process(all)
            begin                
                if choosen_switch_output(pair*2) /= ((choosen_switch_output(pair*2)'range) => '0') then 
-                   inst_choosen_switch_output(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1,choosen_switch_output'length));  
+                   inst_choosen_switch_output(depth)(pair) <= choosen_switch_output(pair*2);  
                elsif choosen_switch_output(pair*2+1) /= ((choosen_switch_output(pair*2)'range) => '0') then 
                    --wpisac tu do nowego array aktualny port
-                   inst_choosen_switch_output(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2,choosen_switch_output'length));                         
+                   inst_choosen_switch_output(depth)(pair) <= choosen_switch_output(pair*2+1);                         
                else    
                    inst_choosen_switch_output(depth)(pair) <= (others => '0');   
                end if;                
@@ -155,10 +155,10 @@ FOR_DEPTH: for depth in 0 to log2_int(NUMBER_OF_MEMORIES)-1 generate
         NEXT_LEVELS: if depth > 0 generate
             process(all)
             begin                
-                if inst_choosen_switch_output(depth-1)(pair) /= ((inst_choosen_switch_output(depth-1)(pair)'range) => '0') then 
-                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair);             
+                if inst_choosen_switch_output(depth-1)(pair*2) /= ((inst_choosen_switch_output(depth-1)(pair)'range) => '0') then 
+                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair*2);             
                 else    
-                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair+1);   
+                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair*2+1);   
                 end if;                
             end process;     
         end generate  NEXT_LEVELS;
@@ -170,17 +170,6 @@ CHOSEN_OUTPUT <= to_integer(unsigned(inst_choosen_switch_output(log2_int(NUMBER_
 
        
 
---GENERATE_ENCODER_RESPONSE: for encoder_in in 0 to TCAM_MAX_SIZE-1 generate
---    COMP_PROC: process(CLK)
---    begin
---        if rising_edge(CLK) then
---            if (equal_array(MEM_CONTENT(mem_address), DATA_IN)) then
---                DATA_OUT(mem_address) <= '1';
---            else
---                DATA_OUT(mem_address) <= '0';
---            end if;
---        end if;
---    end process;
---end generate GENERATE_TCAM_RESPONSE;
+
 
 end Behavioral;
