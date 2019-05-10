@@ -14,93 +14,47 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="467000001fs"></ZoomEndTime>
-      <Cursor1Time time="175000000fs"></Cursor1Time>
+      <ZoomEndTime time="200000001fs"></ZoomEndTime>
+      <Cursor1Time time="22967000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="254"></NameColumnWidth>
-      <ValueColumnWidth column_width="155"></ValueColumnWidth>
+      <NameColumnWidth column_width="295"></NameColumnWidth>
+      <ValueColumnWidth column_width="148"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="7" />
    <wvobject type="logic" fp_name="/encoder_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d">
-      <obj_property name="ElementShortName">inst_tcam_encoder_array_2d[4:0][8:0][999:0][9:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_tcam_encoder_array_2d[4:0][8:0][999:0][9:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[4]">
-         <obj_property name="ElementShortName">[4][8:0][999:0][9:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][8:0][999:0][9:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[3]">
-         <obj_property name="ElementShortName">[3][8:0][999:0][9:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][8:0][999:0][9:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[2]">
-         <obj_property name="ElementShortName">[2][8:0][999:0][9:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][8:0][999:0][9:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1]">
-         <obj_property name="ElementShortName">[1][8:0][999:0][9:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][8:0][999:0][9:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0]">
-         <obj_property name="ElementShortName">[0][8:0][999:0][9:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][8:0][999:0][9:0]</obj_property>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][8]">
-            <obj_property name="ElementShortName">[8][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[8][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][7]">
-            <obj_property name="ElementShortName">[7][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[7][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][6]">
-            <obj_property name="ElementShortName">[6][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[6][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][5]">
-            <obj_property name="ElementShortName">[5][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[5][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-            <obj_property name="isExpanded"></obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][4]">
-            <obj_property name="ElementShortName">[4][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[4][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][3]">
-            <obj_property name="ElementShortName">[3][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[3][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][2]">
-            <obj_property name="ElementShortName">[2][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[2][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][1]">
-            <obj_property name="ElementShortName">[1][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[1][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][0]">
-            <obj_property name="ElementShortName">[0][999:0][9:0]</obj_property>
-            <obj_property name="ObjectShortName">[0][999:0][9:0]</obj_property>
-            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-         </wvobject>
-      </wvobject>
-   </wvobject>
    <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS">
-      <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[4:0][999:0]</obj_property>
-      <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[4:0][999:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
+      <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[9]">
+         <obj_property name="ElementShortName">[9][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[8]">
+         <obj_property name="ElementShortName">[8][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[7]">
+         <obj_property name="ElementShortName">[7][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[6]">
+         <obj_property name="ElementShortName">[6][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[5]">
+         <obj_property name="ElementShortName">[5][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
       <wvobject type="array" fp_name="/encoder_tb/RESULTS_FROM_TCAMS[4]">
          <obj_property name="ElementShortName">[4][999:0]</obj_property>
          <obj_property name="ObjectShortName">[4][999:0]</obj_property>
@@ -127,291 +81,195 @@
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject type="other" fp_name="/encoder_tb/CHOSEN_OUTPUT">
-      <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
-      <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
+   <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d">
+      <obj_property name="ElementShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[9]">
+         <obj_property name="ElementShortName">[9][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[8]">
+         <obj_property name="ElementShortName">[8][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[7]">
+         <obj_property name="ElementShortName">[7][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[6]">
+         <obj_property name="ElementShortName">[6][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[5]">
+         <obj_property name="ElementShortName">[5][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[4]">
+         <obj_property name="ElementShortName">[4][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[3]">
+         <obj_property name="ElementShortName">[3][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[2]">
+         <obj_property name="ElementShortName">[2][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1]">
+         <obj_property name="ElementShortName">[1][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][8]">
+            <obj_property name="ElementShortName">[8][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][7]">
+            <obj_property name="ElementShortName">[7][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][6]">
+            <obj_property name="ElementShortName">[6][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][5]">
+            <obj_property name="ElementShortName">[5][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][4]">
+            <obj_property name="ElementShortName">[4][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][3]">
+            <obj_property name="ElementShortName">[3][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][2]">
+            <obj_property name="ElementShortName">[2][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][1]">
+            <obj_property name="ElementShortName">[1][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[1][0]">
+            <obj_property name="ElementShortName">[0][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][999:0][9:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0]">
+         <obj_property name="ElementShortName">[0][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][8]">
+            <obj_property name="ElementShortName">[8][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[8][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][7]">
+            <obj_property name="ElementShortName">[7][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[7][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][6]">
+            <obj_property name="ElementShortName">[6][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[6][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][5]">
+            <obj_property name="ElementShortName">[5][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[5][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][4]">
+            <obj_property name="ElementShortName">[4][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[4][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][3]">
+            <obj_property name="ElementShortName">[3][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[3][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][2]">
+            <obj_property name="ElementShortName">[2][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[2][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][1]">
+            <obj_property name="ElementShortName">[1][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[1][999:0][9:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/encoder_tb/uut/inst_tcam_encoder_array_2d[0][0]">
+            <obj_property name="ElementShortName">[0][999:0][9:0]</obj_property>
+            <obj_property name="ObjectShortName">[0][999:0][9:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output">
+      <obj_property name="ElementShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[9]">
+         <obj_property name="ElementShortName">[9][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[8]">
+         <obj_property name="ElementShortName">[8][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[7]">
+         <obj_property name="ElementShortName">[7][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[6]">
+         <obj_property name="ElementShortName">[6][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[5]">
+         <obj_property name="ElementShortName">[5][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[4]">
+         <obj_property name="ElementShortName">[4][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[3]">
+         <obj_property name="ElementShortName">[3][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[2]">
+         <obj_property name="ElementShortName">[2][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[1]">
+         <obj_property name="ElementShortName">[1][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output[0]">
+         <obj_property name="ElementShortName">[0][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][3:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="other" fp_name="/encoder_tb/T">
       <obj_property name="ElementShortName">T</obj_property>
       <obj_property name="ObjectShortName">T</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/MEMORY_INIT_FILE">
-      <obj_property name="ElementShortName">MEMORY_INIT_FILE[191:0]</obj_property>
-      <obj_property name="ObjectShortName">MEMORY_INIT_FILE[191:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem">
-      <obj_property name="ElementShortName">mem[0:59][3:0]</obj_property>
-      <obj_property name="ObjectShortName">mem[0:59][3:0]</obj_property>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[0]">
-         <obj_property name="ElementShortName">[0][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][3:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[1]">
-         <obj_property name="ElementShortName">[1][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][3:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[2]">
-         <obj_property name="ElementShortName">[2][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][3:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[3]">
-         <obj_property name="ElementShortName">[3][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][3:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[4]">
-         <obj_property name="ElementShortName">[4][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[5]">
-         <obj_property name="ElementShortName">[5][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[5][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[6]">
-         <obj_property name="ElementShortName">[6][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[6][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[7]">
-         <obj_property name="ElementShortName">[7][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[7][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[8]">
-         <obj_property name="ElementShortName">[8][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[8][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[9]">
-         <obj_property name="ElementShortName">[9][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[9][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[10]">
-         <obj_property name="ElementShortName">[10][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[10][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[11]">
-         <obj_property name="ElementShortName">[11][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[11][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[12]">
-         <obj_property name="ElementShortName">[12][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[12][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[13]">
-         <obj_property name="ElementShortName">[13][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[13][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[14]">
-         <obj_property name="ElementShortName">[14][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[14][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[15]">
-         <obj_property name="ElementShortName">[15][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[15][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[16]">
-         <obj_property name="ElementShortName">[16][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[16][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[17]">
-         <obj_property name="ElementShortName">[17][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[17][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[18]">
-         <obj_property name="ElementShortName">[18][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[18][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[19]">
-         <obj_property name="ElementShortName">[19][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[19][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[20]">
-         <obj_property name="ElementShortName">[20][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[20][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[21]">
-         <obj_property name="ElementShortName">[21][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[21][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[22]">
-         <obj_property name="ElementShortName">[22][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[22][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[23]">
-         <obj_property name="ElementShortName">[23][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[23][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[24]">
-         <obj_property name="ElementShortName">[24][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[24][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[25]">
-         <obj_property name="ElementShortName">[25][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[25][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[26]">
-         <obj_property name="ElementShortName">[26][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[26][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[27]">
-         <obj_property name="ElementShortName">[27][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[27][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[28]">
-         <obj_property name="ElementShortName">[28][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[28][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[29]">
-         <obj_property name="ElementShortName">[29][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[29][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[30]">
-         <obj_property name="ElementShortName">[30][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[30][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[31]">
-         <obj_property name="ElementShortName">[31][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[31][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[32]">
-         <obj_property name="ElementShortName">[32][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[32][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[33]">
-         <obj_property name="ElementShortName">[33][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[33][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[34]">
-         <obj_property name="ElementShortName">[34][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[34][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[35]">
-         <obj_property name="ElementShortName">[35][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[35][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[36]">
-         <obj_property name="ElementShortName">[36][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[36][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[37]">
-         <obj_property name="ElementShortName">[37][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[37][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[38]">
-         <obj_property name="ElementShortName">[38][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[38][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[39]">
-         <obj_property name="ElementShortName">[39][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[39][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[40]">
-         <obj_property name="ElementShortName">[40][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[40][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[41]">
-         <obj_property name="ElementShortName">[41][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[41][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[42]">
-         <obj_property name="ElementShortName">[42][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[42][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[43]">
-         <obj_property name="ElementShortName">[43][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[43][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[44]">
-         <obj_property name="ElementShortName">[44][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[44][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[45]">
-         <obj_property name="ElementShortName">[45][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[45][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[46]">
-         <obj_property name="ElementShortName">[46][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[46][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[47]">
-         <obj_property name="ElementShortName">[47][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[47][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[48]">
-         <obj_property name="ElementShortName">[48][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[48][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[49]">
-         <obj_property name="ElementShortName">[49][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[49][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[50]">
-         <obj_property name="ElementShortName">[50][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[50][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[51]">
-         <obj_property name="ElementShortName">[51][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[51][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[52]">
-         <obj_property name="ElementShortName">[52][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[52][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[53]">
-         <obj_property name="ElementShortName">[53][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[53][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[54]">
-         <obj_property name="ElementShortName">[54][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[54][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[55]">
-         <obj_property name="ElementShortName">[55][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[55][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[56]">
-         <obj_property name="ElementShortName">[56][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[56][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[57]">
-         <obj_property name="ElementShortName">[57][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[57][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[58]">
-         <obj_property name="ElementShortName">[58][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[58][3:0]</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/xpm_memory_base_inst/mem[59]">
-         <obj_property name="ElementShortName">[59][3:0]</obj_property>
-         <obj_property name="ObjectShortName">[59][3:0]</obj_property>
-      </wvobject>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/choosen_switch_output">
-      <obj_property name="ElementShortName">choosen_switch_output[4:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">choosen_switch_output[4:0][3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
    <wvobject type="array" fp_name="/encoder_tb/uut/inst_choosen_switch_output">
-      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/DECODER_OUT_MEM/addra">
-      <obj_property name="ElementShortName">addra[6:0]</obj_property>
-      <obj_property name="ObjectShortName">addra[6:0]</obj_property>
+      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
       <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/encoder_tb/uut/CHOSEN_OUTPUT">
+   <wvobject type="other" fp_name="/encoder_tb/CHOSEN_OUTPUT">
       <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
       <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/inst_choosen_switch_output">
-      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb/uut/inst_choosen_switch_output">
-      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][4:0][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>

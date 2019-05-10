@@ -7,16 +7,16 @@ library UNISIM;
 package types is
     function log2_int (x : integer) return integer;
     constant NUMBER_OF_PHYSICAL_OUT_INTERFACES : integer := 16; --(0 considered as negative answer zn d16 is virtual- do not exists)    
-    constant NUMBER_OF_MEMORIES : integer := 5; 
+    constant NUMBER_OF_MEMORIES : integer := 10; 
     type file_names_type is array(NUMBER_OF_MEMORIES-1 downto 0) of String(24 downto 1);
---    constant file_name : file_names_type := ("mem_seq_readout_gen0.mem", "mem_seq_readout_gen1.mem", "mem_seq_readout_gen2.mem", "mem_seq_readout_gen3.mem", "mem_seq_readout_gen4.mem");--, "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
-    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
+    constant file_name : file_names_type := ("mem_seq_readout_gen0.mem", "mem_seq_readout_gen1.mem", "mem_seq_readout_gen2.mem", "mem_seq_readout_gen3.mem", "mem_seq_readout_gen4.mem", "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
+--    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
---    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := ( 60, 70, 80, 90, 100);
---    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(20)+1, log2_int(30)+1, log2_int(40)+1, log2_int(50)+1, log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
-    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := ( log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+--    constant TCAM_SIZES : TCAM_SIZES_ARRAY := ( 60, 70, 80, 90, 100);
+    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(20)+1, log2_int(30)+1, log2_int(40)+1, log2_int(50)+1, log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
+--    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := ( log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
 
     constant DATA_SIZE: integer :=32; 
     constant TCAM_MAX_SIZE: integer :=1000; 
