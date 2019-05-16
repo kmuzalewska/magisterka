@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="encoder_tb2_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="encoder_tb2" />
+            <top_module name="item_to_encoder2" />
+            <top_module name="types" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="300000001fs"></ZoomEndTime>
+      <Cursor1Time time="300000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="137"></NameColumnWidth>
+      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="logic" fp_name="/encoder_tb2/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS">
+      <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
+      <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[9]">
+         <obj_property name="ElementShortName">[9][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[8]">
+         <obj_property name="ElementShortName">[8][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[7]">
+         <obj_property name="ElementShortName">[7][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[6]">
+         <obj_property name="ElementShortName">[6][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[5]">
+         <obj_property name="ElementShortName">[5][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[4]">
+         <obj_property name="ElementShortName">[4][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[3]">
+         <obj_property name="ElementShortName">[3][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[2]">
+         <obj_property name="ElementShortName">[2][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[1]">
+         <obj_property name="ElementShortName">[1][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[0]">
+         <obj_property name="ElementShortName">[0][999:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="other" fp_name="/encoder_tb2/CHOSEN_OUTPUT">
+      <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
+      <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/encoder_tb2/T">
+      <obj_property name="ElementShortName">T</obj_property>
+      <obj_property name="ObjectShortName">T</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d">
+      <obj_property name="ElementShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[9]">
+         <obj_property name="ElementShortName">[9][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[8]">
+         <obj_property name="ElementShortName">[8][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[7]">
+         <obj_property name="ElementShortName">[7][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[6]">
+         <obj_property name="ElementShortName">[6][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[5]">
+         <obj_property name="ElementShortName">[5][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[4]">
+         <obj_property name="ElementShortName">[4][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[3]">
+         <obj_property name="ElementShortName">[3][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[2]">
+         <obj_property name="ElementShortName">[2][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[1]">
+         <obj_property name="ElementShortName">[1][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d[0]">
+         <obj_property name="ElementShortName">[0][8:0][999:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][8:0][999:0][9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output">
+      <obj_property name="ElementShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[9]">
+         <obj_property name="ElementShortName">[9][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[8]">
+         <obj_property name="ElementShortName">[8][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[7]">
+         <obj_property name="ElementShortName">[7][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[6]">
+         <obj_property name="ElementShortName">[6][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[5]">
+         <obj_property name="ElementShortName">[5][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[4]">
+         <obj_property name="ElementShortName">[4][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[3]">
+         <obj_property name="ElementShortName">[3][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[2]">
+         <obj_property name="ElementShortName">[2][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[1]">
+         <obj_property name="ElementShortName">[1][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output[0]">
+         <obj_property name="ElementShortName">[0][3:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][3:0]</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/encoder_tb2/uut/inst_choosen_switch_output">
+      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+</wave_config>

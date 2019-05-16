@@ -1,0 +1,18 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date              : Thu May 16 11:37:28 2019
+| Host              : T3 running 64-bit Ubuntu 18.04.2 LTS
+| Command           : report_clock_interaction -delay_type min_max -significant_digits 3 -name timing_2 -file /home/klara/magisterka/timing_2.txt
+| Design            : encoder
+| Device            : xczu17eg-ffvc1760
+| Speed File        : -2  PRODUCTION 1.23 10-29-2018
+| Temperature Grade : E
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+No clocks found.
+
+
+
