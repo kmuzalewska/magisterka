@@ -50,8 +50,6 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/array_3D.vhd
-  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder.vhd
-  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder2.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -64,12 +62,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top encoder -part xczu17eg-ffvc1760-2-e
+synth_design -top main -part xczu17eg-ffvc1760-2-e -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef encoder.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file encoder_utilization_synth.rpt -pb encoder_utilization_synth.pb"
+write_checkpoint -force -noxdef main.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

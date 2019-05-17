@@ -1,13 +1,14 @@
-
-*** Running vivado
-    with args -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
-
-
-****** Vivado v2018.3 (64-bit)
-  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
-  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Fri May 17 09:06:26 2019
+# Process ID: 16133
+# Current directory: /home/klara/magisterka/magisterka.runs/synth_1
+# Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: /home/klara/magisterka/magisterka.runs/synth_1/main.vds
+# Journal file: /home/klara/magisterka/magisterka.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
 source main.tcl -notrace
 Command: synth_design -top main -part xczu17eg-ffvc1760-2-e -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
 Starting synth_design

@@ -13,13 +13,15 @@ package types is
 --    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+--    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 10, 10, 100, 100, 100, 1000, 1000, 1000, 10000);
 --    constant TCAM_SIZES : TCAM_SIZES_ARRAY := ( 60, 70, 80, 90, 100);
-    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(20)+1, log2_int(30)+1, log2_int(40)+1, log2_int(50)+1, log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
+--    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(20)+1, log2_int(30)+1, log2_int(40)+1, log2_int(50)+1, log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
 --    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := ( log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
+    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(10)+1, log2_int(10)+1, log2_int(100)+1, log2_int(100)+1, log2_int(100)+1, log2_int(1000)+1, log2_int(1000)+1, log2_int(1000)+1, log2_int(10000)+1);
 
     constant DATA_SIZE: integer :=32; 
-    constant TCAM_MAX_SIZE: integer :=1000; 
+    constant TCAM_MAX_SIZE: integer :=10000; 
     
     type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE-1 downto 0) of std_logic_vector(9 downto 0);
     type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)-1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    

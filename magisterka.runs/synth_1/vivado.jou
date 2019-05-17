@@ -2,11 +2,11 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Fri May 10 23:37:41 2019
-# Process ID: 10552
+# Start of session at: Fri May 17 09:06:26 2019
+# Process ID: 16133
 # Current directory: /home/klara/magisterka/magisterka.runs/synth_1
-# Command line: vivado -log encoder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source encoder.tcl
-# Log file: /home/klara/magisterka/magisterka.runs/synth_1/encoder.vds
+# Command line: vivado -log main.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+# Log file: /home/klara/magisterka/magisterka.runs/synth_1/main.vds
 # Journal file: /home/klara/magisterka/magisterka.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
-source encoder.tcl -notrace
+source main.tcl -notrace
