@@ -17,6 +17,11 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param power.enableLutRouteBelPower 1
+set_param power.enableCarry8RouteBelPower 1
+set_param power.enableUnconnectedCarry8PinPower 1
+set_param power.BramSDPPropagationFix 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xczu17eg-ffvc1760-2-e
@@ -49,6 +54,8 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd
+  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder.vhd
+  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder2.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/array_3D.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being

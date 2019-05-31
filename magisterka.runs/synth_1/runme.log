@@ -14,7 +14,7 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu17eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu17eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 16201 
+INFO: Helper process launched with PID 24758 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1422.266 ; gain = 38.000 ; free physical = 4934 ; free virtual = 26355
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1422.270 ; gain = 38.000 ; free physical = 6672 ; free virtual = 25084
 ---------------------------------------------------------------------------------

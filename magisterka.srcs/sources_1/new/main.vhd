@@ -6,13 +6,14 @@ library xil_defaultlib;
 use xil_defaultlib.types.all;
 --Library xpm;
 --use xpm.vcomponent.all;
+use xil_defaultlib.data_to_tcam.all;
 
 
 entity main is
   Port ( 
     CLK: in std_logic;
     DATA_IN: in std_logic_vector(DATA_SIZE-1 downto 0);
-    DATA_TO_TCAM: in TCAM_ARRAY_3D;
+   -- DATA_TO_TCAM: in TCAM_ARRAY_3D;
     CHOSEN_OUTPUT: out integer
   );
 end main;

@@ -16,7 +16,7 @@ set rt::rc [catch {
     set rt::cmdEcho 0
     rt::set_parameter writeXmsg true
     rt::set_parameter enableParallelHelperSpawn true
-    set ::env(RT_TMP) "./.Xil/Vivado-16133-T3/realtime/tmp"
+    set ::env(RT_TMP) "./.Xil/Vivado-24689-T3/realtime/tmp"
     if { [ info exists ::env(RT_TMP) ] } {
       file delete -force $::env(RT_TMP)
       file mkdir $::env(RT_TMP)
@@ -43,6 +43,8 @@ set rt::rc [catch {
       /home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd
       /home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd
       /home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd
+      /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder.vhd
+      /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder2.vhd
       /home/klara/magisterka/magisterka.srcs/sources_1/new/array_3D.vhd
     }
       rt::filesetChecksum
@@ -61,7 +63,7 @@ set rt::rc [catch {
     rt::set_parameter rstSrlDepthThreshold 6
 # MODE: 
     rt::set_parameter webTalkPath {}
-    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-16133-T3/"
+    rt::set_parameter enableSplitFlowPath "./.Xil/Vivado-24689-T3/"
     set ok_to_delete_rt_tmp true 
     if { [rt::get_parameter parallelDebug] } { 
        set ok_to_delete_rt_tmp false 

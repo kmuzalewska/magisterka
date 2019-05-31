@@ -3,10 +3,10 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="encoder_tb2_behav.wdb" id="1">
+      <db_ref path="main_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="encoder_tb2" />
-            <top_module name="item_to_encoder2" />
+            <top_module name="data_to_tcam" />
+            <top_module name="main_tb" />
             <top_module name="types" />
             <top_module name="vcomponents" />
          </top_modules>
@@ -14,95 +14,65 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="101207387fs"></ZoomEndTime>
-      <Cursor1Time time="200000000fs"></Cursor1Time>
+      <ZoomEndTime time="153431373fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="137"></NameColumnWidth>
-      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+      <NameColumnWidth column_width="236"></NameColumnWidth>
+      <ValueColumnWidth column_width="176"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
-   <wvobject type="logic" fp_name="/encoder_tb2/CLK">
+   <WVObjectSize size="11" />
+   <wvobject type="logic" fp_name="/main_tb/CLK">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS">
+   <wvobject type="array" fp_name="/main_tb/DATA_IN">
+      <obj_property name="ElementShortName">DATA_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/main_tb/uut/ARRAY_OF_TCAM_INST/DATA_IN">
+      <obj_property name="ElementShortName">DATA_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_IN[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/main_tb/uut/ARRAY_OF_TCAM_INST/DATA_OUT">
+      <obj_property name="ElementShortName">DATA_OUT[9:0][999:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_OUT[9:0][999:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/main_tb/uut/ENCODER_INST/RESULTS_FROM_TCAMS">
       <obj_property name="ElementShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
       <obj_property name="ObjectShortName">RESULTS_FROM_TCAMS[9:0][999:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[9]">
-         <obj_property name="ElementShortName">[9][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[9][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[8]">
-         <obj_property name="ElementShortName">[8][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[8][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[7]">
-         <obj_property name="ElementShortName">[7][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[7][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[6]">
-         <obj_property name="ElementShortName">[6][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[6][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[5]">
-         <obj_property name="ElementShortName">[5][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[5][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[4]">
-         <obj_property name="ElementShortName">[4][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[4][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[3]">
-         <obj_property name="ElementShortName">[3][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[3][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[2]">
-         <obj_property name="ElementShortName">[2][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[2][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[1]">
-         <obj_property name="ElementShortName">[1][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[1][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/encoder_tb2/RESULTS_FROM_TCAMS[0]">
-         <obj_property name="ElementShortName">[0][999:0]</obj_property>
-         <obj_property name="ObjectShortName">[0][999:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject type="other" fp_name="/encoder_tb2/CHOSEN_OUTPUT">
+   <wvobject type="array" fp_name="/main_tb/uut/ENCODER_INST/choosen_switch_output">
+      <obj_property name="ElementShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">choosen_switch_output[9:0][3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/main_tb/uut/ENCODER_INST/inst_choosen_switch_output">
+      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="other" fp_name="/main_tb/uut/ENCODER_INST/CHOSEN_OUTPUT">
       <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
       <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject type="other" fp_name="/encoder_tb2/T">
-      <obj_property name="ElementShortName">T</obj_property>
-      <obj_property name="ObjectShortName">T</obj_property>
+   <wvobject type="other" fp_name="/main_tb/CHOSEN_OUTPUT">
+      <obj_property name="ElementShortName">CHOSEN_OUTPUT</obj_property>
+      <obj_property name="ObjectShortName">CHOSEN_OUTPUT</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb2/uut/inst_choosen_switch_output">
-      <obj_property name="ElementShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_choosen_switch_output[9:0][9:0][3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject type="logic" fp_name="/main_tb/uut/ARRAY_OF_TCAM_INST/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb2/uut/choosen_switch_output">
-      <obj_property name="ElementShortName">choosen_switch_output[9:0][3:0]</obj_property>
-      <obj_property name="ObjectShortName">choosen_switch_output[9:0][3:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/encoder_tb2/uut/inst_tcam_encoder_array_2d">
-      <obj_property name="ElementShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
-      <obj_property name="ObjectShortName">inst_tcam_encoder_array_2d[9:0][8:0][999:0][9:0]</obj_property>
+   <wvobject type="logic" fp_name="/main_tb/uut/ENCODER_INST/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
    </wvobject>
 </wave_config>

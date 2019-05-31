@@ -15,7 +15,7 @@ entity encoder is
 end encoder;
 
 architecture Behavioral of encoder is
-    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D :=(others => (others => (others => "0000000000")));
+    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D :=(others => (others => (others => (others=>'0'))));
     type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
     signal choosen_switch_output : choosen_switch_output_array :=(others => (others => '0'));
     type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE) downto 0) of choosen_switch_output_array;    
@@ -50,10 +50,11 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
                     else    
                        -- assert 2<1 report "else" & integer'image(pair) severity error;
-                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= "0000000000";  
+                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= (others =>'0');--"0000000000";  
                     end if;                     
                 else                
-                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= "0000000000" and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania
+                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= (inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0') and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania [Synth 8-211] could not evaluate expression: OTHERS in array aggregate without constraining context ["/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd":56](inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0')
+
 --                         --wpisac tu do nowego array port nastepny
                          inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair);    
                          -- assert 2<1 report "inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= '0000000000'" & integer'image(pair) severity error;
@@ -77,7 +78,8 @@ end generate FOR_MEMORIES;
 
 --retrive data from outputs mappin
 GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
---  assert 2<1 report "texta" & integer'image(i) severity error;
+ -- assert 2<1 report "memory" & integer'image(i) severity error;
+  --assert 2<1 report "TCAM_SIZES(i)" & integer'image(TCAM_SIZES(i)) severity error;
   
   DECODER_OUT_MEM: xpm_memory_spram
    generic map (
@@ -88,7 +90,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
       MEMORY_INIT_FILE => file_name(i),     -- String --sciezka do pliku z ktorego czta --tu tablica stringow
       MEMORY_INIT_PARAM => "0",       -- String
       MEMORY_OPTIMIZATION => "true",  -- String
-      MEMORY_PRIMITIVE => "auto",     -- String
+      MEMORY_PRIMITIVE => "block",     -- String
       MEMORY_SIZE => TCAM_SIZES(i)*log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- memory size in bits, TCAM_SIZES(i) of individaual memories multiplied by bits required to distinguish output interfaces   
       MESSAGE_CONTROL => 0,           -- DECIMAL
       READ_DATA_WIDTH_A => log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- DECIMAL
@@ -109,7 +111,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
 
       --addra => std_logic_vector(to_unsigned(inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0), TCAM_ADDR_SIZES(i) )),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
      -- addra => std_logic_vector(to_unsigned(0, 10)),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
-      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0)(log2_int(TCAM_SIZES(i)) downto 0),      
+      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0)(log2_int(TCAM_SIZES(i)) downto 0),       
       clka => CLK,                     -- 1-bit input: Clock signal for port A.
       dina => x"0",                     -- WRITE_DATA_WIDTH_A-bit input: Data input for port A write operations.
       ena => '1',                       -- 1-bit input: Memory enable signal for port A. Must be high on clock
