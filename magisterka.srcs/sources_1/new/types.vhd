@@ -8,8 +8,8 @@ package types is
     function log2_int (x : integer) return integer;
     constant NUMBER_OF_PHYSICAL_OUT_INTERFACES : integer := 16; --(0 considered as negative answer zn d16 is virtual- do not exists)    
     constant NUMBER_OF_MEMORIES : integer := 10; 
-    type file_names_type is array(NUMBER_OF_MEMORIES-1 downto 0) of String(24 downto 1);
-    constant file_name : file_names_type := ("mem_seq_readout_gen0.mem", "mem_seq_readout_gen8.mem", "mem_seq_readout_gen7.mem", "mem_seq_readout_gen6.mem", "mem_seq_readout_gen5.mem", "mem_seq_readout_gen4.mem","mem_seq_readout_gen3.mem","mem_seq_readout_gen2.mem","mem_seq_readout_gen1.mem","mem_seq_readout_gen0.mem" );--dy deklaruje sie rray to idzie od 9 do 0
+    type file_names_type is array(NUMBER_OF_MEMORIES-1 downto 0) of String(24 downto 1);--tu te kolejnosc pamieci zmienilam
+    constant file_name : file_names_type := ("mem_seq_readout_gen0.mem", "mem_seq_readout_gen1.mem", "mem_seq_readout_gen2.mem", "mem_seq_readout_gen3.mem", "mem_seq_readout_gen4.mem", "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );--dy deklaruje sie rray to idzie od 9 do 0
 --    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
