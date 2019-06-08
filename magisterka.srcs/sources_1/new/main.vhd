@@ -20,6 +20,10 @@ end main;
 
 architecture Behavioral of main is
     signal data_to_encoder: ENCODER_ARRAY;
+    signal data_to_TCAM_local: TCAM_ARRAY_3D:= DATA_TO_TCAM_CONST;
+   
+    attribute dont_touch : string;
+    attribute dont_touch of  data_to_TCAM_local : signal is "true";
 --    signal DANE_OD_PDULINSKIEGO: TCAM_ARRAY_3D;
 
 component array_of_tcam
@@ -47,7 +51,7 @@ port map(
     CLK => CLK,
     DATA_IN => DATA_IN,
     DATA_OUT => data_to_encoder,
-    MEM_CONTENT => DATA_TO_TCAM
+    MEM_CONTENT => data_to_TCAM_local --DATA_TO_TCAM --
 );
 
 ENCODER_INST: entity xil_defaultlib.encoder

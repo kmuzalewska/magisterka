@@ -1,0 +1,2002 @@
+
+*** Running vivado
+    with args -log main.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source main.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:36:41 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source main.tcl -notrace
+Command: synth_design -top main -part xczu17eg-ffvc1760-2-e -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu17eg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu17eg'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8866 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1422.270 ; gain = 38.000 ; free physical = 6839 ; free virtual = 21954
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'main' [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:21]
+WARNING: [Synth 8-302] global signal 'data_to_tcam_sig' treated as architecture-local [/home/klara/magisterka/magisterka.srcs/sources_1/new/data_to_tcam.vhd:10]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:23]
+INFO: [Synth 8-638] synthesizing module 'array_of_tcam' [/home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'tcam' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'tcam' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'array_of_tcam' (2#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'encoder' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:17]
+	Parameter MEMORY_SIZE bound to: 40 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 5 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 40 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 5 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 40 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 5 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 10 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 4 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 4 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (40), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (5) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (40), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (5) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen9.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base' (3#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 80 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized1' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 80 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized0' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 80 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 5 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 20 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (80), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (6) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (80), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (6) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen8.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized0' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized1' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 120 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen7.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized3' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 120 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen7.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized1' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 120 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen7.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 5 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 30 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 5 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (120), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (6) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (120), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (6) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen7.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized1' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized3' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 160 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen6.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized5' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 160 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen6.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized2' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 160 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen6.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 40 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (160), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (160), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen6.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized2' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized5' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 200 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen5.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized7' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 200 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen5.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized3' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 200 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen5.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 50 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (200), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (200), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen5.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized3' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized7' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 240 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen4.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized9' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 240 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen4.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized4' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 240 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen4.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 6 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 60 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 6 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (240), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (240), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (7) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen4.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized4' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized9' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 280 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen3.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized11' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 280 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen3.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized5' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 280 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen3.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 70 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (280), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (280), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen3.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized5' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized11' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 320 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen2.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized13' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 320 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen2.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized6' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 320 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen2.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 80 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (320), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (320), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen2.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized6' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized13' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 360 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen1.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized15' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 360 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen1.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 360 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen1.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 90 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (360), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (360), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen1.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized7' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized15' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen0.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:84]
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized17' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter ECC_MODE bound to: no_ecc - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen0.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: read_first - type: string 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter P_CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter P_ECC_MODE bound to: 0 - type: integer 
+	Parameter P_WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter P_WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized8' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+	Parameter MEMORY_TYPE bound to: 0 - type: integer 
+	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
+	Parameter CLOCKING_MODE bound to: 0 - type: integer 
+	Parameter ECC_MODE bound to: 0 - type: integer 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen0.mem - type: string 
+	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
+	Parameter USE_MEM_INIT bound to: 1 - type: integer 
+	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
+	Parameter WAKEUP_TIME bound to: 0 - type: integer 
+	Parameter AUTO_SLEEP_TIME bound to: 0 - type: integer 
+	Parameter MESSAGE_CONTROL bound to: 0 - type: integer 
+	Parameter VERSION bound to: 0 - type: integer 
+	Parameter USE_EMBEDDED_CONSTRAINT bound to: 0 - type: integer 
+	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
+	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
+	Parameter READ_LATENCY_A bound to: 2 - type: integer 
+	Parameter WRITE_MODE_A bound to: 1 - type: integer 
+	Parameter RST_MODE_A bound to: SYNC - type: string 
+	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
+	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 7 - type: integer 
+	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
+	Parameter READ_LATENCY_B bound to: 2 - type: integer 
+	Parameter WRITE_MODE_B bound to: 1 - type: integer 
+	Parameter RST_MODE_B bound to: SYNC - type: string 
+	Parameter P_MEMORY_PRIMITIVE bound to: block - type: string 
+	Parameter P_MIN_WIDTH_DATA_A bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 100 - type: integer 
+	Parameter P_ECC_MODE bound to: no_ecc - type: string 
+	Parameter P_MEMORY_OPT bound to: yes - type: string 
+	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
+	Parameter P_WIDTH_COL_WRITE_B bound to: 4 - type: integer 
+	Parameter P_NUM_COLS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_COLS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
+	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
+	Parameter P_WIDTH_ADDR_LSB_READ_B bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_A bound to: 0 - type: integer 
+	Parameter P_ENABLE_BYTE_WRITE_B bound to: 0 - type: integer 
+	Parameter P_SDP_WRITE_MODE bound to: yes - type: string 
+	Parameter NUM_CHAR_LOC bound to: 0 - type: integer 
+	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
+	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-16] MEMORY_SIZE (400), WRITE_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A write operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:559]
+WARNING: [Synth 8-6060] Synth Warning: [XPM_MEMORY 30-17] MEMORY_SIZE (400), READ_DATA_WIDTH_A (4), and ADDR_WIDTH_A (8) together imply that the addressable range exceeds the memory size for this configuration which uses port A read operations.   [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:561]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen0.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
+INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized8' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
+INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized17' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
+WARNING: [Synth 8-5856] 3D RAM inst_tcam_encoder_array_2d_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM inst_choosen_switch_output_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[0][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[0][0][5] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[0][0][6] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[7].inst_tcam_encoder_array_2d_reg[0][0][7] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[0][0][8] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[0][0][9] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[0][0][10] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[0][0][11] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[0][0][12] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[0][0][13] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[0][0][14] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[15].inst_tcam_encoder_array_2d_reg[0][0][15] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[0][0][16] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[0][0][17] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[0][0][18] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[0][0][19] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[0][0][20] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[0][0][21] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[0][0][22] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[23].inst_tcam_encoder_array_2d_reg[0][0][23] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[0][0][24] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[0][0][25] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[0][0][26] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[0][0][27] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[0][0][28] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[0][0][29] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[0][0][30] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[0][0][31] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[0][0][32] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[0][0][33] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[0][0][34] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[0][0][35] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[0][0][36] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[0][0][37] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[0][0][38] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[0][0][39] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[0][0][40] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[0][0][41] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[0][0][42] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[0][0][43] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[0][0][44] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[0][0][45] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[0][0][46] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[0][0][47] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[0][0][48] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[0][0][49] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[0][1][3] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[0][1][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[0][1][5] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[0][1][6] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[7].inst_tcam_encoder_array_2d_reg[0][1][7] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[0][1][8] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[0][1][9] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[0][1][10] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[0][1][11] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[0][1][12] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[0][1][13] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[0][1][14] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[15].inst_tcam_encoder_array_2d_reg[0][1][15] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[0][1][16] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[0][1][17] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[0][1][18] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[0][1][19] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[0][1][20] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[0][1][21] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[0][1][22] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[23].inst_tcam_encoder_array_2d_reg[0][1][23] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[0][1][24] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[0][1][25] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[0][1][26] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[0][1][27] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[0][1][28] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[0][1][29] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[0][1][30] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[0][1][31] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[0][1][32] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[0][1][33] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[0][1][34] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[0][1][35] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[0][1][36] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[0][1][37] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[0][1][38] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[0][1][39] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[0][1][40] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[0][1][41] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[0][1][42] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[0][1][43] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[0][1][44] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[0][1][45] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[0][1][46] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0]' and it is trimmed from '8' to '5' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[0][2][1]' and it is trimmed from '8' to '5' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[0][1][2]' and it is trimmed from '8' to '5' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][4][0]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][3][1]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[2].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][2][2]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][1][3]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][4][0]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][3][1]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[2].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][2][2]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[2][1][3]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][5][0]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][4][1]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][3][2]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][2][3]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[3][1][4]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][5][0]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][4][1]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[4][3][2]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][2][3]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[4][1][4]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][5][0]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][4][1]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][3][2]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[5][2][3]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[5][1][4]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:56]
+INFO: [Synth 8-256] done synthesizing module 'encoder' (5#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:17]
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
+INFO: [Synth 8-256] done synthesizing module 'main' (6#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:21]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port sleep
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addra[7]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port injectsbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port injectdbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port clkb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port rstb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port enb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port regceb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[6]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[5]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[4]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port addrb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port dinb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port dinb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port dinb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port dinb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port injectsbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized8 has unconnected port injectdbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port sleep
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addra[7]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port injectsbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port injectdbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port clkb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port rstb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port enb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port regceb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[6]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[5]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[4]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port dinb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port dinb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port dinb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port dinb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port injectsbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port injectdbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port sleep
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addra[7]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port injectsbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port injectdbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port clkb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port rstb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port enb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port regceb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[6]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[5]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[4]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port addrb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port dinb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port dinb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port dinb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port dinb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port injectsbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized6 has unconnected port injectdbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port sleep
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addra[7]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port injectsbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port injectdbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port clkb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port rstb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port enb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port regceb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[6]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[5]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[4]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port addrb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port dinb[3]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port dinb[2]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port dinb[1]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port dinb[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port injectsbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized5 has unconnected port injectdbiterrb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port sleep
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port addra[6]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port injectsbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port injectdbiterra
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port clkb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port rstb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port enb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port regceb
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port addrb[5]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port addrb[4]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized4 has unconnected port addrb[3]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:02:42 ; elapsed = 00:02:45 . Memory (MB): peak = 2346.605 ; gain = 962.336 ; free physical = 6194 ; free virtual = 21324
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][31][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][31][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][30][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][30][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][29][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][29][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][28][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][28][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][27][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][27][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][26][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][26][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][25][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][25][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][24][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][24][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][23][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][23][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][22][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][22][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][21][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][21][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][20][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][20][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][19][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][19][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][18][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][18][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][17][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][17][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][16][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][16][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][15][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][15][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][14][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][14][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][13][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][13][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][12][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][12][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][11][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][11][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][10][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][10][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][9][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][9][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][8][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][8][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][7][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][7][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][6][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][6][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][5][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][5][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][4][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][4][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][3][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][3][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][2][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][2][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][1][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][1][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][0][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][99][0][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][31][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][31][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][30][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][30][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][29][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][29][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][28][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][28][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][27][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][27][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][26][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][26][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][25][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][25][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][24][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][24][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][23][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][23][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][22][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][22][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][21][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][21][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][20][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][20][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][19][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][19][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][18][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][18][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][17][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][17][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][16][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][16][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][15][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][15][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][14][1] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+WARNING: [Synth 8-3295] tying undriven pin ARRAY_OF_TCAM_INST:MEM_CONTENT[9][98][14][0] to constant 0 [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:49]
+INFO: [Common 17-14] Message 'Synth 8-3295' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:59 ; elapsed = 00:03:03 . Memory (MB): peak = 2346.605 ; gain = 962.336 ; free physical = 6495 ; free virtual = 21624
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:59 ; elapsed = 00:03:03 . Memory (MB): peak = 2346.605 ; gain = 962.336 ; free physical = 6495 ; free virtual = 21624
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xczu17eg-ffvc1760-2-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc]
+Finished Parsing XDC File [/home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc]
+Parsing XDC File [/home/klara/magisterka/magisterka.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/klara/magisterka/magisterka.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3244.785 ; gain = 0.000 ; free physical = 5304 ; free virtual = 20434
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3244.785 ; gain = 0.000 ; free physical = 5303 ; free virtual = 20433
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.21 . Memory (MB): peak = 3244.785 ; gain = 0.000 ; free physical = 5303 ; free virtual = 20433
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:03:53 ; elapsed = 00:04:06 . Memory (MB): peak = 3244.785 ; gain = 1860.516 ; free physical = 5443 ; free virtual = 20573
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:06:03 ; elapsed = 00:06:18 . Memory (MB): peak = 3244.785 ; gain = 1860.516 ; free physical = 979 ; free virtual = 16133
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |tcam          |          10|     25632|
+|2     |main__GC0     |           1|      4291|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 189   
+	                7 Bit    Registers := 15    
+	                6 Bit    Registers := 8     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 20    
+	                1 Bit    Registers := 1000  
++---RAMs : 
+	              400 Bit         RAMs := 1     
+	              360 Bit         RAMs := 1     
+	              320 Bit         RAMs := 1     
+	              280 Bit         RAMs := 1     
+	              240 Bit         RAMs := 1     
+	              200 Bit         RAMs := 1     
+	              160 Bit         RAMs := 1     
+	              120 Bit         RAMs := 1     
+	               80 Bit         RAMs := 1     
+	               40 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 129   
+	   2 Input      7 Bit        Muxes := 15    
+	   2 Input      6 Bit        Muxes := 8     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 16    
+	   3 Input      4 Bit        Muxes := 30    
+	   3 Input      3 Bit        Muxes := 20    
+	   3 Input      2 Bit        Muxes := 10    
+	   2 Input      1 Bit        Muxes := 31000 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module tcam 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 100   
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3100  
+Module xpm_memory_base 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	               40 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	               80 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              120 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              160 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              200 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              240 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized5 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              280 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized6 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              320 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized7 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              360 Bit         RAMs := 1     
+Module xpm_memory_base__parameterized8 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
++---RAMs : 
+	              400 Bit         RAMs := 1     
+Module encoder 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 189   
+	                7 Bit    Registers := 15    
+	                6 Bit    Registers := 8     
+	                5 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 129   
+	   2 Input      7 Bit        Muxes := 15    
+	   2 Input      6 Bit        Muxes := 8     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 16    
+	   3 Input      4 Bit        Muxes := 30    
+	   3 Input      3 Bit        Muxes := 20    
+	   3 Input      2 Bit        Muxes := 10    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1590 (col length:264)
+BRAMs: 1592 (col length: RAMB18 264 RAMB36 132)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[5][0][5]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[4][0][5]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[3][0][5]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[2][0][4]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[1][0][4]' and it is trimmed from '8' to '6' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[0][0][3]' and it is trimmed from '8' to '5' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:46]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[9].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[9][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[7].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[7][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[6].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[6][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[5][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[4][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[3][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[5][1][4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[5][1][4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[4][1][4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[4][1][4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[3][1][4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[3][1][4][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[2][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[1][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[2][1][3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][1][3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[5][2][3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[5][2][3][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][2][3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][2][3][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][2][3][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][2][3][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[2].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][2][2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[2].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][2][2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][3][2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][3][2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[4][3][2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[4][3][2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][3][2][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[3].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][3][2][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][3][1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][3][1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][4][1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][4][1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][4][1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][4][1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][4][1][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[4].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][4][1][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][4][0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][4][0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][5][0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][5][0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][5][0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][5][0][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][5][0][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[5].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][5][0][5] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:38 ; elapsed = 00:06:54 . Memory (MB): peak = 3244.785 ; gain = 1860.516 ; free physical = 774 ; free virtual = 16028
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name                      | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|xpm_memory_base:                 | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized0: | gen_wr_a.gen_word_narrow.mem_reg | 32 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized1: | gen_wr_a.gen_word_narrow.mem_reg | 32 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized2: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized3: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized4: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized5: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized6: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized8: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |tcam          |           1|       768|
+|2     |main__GC0     |           1|      2968|
+|3     |tcam__1       |           2|       960|
+|4     |tcam__2       |           3|      1152|
+|5     |tcam__3       |           4|      1344|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:07:02 ; elapsed = 00:07:39 . Memory (MB): peak = 3436.246 ; gain = 2051.977 ; free physical = 210 ; free virtual = 15464
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:07:06 ; elapsed = 00:07:44 . Memory (MB): peak = 3543.121 ; gain = 2158.852 ; free physical = 220 ; free virtual = 15418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name                      | RTL Object                       | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|xpm_memory_base:                 | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized0: | gen_wr_a.gen_word_narrow.mem_reg | 32 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized1: | gen_wr_a.gen_word_narrow.mem_reg | 32 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized2: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized3: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized4: | gen_wr_a.gen_word_narrow.mem_reg | 64 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized5: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized6: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized8: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
++---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |tcam          |           1|       768|
+|2     |main__GC0     |           1|      2967|
+|3     |tcam__1       |           2|       960|
+|4     |tcam__2       |           3|      1152|
+|5     |tcam__3       |           4|      1344|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:07:22 ; elapsed = 00:08:01 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 561 ; free virtual = 15476
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:07:25 ; elapsed = 00:08:04 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 566 ; free virtual = 15481
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:07:25 ; elapsed = 00:08:04 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 566 ; free virtual = 15481
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:26 ; elapsed = 00:08:05 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 566 ; free virtual = 15481
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:07:27 ; elapsed = 00:08:06 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 566 ; free virtual = 15481
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:07:28 ; elapsed = 00:08:07 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 634 ; free virtual = 15549
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:07:29 ; elapsed = 00:08:08 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 636 ; free virtual = 15551
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     1|
+|2     |LUT1        | 64000|
+|3     |LUT2        |    90|
+|4     |LUT3        |   150|
+|5     |LUT4        |   330|
+|6     |LUT5        |   363|
+|7     |LUT6        |  2172|
+|8     |RAMB18E2_10 |     1|
+|9     |RAMB18E2_11 |     1|
+|10    |RAMB18E2_12 |     1|
+|11    |RAMB18E2_13 |     1|
+|12    |RAMB18E2_14 |     1|
+|13    |RAMB18E2_15 |     1|
+|14    |RAMB18E2_16 |     1|
+|15    |RAMB18E2_17 |     1|
+|16    |RAMB18E2_18 |     1|
+|17    |RAMB18E2_19 |     1|
+|18    |FDRE        |   901|
+|19    |IBUF        |    33|
+|20    |OBUF        |    32|
++------+------------+------+
+
+Report Instance Areas: 
++------+-------------------------------------------+----------------------------------+------+
+|      |Instance                                   |Module                            |Cells |
++------+-------------------------------------------+----------------------------------+------+
+|1     |top                                        |                                  | 68082|
+|2     |  ARRAY_OF_TCAM_INST                       |array_of_tcam                     |  2608|
+|3     |    \GEN_TCAM_MEMORIES[0].TCAM_INST        |tcam                              |   173|
+|4     |    \GEN_TCAM_MEMORIES[1].TCAM_INST        |tcam_0                            |   217|
+|5     |    \GEN_TCAM_MEMORIES[2].TCAM_INST        |tcam_1                            |   217|
+|6     |    \GEN_TCAM_MEMORIES[3].TCAM_INST        |tcam_2                            |   261|
+|7     |    \GEN_TCAM_MEMORIES[4].TCAM_INST        |tcam_3                            |   261|
+|8     |    \GEN_TCAM_MEMORIES[5].TCAM_INST        |tcam_4                            |   261|
+|9     |    \GEN_TCAM_MEMORIES[6].TCAM_INST        |tcam_5                            |   303|
+|10    |    \GEN_TCAM_MEMORIES[7].TCAM_INST        |tcam_6                            |   305|
+|11    |    \GEN_TCAM_MEMORIES[8].TCAM_INST        |tcam_7                            |   305|
+|12    |    \GEN_TCAM_MEMORIES[9].TCAM_INST        |tcam_8                            |   305|
+|13    |  ENCODER_INST                             |encoder                           |  1408|
+|14    |    \GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM  |xpm_memory_spram                  |    19|
+|15    |      xpm_memory_base_inst                 |xpm_memory_base                   |     1|
+|16    |    \GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM  |xpm_memory_spram__parameterized1  |     1|
+|17    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized0   |     1|
+|18    |    \GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM  |xpm_memory_spram__parameterized3  |     2|
+|19    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized1   |     1|
+|20    |    \GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM  |xpm_memory_spram__parameterized5  |     1|
+|21    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized2   |     1|
+|22    |    \GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM  |xpm_memory_spram__parameterized7  |    11|
+|23    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized3   |     1|
+|24    |    \GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM  |xpm_memory_spram__parameterized9  |     1|
+|25    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized4   |     1|
+|26    |    \GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM  |xpm_memory_spram__parameterized11 |     2|
+|27    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized5   |     1|
+|28    |    \GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM  |xpm_memory_spram__parameterized13 |     1|
+|29    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized6   |     1|
+|30    |    \GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM  |xpm_memory_spram__parameterized15 |     5|
+|31    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized7   |     1|
+|32    |    \GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM  |xpm_memory_spram__parameterized17 |     1|
+|33    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized8   |     1|
++------+-------------------------------------------+----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:07:29 ; elapsed = 00:08:08 . Memory (MB): peak = 3893.020 ; gain = 2508.750 ; free physical = 637 ; free virtual = 15552
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 64006 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:06:48 ; elapsed = 00:07:20 . Memory (MB): peak = 3896.930 ; gain = 1614.480 ; free physical = 5308 ; free virtual = 20223
+Synthesis Optimization Complete : Time (s): cpu = 00:07:29 ; elapsed = 00:08:10 . Memory (MB): peak = 3896.930 ; gain = 2512.660 ; free physical = 5308 ; free virtual = 20223
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 34 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'main' is not ideal for floorplanning, since the cellview 'main' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3896.930 ; gain = 0.000 ; free physical = 5220 ; free virtual = 20135
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 34 instances were transformed.
+  BUFG => BUFGCE: 1 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 33 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+162 Infos, 356 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:07:38 ; elapsed = 00:08:18 . Memory (MB): peak = 3896.930 ; gain = 2520.664 ; free physical = 5434 ; free virtual = 20349
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3896.930 ; gain = 0.000 ; free physical = 5434 ; free virtual = 20349
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/klara/magisterka/magisterka.runs/synth_1/main.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3901.023 ; gain = 4.094 ; free physical = 5430 ; free virtual = 20349
+INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  7 23:45:55 2019...

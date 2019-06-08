@@ -13,15 +13,15 @@ package types is
 --    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (1000, 900, 800, 700, 600, 500, 400, 300, 200, 100);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (100, 90, 80, 70, 60, 50, 40, 30, 20, 10);
 --    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 10, 10, 100, 100, 100, 1000, 1000, 1000, 10000);
 --    constant TCAM_SIZES : TCAM_SIZES_ARRAY := ( 60, 70, 80, 90, 100);
-    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(1000), log2_int(900), log2_int(800), log2_int(700), log2_int(600), log2_int(500), log2_int(400), log2_int(300), log2_int(200), log2_int(100));
+    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(100), log2_int(90), log2_int(80), log2_int(70), log2_int(60), log2_int(50), log2_int(40), log2_int(30), log2_int(20), log2_int(10));
 --    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := ( log2_int(60)+1, log2_int(70)+1, log2_int(80)+1, log2_int(90)+1, log2_int(100)+1);
 --    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(10)+1, log2_int(10)+1, log2_int(10)+1, log2_int(100)+1, log2_int(100)+1, log2_int(100)+1, log2_int(1000)+1, log2_int(1000)+1, log2_int(1000)+1, log2_int(10000)+1);
 
     constant DATA_SIZE: integer :=32; 
-    constant TCAM_MAX_SIZE: integer :=1000; 
+    constant TCAM_MAX_SIZE: integer :=100; 
     
     type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE-1 downto 0) of std_logic_vector(log2_int(TCAM_MAX_SIZE) downto 0);--(9 downto 0);--(13 downto 0);
     type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE) downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    
@@ -30,8 +30,8 @@ package types is
     type TCAM is ('0','1','Y');
     type TCAM_ARRAY is array(DATA_SIZE-1 downto 0) of TCAM; --TCAM word    
     type TCAM_ARRAY_2D is array(TCAM_MAX_SIZE-1 downto 0) of TCAM_ARRAY; --content of idividual TCAM memeory
-    type TCAM_ARRAY_3D is array(TCAM_SIZES'length-1 downto 0) of TCAM_ARRAY_2D; --content of all TCAM memories
-    type ENCODER_ARRAY is array(NUMBER_OF_MEMORIES - 1 downto 0) of std_logic_vector(TCAM_MAX_SIZE-1 downto 0);  
+    type TCAM_ARRAY_3D is array(NUMBER_OF_MEMORIES-1 downto 0) of TCAM_ARRAY_2D; --content of all TCAM memories
+    type ENCODER_ARRAY is array(NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(TCAM_MAX_SIZE-1 downto 0);  
     function equal (a:TCAM; b: std_logic) return boolean;
     function equal_array (a:TCAM_ARRAY; b: std_logic_vector) return boolean;
 end types;

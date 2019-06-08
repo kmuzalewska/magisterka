@@ -17,13 +17,13 @@ architecture Behavioral of array_of_tcam is
 
 begin
 
-    GEN_TCAM_MEMORIES: for mem_index in 0 to MEM_CONTENT'length-1 generate
+    GEN_TCAM_MEMORIES: for mem_index in 0 to NUMBER_OF_MEMORIES-1 generate
       TCAM_INST:  entity xil_defaultlib.tcam 
       port map(
       CLK       => CLK,           
       DATA_IN   => DATA_IN,      
       DATA_OUT  => DATA_OUT(mem_index),    
-      MEM_CONTENT => MEM_CONTENT(mem_index)  
+      ONE_MEM_CONTENT => MEM_CONTENT(mem_index)  
        );         
     end generate;
     

@@ -9,7 +9,7 @@ use xpm.vcomponents.all;
 entity encoder is
   Port ( 
     CLK: in std_logic;
-    RESULTS_FROM_TCAMS: in ENCODER_ARRAY:=(others => (others => '0'));
+    RESULTS_FROM_TCAMS: in ENCODER_ARRAY;--:=(others => (others => '0'));
     CHOSEN_OUTPUT: out integer:=0
   );
 end encoder;
@@ -90,7 +90,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
       MEMORY_INIT_FILE => file_name(i),     -- String --sciezka do pliku z ktorego czta --tu tablica stringow
       MEMORY_INIT_PARAM => "0",       -- String
       MEMORY_OPTIMIZATION => "true",  -- String
-      MEMORY_PRIMITIVE => "block",     -- String
+      MEMORY_PRIMITIVE => "auto",     -- String
       MEMORY_SIZE => TCAM_SIZES(i)*log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- memory size in bits, TCAM_SIZES(i) of individaual memories multiplied by bits required to distinguish output interfaces   
       MESSAGE_CONTROL => 0,           -- DECIMAL
       READ_DATA_WIDTH_A => log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- DECIMAL
