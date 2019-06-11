@@ -15,12 +15,13 @@ entity encoder is
 end encoder;
 
 architecture Behavioral of encoder is
-    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D :=(others => (others => (others => (others=>'0'))));
+    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D;-- :=(others => (others => (others => (others=>'0'))));
     type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
-    signal choosen_switch_output : choosen_switch_output_array :=(others => (others => '0'));
+    signal choosen_switch_output : choosen_switch_output_array;-- :=(others => (others => '0'));
     type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE) downto 0) of choosen_switch_output_array;    
-    signal inst_choosen_switch_output: choosen_switch_output_3D:=(others => (others => (others => '0')));
-    
+    signal inst_choosen_switch_output: choosen_switch_output_3D;--:=(others => (others => (others => '0')));
+--    attribute dont_touch : string;
+--    attribute dont_touch of  inst_tcam_encoder_array_2d : signal is "true";
     
 begin
 
@@ -28,7 +29,7 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
    -- assert 2<1 report "for memories" & integer'image(i) severity error;
     FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
 --        assert 2<1 report "for depth" & integer'image(depth) severity error;
-        FOR_INDEXES: for pair in 0 to TCAM_MAX_SIZE/2-1 generate --499 generate
+        FOR_INDEXES: for pair in 0 to (TCAM_MAX_SIZE/2-1) generate --499 generate
 --                assert 2<1 report "for pair" & integer'image(pair) severity error;
 
             SEARCH_FOR_INDEX: process(all)
@@ -78,7 +79,7 @@ end generate FOR_MEMORIES;
 
 --retrive data from outputs mappin
 GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
- -- assert 2<1 report "memory" & integer'image(i) severity error;
+  --assert 2<1 report "memory" & integer'image(i) & addra severity error;
   --assert 2<1 report "TCAM_SIZES(i)" & integer'image(TCAM_SIZES(i)) severity error;
   
   DECODER_OUT_MEM: xpm_memory_spram
@@ -90,7 +91,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
       MEMORY_INIT_FILE => file_name(i),     -- String --sciezka do pliku z ktorego czta --tu tablica stringow
       MEMORY_INIT_PARAM => "0",       -- String
       MEMORY_OPTIMIZATION => "true",  -- String
-      MEMORY_PRIMITIVE => "auto",     -- String
+      MEMORY_PRIMITIVE => "block",     -- String
       MEMORY_SIZE => TCAM_SIZES(i)*log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- memory size in bits, TCAM_SIZES(i) of individaual memories multiplied by bits required to distinguish output interfaces   
       MESSAGE_CONTROL => 0,           -- DECIMAL
       READ_DATA_WIDTH_A => log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),        -- DECIMAL

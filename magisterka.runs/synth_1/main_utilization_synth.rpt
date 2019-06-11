@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date         : Sat Jun  1 01:15:48 2019
+| Date         : Sun Jun  9 15:26:50 2019
 | Host         : T3 running 64-bit Ubuntu 18.04.2 LTS
 | Command      : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
 | Design       : main
@@ -28,20 +28,20 @@ Table of Contents
 1. CLB Logic
 ------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| CLB LUTs*               | 2769 |     0 |    423403 |  0.65 |
-|   LUT as Logic          | 2769 |     0 |    423403 |  0.65 |
-|   LUT as Memory         |    0 |     0 |    161280 |  0.00 |
-| CLB Registers           | 2168 |     0 |    846806 |  0.26 |
-|   Register as Flip Flop | 2168 |     0 |    846806 |  0.26 |
-|   Register as Latch     |    0 |     0 |    846806 |  0.00 |
-| CARRY8                  |    0 |     0 |     65340 |  0.00 |
-| F7 Muxes                |    0 |     0 |    261360 |  0.00 |
-| F8 Muxes                |    0 |     0 |    130680 |  0.00 |
-| F9 Muxes                |    0 |     0 |     65340 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++-------------------------+-------+-------+-----------+-------+
+|        Site Type        |  Used | Fixed | Available | Util% |
++-------------------------+-------+-------+-----------+-------+
+| CLB LUTs*               | 67108 |     0 |    423403 | 15.85 |
+|   LUT as Logic          | 67108 |     0 |    423403 | 15.85 |
+|   LUT as Memory         |     0 |     0 |    161280 |  0.00 |
+| CLB Registers           |   901 |     0 |    846806 |  0.11 |
+|   Register as Flip Flop |   901 |     0 |    846806 |  0.11 |
+|   Register as Latch     |     0 |     0 |    846806 |  0.00 |
+| CARRY8                  |     0 |     0 |     65340 |  0.00 |
+| F7 Muxes                |     0 |     0 |    261360 |  0.00 |
+| F8 Muxes                |     0 |     0 |    130680 |  0.00 |
+| F9 Muxes                |     0 |     0 |     65340 |  0.00 |
++-------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -60,7 +60,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 2168  |          Yes |       Reset |            - |
+| 901   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -156,22 +156,22 @@ Table of Contents
 8. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| FDRE     | 2168 |            Register |
-| LUT6     | 1340 |                 CLB |
-| LUT5     |  943 |                 CLB |
-| LUT4     |  287 |                 CLB |
-| LUT2     |  154 |                 CLB |
-| LUT3     |   44 |                 CLB |
-| INBUF    |   33 |                 I/O |
-| IBUFCTRL |   33 |              Others |
-| OBUF     |   32 |                 I/O |
-| RAMB18E2 |   10 |           Block Ram |
-| LUT1     |    1 |                 CLB |
-| BUFGCE   |    1 |               Clock |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT1     | 64000 |                 CLB |
+| LUT6     |  2178 |                 CLB |
+| FDRE     |   901 |            Register |
+| LUT5     |   359 |                 CLB |
+| LUT4     |   331 |                 CLB |
+| LUT3     |   150 |                 CLB |
+| LUT2     |    90 |                 CLB |
+| INBUF    |    33 |                 I/O |
+| IBUFCTRL |    33 |              Others |
+| OBUF     |    32 |                 I/O |
+| RAMB18E2 |    10 |           Block Ram |
+| BUFGCE   |     1 |               Clock |
++----------+-------+---------------------+
 
 
 9. Black Boxes

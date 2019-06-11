@@ -63,6 +63,8 @@ proc step_failed { step } {
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -81,6 +83,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_MEMORY [current_project]
   add_files -quiet /home/klara/magisterka/magisterka.runs/synth_1/main.dcp
+  read_xdc /home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc
   link_design -top main -part xczu17eg-ffvc1760-2-e
   close_msg_db -file init_design.pb
 } RESULT]

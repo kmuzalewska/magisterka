@@ -24,6 +24,8 @@ set_param power.BramSDPPropagationFix 1
 set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xczu17eg-ffvc1760-2-e
 
 set_param project.singleFileAddWarning.threshold 0
@@ -52,11 +54,9 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/types.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd
+  /home/klara/magisterka/magisterka.srcs/sources_1/new/data_to_tcam.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd
   /home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd
-  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder.vhd
-  /home/klara/magisterka/magisterka.srcs/sources_1/new/item_to_encoder2.vhd
-  /home/klara/magisterka/magisterka.srcs/sources_1/new/array_3D.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -66,6 +66,9 @@ read_vhdl -vhdl2008 -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc /home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files /home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc]
+
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
