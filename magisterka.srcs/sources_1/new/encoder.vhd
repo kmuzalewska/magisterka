@@ -15,11 +15,11 @@ entity encoder is
 end encoder;
 
 architecture Behavioral of encoder is
-    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D;-- :=(others => (others => (others => (others=>'0'))));
+    signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D:=(others => (others => (others => (others=>'0'))));
     type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
-    signal choosen_switch_output : choosen_switch_output_array;-- :=(others => (others => '0'));
-    type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE) downto 0) of choosen_switch_output_array;    
-    signal inst_choosen_switch_output: choosen_switch_output_3D;--:=(others => (others => (others => '0')));
+    signal choosen_switch_output : choosen_switch_output_array:=(others => (others => '0'));
+    type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE)+1 downto 0) of choosen_switch_output_array;    
+    signal inst_choosen_switch_output: choosen_switch_output_3D:=(others => (others => (others => '0')));
 --    attribute dont_touch : string;
 --    attribute dont_touch of  inst_tcam_encoder_array_2d : signal is "true";
     
@@ -84,7 +84,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
   
   DECODER_OUT_MEM: xpm_memory_spram
    generic map (
-      ADDR_WIDTH_A => log2_int(TCAM_SIZES(i))+1,             -- DECIMAL
+      ADDR_WIDTH_A => log2_int(TCAM_SIZES(i)),             -- DECIMAL
       AUTO_SLEEP_TIME => 0,           -- DECIMAL
       BYTE_WRITE_WIDTH_A => log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES),       -- DECIMAL
       ECC_MODE => "no_ecc",           -- String
@@ -112,7 +112,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
 
       --addra => std_logic_vector(to_unsigned(inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0), TCAM_ADDR_SIZES(i) )),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
      -- addra => std_logic_vector(to_unsigned(0, 10)),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
-      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0)(log2_int(TCAM_SIZES(i)) downto 0),       
+      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0)(log2_int(TCAM_SIZES(i))-1 downto 0),       
       clka => CLK,                     -- 1-bit input: Clock signal for port A.
       dina => x"0",                     -- WRITE_DATA_WIDTH_A-bit input: Data input for port A write operations.
       ena => '1',                       -- 1-bit input: Memory enable signal for port A. Must be high on clock

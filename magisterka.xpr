@@ -33,7 +33,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="199"/>
+    <Option Name="WTXSimLaunchSim" Val="210"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -104,69 +104,61 @@
           <Attr Name="UsedIn" Val="synthesis"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen0.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen6.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen5.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen0.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen6.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen5.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen7.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen2.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen3.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen3.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen4.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen4.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen9.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen1.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen1.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen7.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen8.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen8.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../Downloads/mem/mem_seq_readout_gen2.mem">
+      <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen9.mem">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -193,13 +185,6 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/main_tb.vhd">
         <FileInfo SFType="VHDL2008">
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/array_3D.vhd">
-        <FileInfo SFType="VHDL2008">
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -285,16 +270,14 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xczu17eg-ffvc1760-2-e" ConstrsSet="constrs_1" Description="Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2018">
-          <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
-        </StratHandle>
+        <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2018"/>
         <Step Id="synth_design">
-          <Option Id="NoCombineLuts">1</Option>
           <Option Id="RepFanoutThreshold">400</Option>
+          <Option Id="NoCombineLuts">1</Option>
           <Option Id="ResourceSharing">2</Option>
           <Option Id="FsmExtraction">1</Option>
-          <Option Id="KeepEquivalentRegisters">1</Option>
           <Option Id="ShregMinSize">5</Option>
+          <Option Id="KeepEquivalentRegisters">1</Option>
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -303,9 +286,7 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xczu17eg-ffvc1760-2-e" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2018"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

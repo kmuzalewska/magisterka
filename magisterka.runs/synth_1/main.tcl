@@ -21,9 +21,6 @@ set_param power.enableLutRouteBelPower 1
 set_param power.enableCarry8RouteBelPower 1
 set_param power.enableUnconnectedCarry8PinPower 1
 set_param power.BramSDPPropagationFix 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xczu17eg-ffvc1760-2-e
@@ -39,16 +36,16 @@ set_property target_language VHDL [current_project]
 set_property ip_output_repo /home/klara/magisterka/magisterka.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_mem {
-  /home/klara/Downloads/mem/mem_seq_readout_gen0.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen5.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen6.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen7.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen3.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen4.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen9.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen1.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen8.mem
-  /home/klara/Downloads/mem/mem_seq_readout_gen2.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen6.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen0.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen5.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen2.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen3.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen4.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen1.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen7.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen8.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen9.mem
 }
 read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/types.vhd

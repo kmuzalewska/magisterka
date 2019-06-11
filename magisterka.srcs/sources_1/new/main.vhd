@@ -22,9 +22,8 @@ architecture Behavioral of main is
     signal data_to_encoder: ENCODER_ARRAY;
     signal data_to_TCAM_local: TCAM_ARRAY_3D:= DATA_TO_TCAM_CONST;
    
---    attribute dont_touch : string;
---    attribute dont_touch of  data_to_TCAM_local : signal is "true";
---    signal DANE_OD_PDULINSKIEGO: TCAM_ARRAY_3D;
+    attribute dont_touch : string;
+    attribute dont_touch of  data_to_TCAM_local : signal is "true";
 
 component array_of_tcam
  Port (

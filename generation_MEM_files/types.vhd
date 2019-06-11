@@ -11,7 +11,7 @@ eger) return integer;
     constant NUMBER_OF_MEMORIES : integer := 10; 
      
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (100, 90, 80, 70, 60, 50, 40, 30, 20, 10);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (100, 10, 10, 10, 10,10, 10, 10, 10, 10);
     constant DATA_SIZE: integer :=32; 
     constant TCAM_MAX_SIZE: integer :=100; 
     

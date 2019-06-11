@@ -16,14 +16,15 @@ architecture bench of main_tb is
     Port ( 
       CLK: in std_logic;
       DATA_IN: in std_logic_vector(DATA_SIZE-1 downto 0);
-      DATA_TO_TCAM: in TCAM_ARRAY_3D;
+--      DATA_TO_TCAM: in TCAM_ARRAY_3D;
       CHOSEN_OUTPUT: out integer
     );
   end component;
 
   signal CLK: std_logic;
   signal DATA_IN: std_logic_vector(DATA_SIZE-1 downto 0);
-  signal DATA_TO_TCAM: TCAM_ARRAY_3D:= DATA_TO_TCAM;
+--  signal data_to_TCAM_local: TCAM_ARRAY_3D:= DATA_TO_TCAM_CONST;
+--  signal DATA_TO_TCAM: TCAM_ARRAY_3D:= DATA_TO_TCAM;
   signal CHOSEN_OUTPUT: integer ;
   constant T : time := 20 ns;
     constant num_of_clocks : integer := 0; 
@@ -35,7 +36,7 @@ begin
 
   uut: main port map ( CLK           => CLK,
                        DATA_IN       => DATA_IN,
-                       DATA_TO_TCAM  => DATA_TO_TCAM,
+--                       DATA_TO_TCAM  => data_to_TCAM_local,
                        CHOSEN_OUTPUT => CHOSEN_OUTPUT );
 clk_proc: process
   begin
