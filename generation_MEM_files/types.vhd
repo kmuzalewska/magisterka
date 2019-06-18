@@ -13,7 +13,7 @@ eger) return integer;
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
     constant TCAM_SIZES : TCAM_SIZES_ARRAY := (100, 10, 10, 10, 10,10, 10, 10, 10, 10);
     constant DATA_SIZE: integer :=32; 
-    constant TCAM_MAX_SIZE: integer :=100; 
+    constant TCAM_MAX_SIZE: integer :=10; 
     
     type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE-1 downto 0) of integer;
     type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)-1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    

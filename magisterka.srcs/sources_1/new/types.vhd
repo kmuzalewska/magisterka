@@ -9,11 +9,11 @@ package types is
     constant NUMBER_OF_PHYSICAL_OUT_INTERFACES : integer := 16; --(0 considered as negative answer zn d16 is virtual- do not exists)    
     constant NUMBER_OF_MEMORIES : integer := 10; 
     type file_names_type is array(NUMBER_OF_MEMORIES-1 downto 0) of String(24 downto 1);--tu te kolejnosc pamieci zmienilam
-    constant file_name : file_names_type := ("mem_seq_readout_gen9.mem", "mem_seq_readout_gen8.mem", "mem_seq_readout_gen7.mem", "mem_seq_readout_gen6.mem", "mem_seq_readout_gen5.mem", "mem_seq_readout_gen4.mem","mem_seq_readout_gen3.mem","mem_seq_readout_gen2.mem","mem_seq_readout_gen1.mem","mem_seq_readout_gen0.mem" );--dy deklaruje sie rray to idzie od 9 do 0
+    constant file_name : file_names_type := ("mem_seq_readout_gen8.mem", "mem_seq_readout_gen9.mem", "mem_seq_readout_gen7.mem", "mem_seq_readout_gen6.mem", "mem_seq_readout_gen5.mem", "mem_seq_readout_gen4.mem","mem_seq_readout_gen3.mem","mem_seq_readout_gen2.mem","mem_seq_readout_gen1.mem","mem_seq_readout_gen0.mem" );--dy deklaruje sie rray to idzie od 9 do 0
 --    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 10, 10, 10, 10,100, 10, 10, 10, 10);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 100, 10, 10, 10,10, 10, 10, 10, 10);
 --    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 10, 10, 100, 100, 100, 1000, 1000, 1000, 10000);
 --    constant TCAM_SIZES : TCAM_SIZES_ARRAY := ( 60, 70, 80, 90, 100);
 --    constant TCAM_ADDR_SIZES : TCAM_SIZES_ARRAY := (log2_int(100), log2_int(90), log2_int(80), log2_int(70), log2_int(60), log2_int(50), log2_int(40), log2_int(30), log2_int(20), log2_int(10));
@@ -22,6 +22,9 @@ package types is
 
     constant DATA_SIZE: integer :=32; 
     constant TCAM_MAX_SIZE: integer :=100; 
+    
+    type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
+    type choosen_switch_output_array_2D is array (log2_int(NUMBER_OF_MEMORIES) downto 0) of choosen_switch_output_array;  
     
     type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE-1 downto 0) of std_logic_vector(log2_int(TCAM_MAX_SIZE) downto 0);--(9 downto 0);--(13 downto 0);
     type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)+1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    

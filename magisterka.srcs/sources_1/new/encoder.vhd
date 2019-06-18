@@ -16,12 +16,13 @@ end encoder;
 
 architecture Behavioral of encoder is
     signal inst_tcam_encoder_array_2d : TCAM_ENCODER_ARRAY_2D:=(others => (others => (others => (others=>'0'))));
-    type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
-    signal choosen_switch_output : choosen_switch_output_array:=(others => (others => '0'));
-    type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE)+1 downto 0) of choosen_switch_output_array;    
-    signal inst_choosen_switch_output: choosen_switch_output_3D:=(others => (others => (others => '0')));
+--    signal choosen_switch_output : choosen_switch_output_array:=(others => (others => '0'));
+--    type choosen_switch_output_3D is array (log2_int(TCAM_MAX_SIZE)+1 downto 0) of choosen_switch_output_array;    
+--    signal inst_choosen_switch_output: choosen_switch_output_3D:=(others => (others => (others => '0')));
 --    attribute dont_touch : string;
 --    attribute dont_touch of  inst_tcam_encoder_array_2d : signal is "true";
+    signal inst_choosen_switch_output_array_2d: choosen_switch_output_array_2D:=(others => (others => (others => '0')));
+
     
 begin
 
@@ -106,7 +107,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
       dbiterra => open,             -- 1-bit output: Status signal to indicate double bit error occurrence
                                         -- on the data output of port A.
 
-      douta => choosen_switch_output(i),                   -- READ_DATA_WIDTH_A-bit output: Data output for port A read operations.
+      douta => inst_choosen_switch_output_array_2d(0)(i),                     -- READ_DATA_WIDTH_A-bit output: Data output for port A read operations.
       sbiterra => open,             -- 1-bit output: Status signal to indicate single bit error occurrence
                                         -- on the data output of port A.
 
@@ -143,52 +144,48 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
                                         -- 4'b0010.
 
    );
-end generate;
+end generate GEN_PMAP_MEMORIES;
 
 --wydaje mi sie ze inaczej te fory powinny wygladac
 --przede wszystkim tylko dwa lewele
 
-FOR_DEPTH: for depth in 0 to log2_int(NUMBER_OF_MEMORIES)-1 generate  
-   FOR_INDEXES: for pair in 0 to NUMBER_OF_MEMORIES/2-1 generate
+FOR_DEPTH_SWITCH: for depth in 0 to log2_int(NUMBER_OF_MEMORIES)-1 generate  --0 to 3
+   FOR_INDEXES_SWITCH: for pair in 0 to NUMBER_OF_MEMORIES/2-1 generate  --0 to 4
    --FOR_INDEXES: for pair in 0 to TCAM_SIZES(i)/2-1 generate
        --loop_process:process(CLK)    
        
        --begin
        ---    if rising_edge(CLK) then
-       FIRST_LEVEL: if depth = 0 generate
+       --FIRST_LEVEL: if depth = 0 generate
            process(all)
            begin                
-               if choosen_switch_output(pair*2) /= ((choosen_switch_output(pair*2)'range) => '0') then 
-                   inst_choosen_switch_output(depth)(pair) <= choosen_switch_output(pair*2);  
-               elsif choosen_switch_output(pair*2+1) /= ((choosen_switch_output(pair*2)'range) => '0') then 
-                   --wpisac tu do nowego array aktualny port
-                   inst_choosen_switch_output(depth)(pair) <= choosen_switch_output(pair*2+1);                         
+               if inst_choosen_switch_output_array_2D(depth)(pair*2) /= ((inst_choosen_switch_output_array_2D(0)(pair*2)'range) => '0') then 
+                  inst_choosen_switch_output_array_2D(depth+1)(pair) <= inst_choosen_switch_output_array_2D(depth)(pair*2); 
+               --elsif choosen_switch_output(pair*2+1) /= ((choosen_switch_output(pair*2)'range) => '0') then 
+               --    --wpisac tu do nowego array aktualny port
+               --    inst_choosen_switch_output_array_2D(depth)(pair) <= choosen_switch_output(pair*2+1);                         
                else    
-                   inst_choosen_switch_output(depth)(pair) <= (others => '0');   
+                   inst_choosen_switch_output_array_2D(depth+1)(pair) <= inst_choosen_switch_output_array_2D(depth)(pair*2+1); 
                end if;                
            end process;     
-        end generate  FIRST_LEVEL;    
-        NEXT_LEVELS: if depth > 0 generate
-            process(all)
-            begin                
-                if inst_choosen_switch_output(depth-1)(pair*2) /= ((inst_choosen_switch_output(depth-1)(pair)'range) => '0') then 
-                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair*2);             
-                else    
-                    inst_choosen_switch_output(depth)(pair) <= inst_choosen_switch_output(depth-1)(pair*2+1);   
-                end if;   
---                  assert 2<1 report "depth " & integer'image(depth) & " memory " & integer'image(i) & " " & integer'image(inst_choosen_switch_output(depth)(pair)) severity error;
+        --end generate  FIRST_LEVEL;    
+        --NEXT_LEVELS: if depth > 0 generate
+--            process(all)
+--            begin                
+--                if inst_choosen_switch_output_array_2D(depth-1)(pair*2) /= ((inst_choosen_switch_output_array_2D(depth-1)(pair)'range) => '0') then 
+--                    inst_choosen_switch_output_array_2D(depth)(pair) <= inst_choosen_switch_output_array_2D(depth-1)(pair*2);             
+--                else    
+--                    inst_choosen_switch_output_array_2D(depth)(pair) <= inst_choosen_switch_output_array_2D(depth-1)(pair*2+1);   
+--                end if;   
+----                  assert 2<1 report "depth " & integer'image(depth) & " memory " & integer'image(i) & " " & integer'image(inst_choosen_switch_output_array_2D(depth)(pair)) severity error;
              
-            end process;     
-        end generate  NEXT_LEVELS;
-   end generate FOR_INDEXES;
+--            end process;     
+        --end generate  NEXT_LEVELS;
+   end generate FOR_INDEXES_SWITCH;
    
-end generate FOR_DEPTH;
+end generate FOR_DEPTH_SWITCH;
 
 
-CHOSEN_OUTPUT <= to_integer(unsigned(inst_choosen_switch_output(log2_int(NUMBER_OF_MEMORIES)-1)(0)));
-
-       
-
-
+CHOSEN_OUTPUT <= to_integer(unsigned(inst_choosen_switch_output_array_2D(log2_int(NUMBER_OF_MEMORIES))(0)));
 
 end Behavioral;

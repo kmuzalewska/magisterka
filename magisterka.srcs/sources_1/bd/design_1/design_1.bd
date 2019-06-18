@@ -2,11 +2,9 @@
   "design": {
     "design_info": {
       "boundary_crc": "0x0",
-      "device": "xczu17eg-ffvc1760-2-e",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2018.3",
-      "validated": "true"
+      "tool_version": "2018.3"
     },
     "design_tree": {}
   }
