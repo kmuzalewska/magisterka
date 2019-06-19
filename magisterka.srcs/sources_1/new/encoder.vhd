@@ -55,7 +55,7 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= (others =>'0');--"0000000000";  
                     end if;                     
                 else                
-                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= (inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0') and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania [Synth 8-211] could not evaluate expression: OTHERS in array aggregate without constraining context ["/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd":56](inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0')
+                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair*2) /= (inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0') then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania [Synth 8-211] could not evaluate expression: OTHERS in array aggregate without constraining context ["/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd":56](inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0')
 
 --                         --wpisac tu do nowego array port nastepny
                          inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair*2);    
