@@ -45,11 +45,11 @@ FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust c
                     if RESULTS_FROM_TCAMS(i)(pair*2) /= '0' and RESULTS_FROM_TCAMS(i)(pair*2) /= 'U' then --moze stworzyc component ktory sie tworzy w locie i wyrzuca on array do kolejnego przeszukania
                      --  wpisac tu do nowego array port nastepny
                    --  assert 2<1 report "RESULTS_FROM_TCAMS(i)(pair*2) /= '0'" & integer'image(pair) severity error;
-                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
+                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1, log2_int(TCAM_MAX_SIZE+1)));  
                     elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' and RESULTS_FROM_TCAMS(i)(pair*2) /= 'U' then  
---                       --wpisac tu do nowego array aktualny port
+                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, log2_int(TCAM_MAX_SIZE+1)));                          
                      --   assert 2<1 report "RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0'" & integer'image(pair) severity error;
-                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
+--   elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
                     else    
                        -- assert 2<1 report "else" & integer'image(pair) severity error;
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= (others =>'0');--"0000000000";  
