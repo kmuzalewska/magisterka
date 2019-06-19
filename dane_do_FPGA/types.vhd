@@ -13,16 +13,16 @@ package types is
 --    constant file_name : file_names_type := ( "mem_seq_readout_gen5.mem","mem_seq_readout_gen6.mem","mem_seq_readout_gen7.mem","mem_seq_readout_gen8.mem","mem_seq_readout_gen9.mem" );
 
     type TCAM_SIZES_ARRAY is array (NUMBER_OF_MEMORIES-1 downto 0) of integer;
-    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 200, 10, 10, 10,10, 10, 10, 10, 10);
+    constant TCAM_SIZES : TCAM_SIZES_ARRAY := (10, 400, 10, 10, 10,10, 10, 10, 10, 10);
 
     constant DATA_SIZE: integer :=32; 
-    constant TCAM_MAX_SIZE: integer :=200; 
+    constant TCAM_MAX_SIZE: integer :=400; 
     
     type choosen_switch_output_array is array (NUMBER_OF_MEMORIES-1 downto 0) of std_logic_vector(log2_int(NUMBER_OF_PHYSICAL_OUT_INTERFACES)-1 downto 0);
     type choosen_switch_output_array_2D is array (log2_int(NUMBER_OF_MEMORIES) downto 0) of choosen_switch_output_array;  
     
-    type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE/2-1 downto 0) of std_logic_vector(log2_int(TCAM_MAX_SIZE) downto 0);--(9 downto 0);--(13 downto 
-    type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)-1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    
+    type BASE_TCAM_ENCODER is array (TCAM_MAX_SIZE-1 downto 0) of std_logic_vector(log2_int(TCAM_MAX_SIZE) downto 0);--(9 downto 0);--(13 downto 0);
+    type BASE_TCAM_ENCODER_ARRAY is array (log2_int(TCAM_MAX_SIZE)+1 downto 0) of BASE_TCAM_ENCODER; --array where a comparison of TCAM responses is saved    
     type TCAM_ENCODER_ARRAY_2D is array (NUMBER_OF_MEMORIES - 1 downto 0) of BASE_TCAM_ENCODER_ARRAY;
     
     subtype TCAM is std_logic_vector(1 downto 0); --"00"- is 0, "01" is 1, "11" is don't care

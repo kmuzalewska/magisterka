@@ -16,19 +16,36 @@ sizes = sizes.replace(');', '')#.replace(' ', '')
 sizes_in_int = map(int, sizes.split(','))
 # print(sizes_in_int)
 
-zeros = '"{0:032b}"'.format(0)
+zeros = '"{0:02b}"'.format(0)
 #calculations
 max_nr = pow(2,32)
 def create_random(max_nr_of_x):
+	change_format_of_data=[]
 	random_nr=random.randint(1, max_nr)
 	nr ='{0:032b}'.format(random_nr)
 	# nr_of_x = max_nr_of_x
+	
 	for i in range(max_nr_of_x):
 		pos = random.randint(1, 31)
 		nr = list(nr)
 		nr[pos] = 'Y'
 		nr = ''.join(nr)
-	return nr# random_pos = 
+		print(nr)
+	for i in nr:
+		if i=='0':
+			change_format_of_data.append('00')
+		elif i=='1':
+			change_format_of_data.append('01')
+		elif i=='Y':
+			change_format_of_data.append('11')
+	it=0
+	# for i in change_format_of_data:
+	string ='("'
+	string+= '", "'.join(change_format_of_data)
+	string+= '")'
+	# str_change_format_of_data = ''.join(change_format_of_data)
+	# print(str_change_format_of_data, len(str_change_format_of_data))
+	return string# random_pos = 
 
 #write headers
 header = ("library IEEE;\n"
@@ -47,25 +64,25 @@ content=("\nconstant DATA_TO_TCAM_CONST : TCAM_ARRAY_3D :=\n"
 	"(\n")
 m=0
 for memory in sizes_in_int:
-	
+	print( m )
 	i=0
 	# content += str(m)
 	# content += ' => '
 	content+='(\n'
 	for item in range(memory):
 		content += str(i)
-		content += ' => "'
+		content += ' => '
 		content += create_random(m % 16) #przykladowe liczby
 		if i < (max(sizes_in_int)-1):
-			content +='",\n'
+			content +=',\n'
 		else:
-			content+='")'
+			content+=')'
 		i+=1
 	if i < (max(sizes_in_int)-1):
-		content += 'others => '
+		content += 'others => (others =>'
 		content += zeros
 		# content += ',\n' 
-		content+=')'
+		content+='))'
 	if m < (len(sizes_in_int)-1):
 		content+=',\n'
 	# else:

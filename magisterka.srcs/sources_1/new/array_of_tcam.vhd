@@ -19,6 +19,7 @@ begin
 
     GEN_TCAM_MEMORIES: for mem_index in 0 to NUMBER_OF_MEMORIES-1 generate
       TCAM_INST:  entity xil_defaultlib.tcam 
+      generic map(tcam_nr => mem_index)
       port map(
       CLK       => CLK,           
       DATA_IN   => DATA_IN,      
