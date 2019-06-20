@@ -22,8 +22,8 @@ set_param power.enableCarry8RouteBelPower 1
 set_param power.enableUnconnectedCarry8PinPower 1
 set_param power.BramSDPPropagationFix 1
 set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
+set_msg_config -id {HDL 9-1061} -limit 100000
+set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xczu17eg-ffvc1760-2-e
 
 set_param project.singleFileAddWarning.threshold 0
@@ -45,8 +45,8 @@ read_mem {
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen4.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen1.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen7.mem
-  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen8.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen9.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen8.mem
 }
 read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/types.vhd
@@ -70,7 +70,7 @@ set_property used_in_implementation false [get_files /home/klara/magisterka/magi
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top main -part xczu17eg-ffvc1760-2-e -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+synth_design -top main -part xczu17eg-ffvc1760-2-e -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 
 
 # disable binary constraint mode for synth run checkpoints

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date              : Sun Jun 16 20:05:43 2019
+| Date              : Thu Jun 20 22:06:07 2019
 | Host              : T3 running 64-bit Ubuntu 18.04.2 LTS
 | Command           : report_timing_summary -max_paths 10 -file main_timing_summary_routed.rpt -pb main_timing_summary_routed.pb -rpx main_timing_summary_routed.rpx -warn_on_violation
 | Design            : main
@@ -127,7 +127,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      3.851        0.000                      0                  441        0.022        0.000                      0                  441        1.958        0.000                       0                   498  
+      4.001        0.000                      0                  728        0.010        0.000                      0                  728        1.958        0.000                       0                   895  
 
 
 All user specified timing constraints are met.
@@ -150,7 +150,7 @@ sys_clk  {0.000 2.500}        5.000           200.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-sys_clk             3.851        0.000                      0                  441        0.022        0.000                      0                  441        1.958        0.000                       0                   498  
+sys_clk             4.001        0.000                      0                  728        0.010        0.000                      0                  728        1.958        0.000                       0                   895  
 
 
 ------------------------------------------------------------------------------------------------
@@ -181,35 +181,35 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  sys_clk
   To Clock:  sys_clk
 
-Setup :            0  Failing Endpoints,  Worst Slack        3.851ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.022ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        4.001ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.010ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        1.958ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             3.851ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][0]/C
+Slack (MET) :             4.001ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.614ns  (logic 0.078ns (12.704%)  route 0.536ns (87.296%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.166ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.890ns = ( 7.890 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.744ns
-    Clock Pessimism Removal (CPR):    0.688ns
+  Data Path Delay:        0.902ns  (logic 0.404ns (44.789%)  route 0.498ns (55.211%))
+  Logic Levels:           3  (LUT3=1 LUT4=2)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.212ns = ( 8.212 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.424ns (routing 1.527ns, distribution 0.897ns)
-  Clock Net Delay (Destination): 2.117ns (routing 1.386ns, distribution 0.731ns)
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.439ns (routing 1.722ns, distribution 0.717ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -224,13 +224,22 @@ Slack (MET) :             3.851ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.424     3.744    ENCODER_INST/CLK
-    SLICE_X53Y421        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][0]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y421        FDRE (Prop_BFF_SLICEM_C_Q)
-                                                      0.078     3.822 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][0]/Q
-                         net (fo=1, routed)           0.536     4.358    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/addra[0]
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.206     4.781    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y407        LUT3 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.124     4.905 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][0]_i_1/O
+                         net (fo=1, routed)           0.051     4.956    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][0]_i_1_n_0
+    SLICE_X34Y407        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -244,39 +253,39 @@ Slack (MET) :             3.851ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.117     7.890    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.688     8.578    
-                         clock uncertainty           -0.035     8.543    
-    RAMB18_X4Y164        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[4])
-                                                     -0.334     8.209    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.439     8.212    ENCODER_INST/CLK
+    SLICE_X34Y407        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][0]/C
+                         clock pessimism              0.755     8.967    
+                         clock uncertainty           -0.035     8.932    
+    SLICE_X34Y407        FDRE (Setup_HFF_SLICEL_C_D)
+                                                      0.025     8.957    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][0]
   -------------------------------------------------------------------
-                         required time                          8.209    
-                         arrival time                          -4.358    
+                         required time                          8.957    
+                         arrival time                          -4.956    
   -------------------------------------------------------------------
-                         slack                                  3.851    
+                         slack                                  4.001    
 
-Slack (MET) :             3.945ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][1]/C
+Slack (MET) :             4.005ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.569ns  (logic 0.077ns (13.533%)  route 0.492ns (86.467%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.166ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.890ns = ( 7.890 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.744ns
-    Clock Pessimism Removal (CPR):    0.688ns
+  Data Path Delay:        0.906ns  (logic 0.368ns (40.618%)  route 0.538ns (59.382%))
+  Logic Levels:           3  (LUT3=1 LUT4=2)
+  Clock Path Skew:        -0.079ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.220ns = ( 8.220 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.424ns (routing 1.527ns, distribution 0.897ns)
-  Clock Net Delay (Destination): 2.117ns (routing 1.386ns, distribution 0.731ns)
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.447ns (routing 1.722ns, distribution 0.725ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -291,13 +300,22 @@ Slack (MET) :             3.945ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.424     3.744    ENCODER_INST/CLK
-    SLICE_X53Y421        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][1]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y421        FDRE (Prop_AFF_SLICEM_C_Q)
-                                                      0.077     3.821 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][1]/Q
-                         net (fo=1, routed)           0.492     4.313    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/addra[1]
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.247     4.822    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y408        LUT3 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.910 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][3]_i_1/O
+                         net (fo=1, routed)           0.050     4.960    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][3]_i_1_n_0
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -311,39 +329,39 @@ Slack (MET) :             3.945ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.117     7.890    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.688     8.578    
-                         clock uncertainty           -0.035     8.543    
-    RAMB18_X4Y164        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[5])
-                                                     -0.285     8.258    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.447     8.220    ENCODER_INST/CLK
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][3]/C
+                         clock pessimism              0.755     8.975    
+                         clock uncertainty           -0.035     8.940    
+    SLICE_X34Y408        FDRE (Setup_CFF_SLICEL_C_D)
+                                                      0.025     8.965    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][3]
   -------------------------------------------------------------------
-                         required time                          8.258    
-                         arrival time                          -4.313    
+                         required time                          8.965    
+                         arrival time                          -4.960    
   -------------------------------------------------------------------
-                         slack                                  3.945    
+                         slack                                  4.005    
 
-Slack (MET) :             3.952ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][3]/C
+Slack (MET) :             4.028ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[7]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.569ns  (logic 0.077ns (13.533%)  route 0.492ns (86.467%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.166ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.890ns = ( 7.890 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.744ns
-    Clock Pessimism Removal (CPR):    0.688ns
+  Data Path Delay:        0.875ns  (logic 0.413ns (47.200%)  route 0.462ns (52.800%))
+  Logic Levels:           3  (LUT2=1 LUT4=2)
+  Clock Path Skew:        -0.087ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.212ns = ( 8.212 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.424ns (routing 1.527ns, distribution 0.897ns)
-  Clock Net Delay (Destination): 2.117ns (routing 1.386ns, distribution 0.731ns)
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.439ns (routing 1.722ns, distribution 0.717ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -358,13 +376,22 @@ Slack (MET) :             3.952ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.424     3.744    ENCODER_INST/CLK
-    SLICE_X53Y422        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][3]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y422        FDRE (Prop_AFF_SLICEM_C_Q)
-                                                      0.077     3.821 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][3]/Q
-                         net (fo=1, routed)           0.492     4.313    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/addra[3]
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[7]
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 f  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 f  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 f  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.206     4.781    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y407        LUT2 (Prop_H5LUT_SLICEL_I0_O)
+                                                      0.133     4.914 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_1/O
+                         net (fo=1, routed)           0.015     4.929    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_1_n_0
+    SLICE_X34Y407        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][7]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -378,39 +405,39 @@ Slack (MET) :             3.952ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.117     7.890    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.688     8.578    
-                         clock uncertainty           -0.035     8.543    
-    RAMB18_X4Y164        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[7])
-                                                     -0.278     8.265    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.439     8.212    ENCODER_INST/CLK
+    SLICE_X34Y407        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][7]/C
+                         clock pessimism              0.755     8.967    
+                         clock uncertainty           -0.035     8.932    
+    SLICE_X34Y407        FDRE (Setup_HFF2_SLICEL_C_D)
+                                                      0.025     8.957    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][7]
   -------------------------------------------------------------------
-                         required time                          8.265    
-                         arrival time                          -4.313    
+                         required time                          8.957    
+                         arrival time                          -4.929    
   -------------------------------------------------------------------
-                         slack                                  3.952    
+                         slack                                  4.028    
 
-Slack (MET) :             3.969ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][2]/C
+Slack (MET) :             4.029ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[6]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.571ns  (logic 0.076ns (13.310%)  route 0.495ns (86.690%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.165ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.890ns = ( 7.890 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.743ns
-    Clock Pessimism Removal (CPR):    0.688ns
+  Data Path Delay:        0.882ns  (logic 0.378ns (42.857%)  route 0.504ns (57.143%))
+  Logic Levels:           3  (LUT3=1 LUT4=2)
+  Clock Path Skew:        -0.079ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.220ns = ( 8.220 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.423ns (routing 1.527ns, distribution 0.896ns)
-  Clock Net Delay (Destination): 2.117ns (routing 1.386ns, distribution 0.731ns)
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.447ns (routing 1.722ns, distribution 0.725ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -425,13 +452,22 @@ Slack (MET) :             3.969ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.423     3.743    ENCODER_INST/CLK
-    SLICE_X53Y421        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][2]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X53Y421        FDRE (Prop_FFF_SLICEM_C_Q)
-                                                      0.076     3.819 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0][2]/Q
-                         net (fo=1, routed)           0.495     4.314    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/addra[2]
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[6]
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.247     4.822    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y408        LUT3 (Prop_C5LUT_SLICEL_I1_O)
+                                                      0.098     4.920 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][4]_i_1/O
+                         net (fo=1, routed)           0.016     4.936    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][4]_i_1_n_0
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][4]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -445,39 +481,39 @@ Slack (MET) :             3.969ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.117     7.890    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y164        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.688     8.578    
-                         clock uncertainty           -0.035     8.543    
-    RAMB18_X4Y164        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[6])
-                                                     -0.260     8.283    ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.447     8.220    ENCODER_INST/CLK
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][4]/C
+                         clock pessimism              0.755     8.975    
+                         clock uncertainty           -0.035     8.940    
+    SLICE_X34Y408        FDRE (Setup_CFF2_SLICEL_C_D)
+                                                      0.025     8.965    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][4]
   -------------------------------------------------------------------
-                         required time                          8.283    
-                         arrival time                          -4.314    
+                         required time                          8.965    
+                         arrival time                          -4.936    
   -------------------------------------------------------------------
-                         slack                                  3.969    
+                         slack                                  4.029    
 
-Slack (MET) :             4.013ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][0]/C
+Slack (MET) :             4.036ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.545ns  (logic 0.079ns (14.495%)  route 0.466ns (85.505%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.073ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.887ns = ( 7.887 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.685ns
-    Clock Pessimism Removal (CPR):    0.725ns
+  Data Path Delay:        0.875ns  (logic 0.402ns (45.943%)  route 0.473ns (54.057%))
+  Logic Levels:           3  (LUT3=1 LUT4=2)
+  Clock Path Skew:        -0.079ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.220ns = ( 8.220 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.365ns (routing 1.527ns, distribution 0.838ns)
-  Clock Net Delay (Destination): 2.114ns (routing 1.386ns, distribution 0.728ns)
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.447ns (routing 1.722ns, distribution 0.725ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -492,13 +528,22 @@ Slack (MET) :             4.013ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.365     3.685    ENCODER_INST/CLK
-    SLICE_X58Y407        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][0]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X58Y407        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.079     3.764 r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][0]/Q
-                         net (fo=1, routed)           0.466     4.230    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/addra[0]
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.183     4.758    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y408        LUT3 (Prop_D6LUT_SLICEL_I0_O)
+                                                      0.122     4.880 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][1]_i_1/O
+                         net (fo=1, routed)           0.049     4.929    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][1]_i_1_n_0
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -512,39 +557,39 @@ Slack (MET) :             4.013ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.114     7.887    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.725     8.612    
-                         clock uncertainty           -0.035     8.577    
-    RAMB18_X4Y162        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[4])
-                                                     -0.334     8.243    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.447     8.220    ENCODER_INST/CLK
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][1]/C
+                         clock pessimism              0.755     8.975    
+                         clock uncertainty           -0.035     8.940    
+    SLICE_X34Y408        FDRE (Setup_DFF_SLICEL_C_D)
+                                                      0.025     8.965    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][1]
   -------------------------------------------------------------------
-                         required time                          8.243    
-                         arrival time                          -4.230    
+                         required time                          8.965    
+                         arrival time                          -4.929    
   -------------------------------------------------------------------
-                         slack                                  4.013    
+                         slack                                  4.036    
 
-Slack (MET) :             4.048ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][1]/C
+Slack (MET) :             4.041ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.571ns  (logic 0.079ns (13.835%)  route 0.492ns (86.165%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.060ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.893ns = ( 7.893 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.679ns
-    Clock Pessimism Removal (CPR):    0.725ns
+  Data Path Delay:        0.856ns  (logic 0.291ns (33.995%)  route 0.565ns (66.005%))
+  Logic Levels:           2  (LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.093ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.215ns = ( 8.215 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.063ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.359ns (routing 1.527ns, distribution 0.832ns)
-  Clock Net Delay (Destination): 2.120ns (routing 1.386ns, distribution 0.734ns)
+  Clock Net Delay (Source):      2.743ns (routing 1.895ns, distribution 0.848ns)
+  Clock Net Delay (Destination): 2.442ns (routing 1.722ns, distribution 0.720ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -559,13 +604,19 @@ Slack (MET) :             4.048ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.359     3.679    ENCODER_INST/CLK
-    SLICE_X56Y401        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][1]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.743     4.063    ENCODER_INST/CLK
+    SLICE_X31Y413        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X56Y401        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.079     3.758 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][1]/Q
-                         net (fo=1, routed)           0.492     4.250    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/addra[1]
-    RAMB18_X4Y161        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
+    SLICE_X31Y413        FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     4.142 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/Q
+                         net (fo=2, routed)           0.391     4.533    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg_n_0_[8][3][4][6]
+    SLICE_X32Y410        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.090     4.623 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2/O
+                         net (fo=7, routed)           0.102     4.725    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2_n_0
+    SLICE_X32Y409        LUT3 (Prop_D6LUT_SLICEM_I1_O)
+                                                      0.122     4.847 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][1]_i_1/O
+                         net (fo=1, routed)           0.072     4.919    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][1]_i_1_n_0
+    SLICE_X32Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -579,39 +630,39 @@ Slack (MET) :             4.048ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.120     7.893    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y161        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.725     8.618    
-                         clock uncertainty           -0.035     8.583    
-    RAMB18_X4Y161        RAMB18E2 (Setup_RAMB18E2_U_RAMB181_CLKARDCLK_ADDRARDADDR[5])
-                                                     -0.285     8.298    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.442     8.215    ENCODER_INST/CLK
+    SLICE_X32Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][1]/C
+                         clock pessimism              0.755     8.970    
+                         clock uncertainty           -0.035     8.935    
+    SLICE_X32Y409        FDRE (Setup_DFF_SLICEM_C_D)
+                                                      0.025     8.960    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][1]
   -------------------------------------------------------------------
-                         required time                          8.298    
-                         arrival time                          -4.250    
+                         required time                          8.960    
+                         arrival time                          -4.919    
   -------------------------------------------------------------------
-                         slack                                  4.048    
+                         slack                                  4.041    
 
-Slack (MET) :             4.065ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][2]/C
+Slack (MET) :             4.044ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[6]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.544ns  (logic 0.079ns (14.522%)  route 0.465ns (85.478%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.096ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.887ns = ( 7.887 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.708ns
-    Clock Pessimism Removal (CPR):    0.725ns
+  Data Path Delay:        0.849ns  (logic 0.219ns (25.795%)  route 0.630ns (74.205%))
+  Logic Levels:           2  (LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.211ns = ( 8.211 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.063ns
+    Clock Pessimism Removal (CPR):    0.755ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.388ns (routing 1.527ns, distribution 0.861ns)
-  Clock Net Delay (Destination): 2.114ns (routing 1.386ns, distribution 0.728ns)
+  Clock Net Delay (Source):      2.743ns (routing 1.895ns, distribution 0.848ns)
+  Clock Net Delay (Destination): 2.438ns (routing 1.722ns, distribution 0.716ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -626,13 +677,19 @@ Slack (MET) :             4.065ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.388     3.708    ENCODER_INST/CLK
-    SLICE_X57Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][2]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.743     4.063    ENCODER_INST/CLK
+    SLICE_X31Y413        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X57Y408        FDRE (Prop_FFF_SLICEL_C_Q)
-                                                      0.079     3.787 r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][2]/Q
-                         net (fo=1, routed)           0.465     4.252    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/addra[2]
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[6]
+    SLICE_X31Y413        FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     4.142 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/Q
+                         net (fo=2, routed)           0.391     4.533    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg_n_0_[8][3][4][6]
+    SLICE_X32Y410        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.090     4.623 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2/O
+                         net (fo=7, routed)           0.191     4.814    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2_n_0
+    SLICE_X33Y409        LUT3 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.050     4.864 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][2]_i_1/O
+                         net (fo=1, routed)           0.048     4.912    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][2]_i_1_n_0
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -646,176 +703,188 @@ Slack (MET) :             4.065ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.114     7.887    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.725     8.612    
-                         clock uncertainty           -0.035     8.577    
-    RAMB18_X4Y162        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[6])
-                                                     -0.260     8.317    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.438     8.211    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][2]/C
+                         clock pessimism              0.755     8.966    
+                         clock uncertainty           -0.035     8.931    
+    SLICE_X33Y409        FDRE (Setup_AFF_SLICEL_C_D)
+                                                      0.025     8.956    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][2]
   -------------------------------------------------------------------
-                         required time                          8.317    
-                         arrival time                          -4.252    
+                         required time                          8.956    
+                         arrival time                          -4.912    
   -------------------------------------------------------------------
-                         slack                                  4.065    
+                         slack                                  4.044    
 
-Slack (MET) :             4.069ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][1]/C
+Slack (MET) :             4.056ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.837ns  (logic 0.238ns (28.435%)  route 0.599ns (71.565%))
+  Logic Levels:           2  (LUT3=1 LUT6=1)
+  Clock Path Skew:        -0.097ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.211ns = ( 8.211 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.063ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.743ns (routing 1.895ns, distribution 0.848ns)
+  Clock Net Delay (Destination): 2.438ns (routing 1.722ns, distribution 0.716ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.743     4.063    ENCODER_INST/CLK
+    SLICE_X31Y413        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y413        FDRE (Prop_AFF_SLICEL_C_Q)
+                                                      0.079     4.142 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][3][4][6]/Q
+                         net (fo=2, routed)           0.391     4.533    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg_n_0_[8][3][4][6]
+    SLICE_X32Y410        LUT6 (Prop_H6LUT_SLICEM_I1_O)
+                                                      0.090     4.623 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2/O
+                         net (fo=7, routed)           0.191     4.814    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][6]_i_2_n_0
+    SLICE_X33Y409        LUT3 (Prop_A5LUT_SLICEL_I1_O)
+                                                      0.069     4.883 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][3]_i_1/O
+                         net (fo=1, routed)           0.017     4.900    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d[8][4][2][3]_i_1_n_0
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    5.000     5.000 r  
+    C6                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.580     5.580 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     5.580    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     5.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.169     5.749    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.024     5.773 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.438     8.211    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
+                         clock pessimism              0.755     8.966    
+                         clock uncertainty           -0.035     8.931    
+    SLICE_X33Y409        FDRE (Setup_AFF2_SLICEL_C_D)
+                                                      0.025     8.956    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]
+  -------------------------------------------------------------------
+                         required time                          8.956    
+                         arrival time                          -4.900    
+  -------------------------------------------------------------------
+                         slack                                  4.056    
+
+Slack (MET) :             4.059ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.852ns  (logic 0.413ns (48.474%)  route 0.439ns (51.526%))
+  Logic Levels:           3  (LUT3=1 LUT4=2)
+  Clock Path Skew:        -0.079ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.220ns = ( 8.220 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.054ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.734ns (routing 1.895ns, distribution 0.839ns)
+  Clock Net Delay (Destination): 2.447ns (routing 1.722ns, distribution 0.725ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.734     4.054    ENCODER_INST/CLK
+    SLICE_X33Y409        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y409        FDRE (Prop_AFF2_SLICEL_C_Q)
+                                                      0.081     4.135 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][3]/Q
+                         net (fo=2, routed)           0.184     4.319    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[8][4][2][3]
+    SLICE_X33Y409        LUT4 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.051     4.370 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3/O
+                         net (fo=1, routed)           0.057     4.427    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_3_n_0
+    SLICE_X33Y409        LUT4 (Prop_F6LUT_SLICEL_I3_O)
+                                                      0.148     4.575 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2/O
+                         net (fo=8, routed)           0.183     4.758    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][7]_i_2_n_0
+    SLICE_X34Y408        LUT3 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.133     4.891 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][2]_i_1/O
+                         net (fo=1, routed)           0.015     4.906    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d[8][5][1][2]_i_1_n_0
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    5.000     5.000 r  
+    C6                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.580     5.580 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     5.580    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     5.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.169     5.749    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.024     5.773 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.447     8.220    ENCODER_INST/CLK
+    SLICE_X34Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][2]/C
+                         clock pessimism              0.755     8.975    
+                         clock uncertainty           -0.035     8.940    
+    SLICE_X34Y408        FDRE (Setup_DFF2_SLICEL_C_D)
+                                                      0.025     8.965    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][2]
+  -------------------------------------------------------------------
+                         required time                          8.965    
+                         arrival time                          -4.906    
+  -------------------------------------------------------------------
+                         slack                                  4.059    
+
+Slack (MET) :             4.060ns  (required time - arrival time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][2][0][1]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
                             (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.520ns  (logic 0.079ns (15.192%)  route 0.441ns (84.808%))
-  Logic Levels:           0  
-  Clock Path Skew:        -0.091ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.887ns = ( 7.887 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.703ns
-    Clock Pessimism Removal (CPR):    0.725ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.383ns (routing 1.527ns, distribution 0.856ns)
-  Clock Net Delay (Destination): 2.114ns (routing 1.386ns, distribution 0.728ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.383     3.703    ENCODER_INST/CLK
-    SLICE_X57Y408        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X57Y408        FDRE (Prop_AFF_SLICEL_C_Q)
-                                                      0.079     3.782 r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0][1]/Q
-                         net (fo=1, routed)           0.441     4.223    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/addra[1]
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    5.000     5.000 r  
-    C6                                                0.000     5.000 r  CLK (IN)
-                         net (fo=0)                   0.000     5.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     5.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     5.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     5.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     5.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.114     7.887    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y162        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.725     8.612    
-                         clock uncertainty           -0.035     8.577    
-    RAMB18_X4Y162        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[5])
-                                                     -0.285     8.292    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
-  -------------------------------------------------------------------
-                         required time                          8.292    
-                         arrival time                          -4.223    
-  -------------------------------------------------------------------
-                         slack                                  4.069    
-
-Slack (MET) :             4.084ns  (required time - arrival time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[13].DATA_OUT_reg[13]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[8][0][6][3]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.760ns  (logic 0.228ns (30.000%)  route 0.532ns (70.000%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        -0.146ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.879ns = ( 7.879 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.713ns
-    Clock Pessimism Removal (CPR):    0.688ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.393ns (routing 1.527ns, distribution 0.866ns)
-  Clock Net Delay (Destination): 2.106ns (routing 1.386ns, distribution 0.720ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.393     3.713    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X46Y425        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[13].DATA_OUT_reg[13]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X46Y425        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.079     3.792 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[13].DATA_OUT_reg[13]/Q
-                         net (fo=2, routed)           0.279     4.071    ENCODER_INST/data_to_encoder[8][7]
-    SLICE_X45Y419        LUT2 (Prop_G6LUT_SLICEL_I1_O)
-                                                      0.149     4.220 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d[8][0][6][3]_i_1/O
-                         net (fo=2, routed)           0.253     4.473    ENCODER_INST/inst_tcam_encoder_array_2d[8][0][6]_4[3]
-    SLICE_X45Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[8][0][6][3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    5.000     5.000 r  
-    C6                                                0.000     5.000 r  CLK (IN)
-                         net (fo=0)                   0.000     5.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     5.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     5.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     5.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     5.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.106     7.879    ENCODER_INST/CLK
-    SLICE_X45Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[8][0][6][3]/C
-                         clock pessimism              0.688     8.567    
-                         clock uncertainty           -0.035     8.532    
-    SLICE_X45Y416        FDRE (Setup_FFF2_SLICEL_C_D)
-                                                      0.025     8.557    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[8][0][6][3]
-  -------------------------------------------------------------------
-                         required time                          8.557    
-                         arrival time                          -4.473    
-  -------------------------------------------------------------------
-                         slack                                  4.084    
-
-Slack (MET) :             4.102ns  (required time - arrival time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
-                            (rising edge-triggered cell RAMB18E2 clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            5.000ns  (sys_clk rise@5.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.451ns  (logic 0.079ns (17.517%)  route 0.372ns (82.483%))
+  Data Path Delay:        0.560ns  (logic 0.081ns (14.464%)  route 0.479ns (85.536%))
   Logic Levels:           0  
   Clock Path Skew:        -0.059ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.893ns = ( 7.893 - 5.000 ) 
-    Source Clock Delay      (SCD):    3.678ns
-    Clock Pessimism Removal (CPR):    0.725ns
+    Destination Clock Delay (DCD):    3.224ns = ( 8.224 - 5.000 ) 
+    Source Clock Delay      (SCD):    4.041ns
+    Clock Pessimism Removal (CPR):    0.757ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.358ns (routing 1.527ns, distribution 0.831ns)
-  Clock Net Delay (Destination): 2.120ns (routing 1.386ns, distribution 0.734ns)
+  Clock Net Delay (Source):      2.721ns (routing 1.895ns, distribution 0.826ns)
+  Clock Net Delay (Destination): 2.451ns (routing 1.722ns, distribution 0.729ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -830,13 +899,13 @@ Slack (MET) :             4.102ns  (required time - arrival time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.358     3.678    ENCODER_INST/CLK
-    SLICE_X56Y400        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][0]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.721     4.041    ENCODER_INST/CLK
+    SLICE_X33Y392        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][2][0][1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X56Y400        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.079     3.757 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0][0]/Q
-                         net (fo=1, routed)           0.372     4.129    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/addra[0]
-    RAMB18_X4Y161        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[4]
+    SLICE_X33Y392        FDRE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.081     4.122 r  ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][2][0][1]/Q
+                         net (fo=1, routed)           0.479     4.601    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/addra[1]
+    RAMB18_X3Y156        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/ADDRARDADDR[5]
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    5.000     5.000 r  
@@ -850,17 +919,17 @@ Slack (MET) :             4.102ns  (required time - arrival time)
                          net (fo=1, routed)           0.169     5.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     5.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.120     7.893    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/clka
-    RAMB18_X4Y161        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.725     8.618    
-                         clock uncertainty           -0.035     8.583    
-    RAMB18_X4Y161        RAMB18E2 (Setup_RAMB18E2_U_RAMB181_CLKARDCLK_ADDRARDADDR[4])
-                                                     -0.352     8.231    ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.451     8.224    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/clka
+    RAMB18_X3Y156        RAMB18E2                                     r  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+                         clock pessimism              0.757     8.981    
+                         clock uncertainty           -0.035     8.946    
+    RAMB18_X3Y156        RAMB18E2 (Setup_RAMB18E2_L_RAMB180_CLKARDCLK_ADDRARDADDR[5])
+                                                     -0.285     8.661    ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0
   -------------------------------------------------------------------
-                         required time                          8.231    
-                         arrival time                          -4.129    
+                         required time                          8.661    
+                         arrival time                          -4.601    
   -------------------------------------------------------------------
-                         slack                                  4.102    
+                         slack                                  4.060    
 
 
 
@@ -868,22 +937,22 @@ Slack (MET) :             4.102ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.022ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
+Slack (MET) :             0.010ns  (arrival time - required time)
+  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[18].DATA_OUT_reg[18]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][0][2][0]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][0][9][0]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.176ns  (logic 0.059ns (33.523%)  route 0.117ns (66.477%))
+  Data Path Delay:        0.186ns  (logic 0.058ns (31.183%)  route 0.128ns (68.817%))
   Logic Levels:           0  
-  Clock Path Skew:        0.094ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.686ns
-    Source Clock Delay      (SCD):    2.869ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.096ns (routing 1.386ns, distribution 0.710ns)
-  Clock Net Delay (Destination): 2.366ns (routing 1.527ns, distribution 0.839ns)
+  Clock Path Skew:        0.114ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.090ns
+    Source Clock Delay      (SCD):    3.221ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Net Delay (Source):      2.448ns (routing 1.722ns, distribution 0.726ns)
+  Clock Net Delay (Destination): 2.770ns (routing 1.895ns, distribution 0.875ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -898,13 +967,13 @@ Slack (MET) :             0.022ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.096     2.869    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X52Y415        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.448     3.221    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/CLK
+    SLICE_X35Y415        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[18].DATA_OUT_reg[18]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X52Y415        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.059     2.928 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/Q
-                         net (fo=3, routed)           0.117     3.045    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][0][2][2]_0[0]
-    SLICE_X54Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][0][2][0]/D
+    SLICE_X35Y415        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.058     3.279 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[18].DATA_OUT_reg[18]/Q
+                         net (fo=3, routed)           0.128     3.407    ENCODER_INST/RESULTS_FROM_TCAMS[8][18]
+    SLICE_X36Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][0][9][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -918,33 +987,158 @@ Slack (MET) :             0.022ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.366     3.686    ENCODER_INST/CLK
-    SLICE_X54Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][0][2][0]/C
-                         clock pessimism             -0.723     2.963    
-    SLICE_X54Y414        FDRE (Hold_EFF_SLICEL_C_D)
-                                                      0.060     3.023    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][0][2][0]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.770     4.090    ENCODER_INST/CLK
+    SLICE_X36Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][0][9][0]/C
+                         clock pessimism             -0.755     3.335    
+    SLICE_X36Y414        FDRE (Hold_EFF2_SLICEM_C_D)
+                                                      0.062     3.397    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][0][9][0]
   -------------------------------------------------------------------
-                         required time                         -3.023    
-                         arrival time                           3.045    
+                         required time                         -3.397    
+                         arrival time                           3.407    
   -------------------------------------------------------------------
-                         slack                                  0.022    
+                         slack                                  0.010    
 
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/C
+Slack (MET) :             0.011ns  (arrival time - required time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][3][1][4]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][0][0][1]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][4][0][4]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.165ns  (logic 0.080ns (48.485%)  route 0.085ns (51.515%))
+  Data Path Delay:        0.175ns  (logic 0.093ns (53.143%)  route 0.082ns (46.857%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.104ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.090ns
+    Source Clock Delay      (SCD):    3.231ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Net Delay (Source):      2.458ns (routing 1.722ns, distribution 0.736ns)
+  Clock Net Delay (Destination): 2.770ns (routing 1.895ns, distribution 0.875ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.458     3.231    ENCODER_INST/CLK
+    SLICE_X38Y415        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][3][1][4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X38Y415        FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.058     3.289 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][3][1][4]/Q
+                         net (fo=1, routed)           0.060     3.349    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg_n_0_[8][3][1][4]
+    SLICE_X37Y415        LUT6 (Prop_G6LUT_SLICEL_I5_O)
+                                                      0.035     3.384 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d[8][4][0][4]_i_1/O
+                         net (fo=1, routed)           0.022     3.406    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d[8][4][0][4]_i_1_n_0
+    SLICE_X37Y415        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][4][0][4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.770     4.090    ENCODER_INST/CLK
+    SLICE_X37Y415        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][4][0][4]/C
+                         clock pessimism             -0.755     3.335    
+    SLICE_X37Y415        FDRE (Hold_GFF_SLICEL_C_D)
+                                                      0.060     3.395    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][4][0][4]
+  -------------------------------------------------------------------
+                         required time                         -3.395    
+                         arrival time                           3.406    
+  -------------------------------------------------------------------
+                         slack                                  0.011    
+
+Slack (MET) :             0.014ns  (arrival time - required time)
+  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[68].DATA_OUT_reg[68]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][0]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.258ns  (logic 0.058ns (22.481%)  route 0.200ns (77.519%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.184ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.121ns
+    Source Clock Delay      (SCD):    3.217ns
+    Clock Pessimism Removal (CPR):    0.720ns
+  Clock Net Delay (Source):      2.444ns (routing 1.722ns, distribution 0.722ns)
+  Clock Net Delay (Destination): 2.801ns (routing 1.895ns, distribution 0.906ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.444     3.217    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/CLK
+    SLICE_X32Y419        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[68].DATA_OUT_reg[68]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y419        FDRE (Prop_CFF_SLICEM_C_Q)
+                                                      0.058     3.275 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[68].DATA_OUT_reg[68]/Q
+                         net (fo=3, routed)           0.200     3.475    ENCODER_INST/RESULTS_FROM_TCAMS[8][68]
+    SLICE_X31Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.801     4.121    ENCODER_INST/CLK
+    SLICE_X31Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][0]/C
+                         clock pessimism             -0.720     3.401    
+    SLICE_X31Y423        FDRE (Hold_EFF_SLICEL_C_D)
+                                                      0.060     3.461    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][0]
+  -------------------------------------------------------------------
+                         required time                         -3.461    
+                         arrival time                           3.475    
+  -------------------------------------------------------------------
+                         slack                                  0.014    
+
+Slack (MET) :             0.019ns  (arrival time - required time)
+  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.167ns  (logic 0.080ns (47.904%)  route 0.087ns (52.096%))
   Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.081ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.683ns
-    Source Clock Delay      (SCD):    2.879ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.106ns (routing 1.386ns, distribution 0.720ns)
-  Clock Net Delay (Destination): 2.363ns (routing 1.527ns, distribution 0.836ns)
+  Clock Path Skew:        0.088ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.051ns
+    Source Clock Delay      (SCD):    3.208ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Net Delay (Source):      2.435ns (routing 1.722ns, distribution 0.713ns)
+  Clock Net Delay (Destination): 2.731ns (routing 1.895ns, distribution 0.836ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -959,16 +1153,16 @@ Slack (MET) :             0.024ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.106     2.879    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X59Y414        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.435     3.208    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/CLK
+    SLICE_X35Y388        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y414        FDRE (Prop_DFF_SLICEM_C_Q)
-                                                      0.058     2.937 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/Q
-                         net (fo=1, routed)           0.063     3.000    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/data_to_encoder[3][1]
-    SLICE_X58Y414        LUT2 (Prop_D6LUT_SLICEL_I0_O)
-                                                      0.022     3.022 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d[3][0][0][1]_i_1/O
-                         net (fo=1, routed)           0.022     3.044    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][0][0][1]_0[1]
-    SLICE_X58Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][0][0][1]/D
+    SLICE_X35Y388        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     3.266 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[1].DATA_OUT_reg[1]/Q
+                         net (fo=1, routed)           0.063     3.329    ENCODER_INST/RESULTS_FROM_TCAMS[1][1]
+    SLICE_X34Y388        LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.022     3.351 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d[1][0][0][1]_i_1/O
+                         net (fo=1, routed)           0.024     3.375    ENCODER_INST/inst_tcam_encoder_array_2d[1][0][0][1]
+    SLICE_X34Y388        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -982,33 +1176,33 @@ Slack (MET) :             0.024ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.363     3.683    ENCODER_INST/CLK
-    SLICE_X58Y414        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][0][0][1]/C
-                         clock pessimism             -0.723     2.960    
-    SLICE_X58Y414        FDRE (Hold_DFF_SLICEL_C_D)
-                                                      0.060     3.020    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][0][0][1]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.731     4.051    ENCODER_INST/CLK
+    SLICE_X34Y388        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/C
+                         clock pessimism             -0.755     3.296    
+    SLICE_X34Y388        FDRE (Hold_CFF_SLICEL_C_D)
+                                                      0.060     3.356    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]
   -------------------------------------------------------------------
-                         required time                         -3.020    
-                         arrival time                           3.044    
+                         required time                         -3.356    
+                         arrival time                           3.375    
   -------------------------------------------------------------------
-                         slack                                  0.024    
+                         slack                                  0.019    
 
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][2][1][3]/C
+Slack (MET) :             0.020ns  (arrival time - required time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][0]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0][3]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][3]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.164ns  (logic 0.080ns (48.781%)  route 0.084ns (51.220%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.079ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.665ns
-    Source Clock Delay      (SCD):    2.862ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.089ns (routing 1.386ns, distribution 0.703ns)
-  Clock Net Delay (Destination): 2.345ns (routing 1.527ns, distribution 0.818ns)
+  Data Path Delay:        0.185ns  (logic 0.080ns (43.243%)  route 0.105ns (56.757%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.105ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.127ns
+    Source Clock Delay      (SCD):    3.263ns
+    Clock Pessimism Removal (CPR):    0.759ns
+  Clock Net Delay (Source):      2.490ns (routing 1.722ns, distribution 0.768ns)
+  Clock Net Delay (Destination): 2.807ns (routing 1.895ns, distribution 0.912ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1023,77 +1217,16 @@ Slack (MET) :             0.024ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.089     2.862    ENCODER_INST/CLK
-    SLICE_X45Y384        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][2][1][3]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.490     3.263    ENCODER_INST/CLK
+    SLICE_X32Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X45Y384        FDRE (Prop_AFF_SLICEL_C_Q)
-                                                      0.058     2.920 r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][2][1][3]/Q
-                         net (fo=1, routed)           0.060     2.980    ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg_n_0_[5][2][1][3]
-    SLICE_X44Y384        LUT4 (Prop_F6LUT_SLICEL_I0_O)
-                                                      0.022     3.002 r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d[5][3][0][3]_i_1/O
-                         net (fo=1, routed)           0.024     3.026    ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d[5][3][0][3]_i_1_n_0
-    SLICE_X44Y384        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0][3]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.345     3.665    ENCODER_INST/CLK
-    SLICE_X44Y384        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0][3]/C
-                         clock pessimism             -0.723     2.942    
-    SLICE_X44Y384        FDRE (Hold_FFF_SLICEL_C_D)
-                                                      0.060     3.002    ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0][3]
-  -------------------------------------------------------------------
-                         required time                         -3.002    
-                         arrival time                           3.026    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.027ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3][1]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Hold (Min at Slow Process Corner)
-  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.182ns  (logic 0.059ns (32.418%)  route 0.123ns (67.582%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.095ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.686ns
-    Source Clock Delay      (SCD):    2.868ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.095ns (routing 1.386ns, distribution 0.709ns)
-  Clock Net Delay (Destination): 2.366ns (routing 1.527ns, distribution 0.839ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.095     2.868    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X52Y412        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X52Y412        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.059     2.927 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[3].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/Q
-                         net (fo=4, routed)           0.123     3.050    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3][3]_0[0]
-    SLICE_X55Y412        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3][1]/D
+    SLICE_X32Y423        FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     3.321 f  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][0]/Q
+                         net (fo=5, routed)           0.069     3.390    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg_n_0_[8][1][16][0]
+    SLICE_X30Y423        LUT5 (Prop_D6LUT_SLICEM_I2_O)
+                                                      0.022     3.412 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d[8][2][8][3]_i_1/O
+                         net (fo=1, routed)           0.036     3.448    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d[8][2][8][3]_i_1_n_0
+    SLICE_X30Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][3]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -1107,219 +1240,33 @@ Slack (MET) :             0.027ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.366     3.686    ENCODER_INST/CLK
-    SLICE_X55Y412        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3][1]/C
-                         clock pessimism             -0.723     2.963    
-    SLICE_X55Y412        FDRE (Hold_EFF_SLICEL_C_D)
-                                                      0.060     3.023    ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3][1]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.807     4.127    ENCODER_INST/CLK
+    SLICE_X30Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][3]/C
+                         clock pessimism             -0.759     3.368    
+    SLICE_X30Y423        FDRE (Hold_DFF_SLICEM_C_D)
+                                                      0.060     3.428    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][3]
   -------------------------------------------------------------------
-                         required time                         -3.023    
-                         arrival time                           3.050    
+                         required time                         -3.428    
+                         arrival time                           3.448    
   -------------------------------------------------------------------
-                         slack                                  0.027    
+                         slack                                  0.020    
 
-Slack (MET) :             0.028ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/C
+Slack (MET) :             0.023ns  (arrival time - required time)
+  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[22].DATA_OUT_reg[22]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3][0]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Hold (Min at Slow Process Corner)
-  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.194ns  (logic 0.059ns (30.412%)  route 0.135ns (69.588%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.106ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.690ns
-    Source Clock Delay      (SCD):    2.861ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.088ns (routing 1.386ns, distribution 0.702ns)
-  Clock Net Delay (Destination): 2.370ns (routing 1.527ns, distribution 0.843ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.088     2.861    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X54Y387        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X54Y387        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.059     2.920 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[6].DATA_OUT_reg[6]/Q
-                         net (fo=4, routed)           0.135     3.055    ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3][3]_0[0]
-    SLICE_X49Y387        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3][0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.370     3.690    ENCODER_INST/CLK
-    SLICE_X49Y387        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3][0]/C
-                         clock pessimism             -0.723     2.967    
-    SLICE_X49Y387        FDRE (Hold_EFF_SLICEL_C_D)
-                                                      0.060     3.027    ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3][0]
-  -------------------------------------------------------------------
-                         required time                         -3.027    
-                         arrival time                           3.055    
-  -------------------------------------------------------------------
-                         slack                                  0.028    
-
-Slack (MET) :             0.029ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][0][2][2]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Hold (Min at Slow Process Corner)
-  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.185ns  (logic 0.094ns (50.811%)  route 0.091ns (49.189%))
-  Logic Levels:           1  (LUT2=1)
-  Clock Path Skew:        0.096ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.677ns
-    Source Clock Delay      (SCD):    2.858ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.085ns (routing 1.386ns, distribution 0.699ns)
-  Clock Net Delay (Destination): 2.357ns (routing 1.527ns, distribution 0.830ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.085     2.858    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X44Y382        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X44Y382        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.059     2.917 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/Q
-                         net (fo=3, routed)           0.067     2.984    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/GENERATE_TCAM_RESPONSE[5].DATA_OUT_reg[5]_0[0]
-    SLICE_X45Y382        LUT2 (Prop_C6LUT_SLICEL_I1_O)
-                                                      0.035     3.019 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[5].TCAM_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d[5][0][2][2]_i_1/O
-                         net (fo=1, routed)           0.024     3.043    ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][0][2][2]_0[2]
-    SLICE_X45Y382        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][0][2][2]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.357     3.677    ENCODER_INST/CLK
-    SLICE_X45Y382        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][0][2][2]/C
-                         clock pessimism             -0.723     2.954    
-    SLICE_X45Y382        FDRE (Hold_CFF_SLICEL_C_D)
-                                                      0.060     3.014    ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][0][2][2]
-  -------------------------------------------------------------------
-                         required time                         -3.014    
-                         arrival time                           3.043    
-  -------------------------------------------------------------------
-                         slack                                  0.029    
-
-Slack (MET) :             0.030ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[10].DATA_OUT_reg[10]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][0][5][0]/D
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Path Group:             sys_clk
-  Path Type:              Hold (Min at Slow Process Corner)
-  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.200ns  (logic 0.058ns (29.000%)  route 0.142ns (71.000%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.108ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.701ns
-    Source Clock Delay      (SCD):    2.870ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.097ns (routing 1.386ns, distribution 0.711ns)
-  Clock Net Delay (Destination): 2.381ns (routing 1.527ns, distribution 0.854ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.097     2.870    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X47Y418        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[10].DATA_OUT_reg[10]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X47Y418        FDRE (Prop_DFF_SLICEM_C_Q)
-                                                      0.058     2.928 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[10].DATA_OUT_reg[10]/Q
-                         net (fo=4, routed)           0.142     3.070    ENCODER_INST/data_to_encoder[8][5]
-    SLICE_X46Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][0][5][0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock sys_clk rise edge)    0.000     0.000 r  
-    C6                                                0.000     0.000 r  CLK (IN)
-                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
-    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
-                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
-    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
-                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
-    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
-                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.381     3.701    ENCODER_INST/CLK
-    SLICE_X46Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][0][5][0]/C
-                         clock pessimism             -0.723     2.978    
-    SLICE_X46Y416        FDRE (Hold_GFF2_SLICEL_C_D)
-                                                      0.062     3.040    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][0][5][0]
-  -------------------------------------------------------------------
-                         required time                         -3.040    
-                         arrival time                           3.070    
-  -------------------------------------------------------------------
-                         slack                                  0.030    
-
-Slack (MET) :             0.031ns  (arrival time - required time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][0][1][0]/C
-                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][1][1][0]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][0][11][0]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.099ns  (logic 0.054ns (54.545%)  route 0.045ns (45.455%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.022ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.313ns
-    Source Clock Delay      (SCD):    1.828ns
-    Clock Pessimism Removal (CPR):    0.463ns
-  Clock Net Delay (Source):      1.299ns (routing 0.839ns, distribution 0.460ns)
-  Clock Net Delay (Destination): 1.471ns (routing 0.938ns, distribution 0.533ns)
+  Data Path Delay:        0.076ns  (logic 0.039ns (51.316%)  route 0.037ns (48.684%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.550ns
+    Source Clock Delay      (SCD):    2.047ns
+    Clock Pessimism Removal (CPR):    0.497ns
+  Clock Net Delay (Source):      1.518ns (routing 1.036ns, distribution 0.482ns)
+  Clock Net Delay (Destination): 1.708ns (routing 1.154ns, distribution 0.554ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1334,16 +1281,13 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=1, routed)           0.091     0.512    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.017     0.529 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         1.299     1.828    ENCODER_INST/CLK
-    SLICE_X57Y398        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][0][1][0]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         1.518     2.047    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/CLK
+    SLICE_X37Y416        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[22].DATA_OUT_reg[22]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X57Y398        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.039     1.867 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][0][1][0]/Q
-                         net (fo=4, routed)           0.030     1.897    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][0][1][0]
-    SLICE_X57Y399        LUT4 (Prop_B6LUT_SLICEL_I3_O)
-                                                      0.015     1.912 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d[1][1][1][0]_i_1/O
-                         net (fo=1, routed)           0.015     1.927    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d[1][1][1][0]_i_1_n_0
-    SLICE_X57Y399        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][1][1][0]/D
+    SLICE_X37Y416        FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     2.086 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[8].TCAM_INST/GENERATE_TCAM_RESPONSE[22].DATA_OUT_reg[22]/Q
+                         net (fo=3, routed)           0.037     2.123    ENCODER_INST/RESULTS_FROM_TCAMS[8][22]
+    SLICE_X37Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][0][11][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -1357,33 +1301,33 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=1, routed)           0.113     0.823    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.019     0.842 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         1.471     2.313    ENCODER_INST/CLK
-    SLICE_X57Y399        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][1][1][0]/C
-                         clock pessimism             -0.463     1.850    
-    SLICE_X57Y399        FDRE (Hold_BFF_SLICEL_C_D)
-                                                      0.046     1.896    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][1][1][0]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         1.708     2.550    ENCODER_INST/CLK
+    SLICE_X37Y416        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][0][11][0]/C
+                         clock pessimism             -0.497     2.053    
+    SLICE_X37Y416        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     2.100    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][0][11][0]
   -------------------------------------------------------------------
-                         required time                         -1.896    
-                         arrival time                           1.927    
+                         required time                         -2.100    
+                         arrival time                           2.123    
   -------------------------------------------------------------------
-                         slack                                  0.031    
+                         slack                                  0.023    
 
-Slack (MET) :             0.031ns  (arrival time - required time)
-  Source:                 ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][0][3][1]/C
+Slack (MET) :             0.026ns  (arrival time - required time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][6]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2][1]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][0]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.182ns  (logic 0.094ns (51.648%)  route 0.088ns (48.352%))
-  Logic Levels:           1  (LUT4=1)
-  Clock Path Skew:        0.091ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.679ns
-    Source Clock Delay      (SCD):    2.865ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.092ns (routing 1.386ns, distribution 0.706ns)
-  Clock Net Delay (Destination): 2.359ns (routing 1.527ns, distribution 0.832ns)
+  Data Path Delay:        0.185ns  (logic 0.095ns (51.351%)  route 0.090ns (48.649%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.099ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.121ns
+    Source Clock Delay      (SCD):    3.263ns
+    Clock Pessimism Removal (CPR):    0.759ns
+  Clock Net Delay (Source):      2.490ns (routing 1.722ns, distribution 0.768ns)
+  Clock Net Delay (Destination): 2.801ns (routing 1.895ns, distribution 0.906ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1398,16 +1342,16 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.092     2.865    ENCODER_INST/CLK
-    SLICE_X54Y401        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][0][3][1]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.490     3.263    ENCODER_INST/CLK
+    SLICE_X32Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][6]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X54Y401        FDRE (Prop_EFF_SLICEL_C_Q)
-                                                      0.059     2.924 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][0][3][1]/Q
-                         net (fo=1, routed)           0.066     2.990    ENCODER_INST/inst_tcam_encoder_array_2d[1][0][3]_13[1]
-    SLICE_X56Y401        LUT4 (Prop_G6LUT_SLICEL_I3_O)
-                                                      0.035     3.025 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d[1][1][2][1]_i_1/O
-                         net (fo=1, routed)           0.022     3.047    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d[1][1][2][1]_i_1_n_0
-    SLICE_X56Y401        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2][1]/D
+    SLICE_X32Y423        FDRE (Prop_AFF2_SLICEM_C_Q)
+                                                      0.060     3.323 f  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][6]/Q
+                         net (fo=5, routed)           0.068     3.391    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg_n_0_[8][1][16][6]
+    SLICE_X31Y423        LUT5 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.035     3.426 r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d[8][2][8][0]_i_1/O
+                         net (fo=1, routed)           0.022     3.448    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d[8][2][8][0]_i_1_n_0
+    SLICE_X31Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -1421,33 +1365,33 @@ Slack (MET) :             0.031ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.359     3.679    ENCODER_INST/CLK
-    SLICE_X56Y401        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2][1]/C
-                         clock pessimism             -0.723     2.956    
-    SLICE_X56Y401        FDRE (Hold_GFF_SLICEL_C_D)
-                                                      0.060     3.016    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2][1]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.801     4.121    ENCODER_INST/CLK
+    SLICE_X31Y423        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][0]/C
+                         clock pessimism             -0.759     3.362    
+    SLICE_X31Y423        FDRE (Hold_GFF_SLICEL_C_D)
+                                                      0.060     3.422    ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][2][8][0]
   -------------------------------------------------------------------
-                         required time                         -3.016    
-                         arrival time                           3.047    
+                         required time                         -3.422    
+                         arrival time                           3.448    
   -------------------------------------------------------------------
-                         slack                                  0.031    
+                         slack                                  0.026    
 
-Slack (MET) :             0.033ns  (arrival time - required time)
-  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[2].DATA_OUT_reg[2]/C
+Slack (MET) :             0.026ns  (arrival time - required time)
+  Source:                 ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
-  Destination:            ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][0][1][0]/D
+  Destination:            ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][0][2][0]/D
                             (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
   Path Group:             sys_clk
   Path Type:              Hold (Min at Slow Process Corner)
   Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
-  Data Path Delay:        0.187ns  (logic 0.059ns (31.551%)  route 0.128ns (68.449%))
+  Data Path Delay:        0.182ns  (logic 0.058ns (31.868%)  route 0.124ns (68.132%))
   Logic Levels:           0  
-  Clock Path Skew:        0.092ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    3.661ns
-    Source Clock Delay      (SCD):    2.845ns
-    Clock Pessimism Removal (CPR):    0.723ns
-  Clock Net Delay (Source):      2.072ns (routing 1.386ns, distribution 0.686ns)
-  Clock Net Delay (Destination): 2.341ns (routing 1.527ns, distribution 0.814ns)
+  Clock Path Skew:        0.096ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.051ns
+    Source Clock Delay      (SCD):    3.200ns
+    Clock Pessimism Removal (CPR):    0.755ns
+  Clock Net Delay (Source):      2.427ns (routing 1.722ns, distribution 0.705ns)
+  Clock Net Delay (Destination): 2.731ns (routing 1.895ns, distribution 0.836ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -1462,13 +1406,13 @@ Slack (MET) :             0.033ns  (arrival time - required time)
                          net (fo=1, routed)           0.169     0.749    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.024     0.773 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.072     2.845    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/CLK_IBUF_BUFG
-    SLICE_X48Y390        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[2].DATA_OUT_reg[2]/C
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.427     3.200    ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/CLK
+    SLICE_X35Y390        FDRE                                         r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X48Y390        FDRE (Prop_DFF_SLICEL_C_Q)
-                                                      0.059     2.904 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[4].TCAM_INST/GENERATE_TCAM_RESPONSE[2].DATA_OUT_reg[2]/Q
-                         net (fo=3, routed)           0.128     3.032    ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][0][1][2]_0[0]
-    SLICE_X48Y386        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][0][1][0]/D
+    SLICE_X35Y390        FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.058     3.258 r  ARRAY_OF_TCAM_INST/GEN_TCAM_MEMORIES[1].TCAM_INST/GENERATE_TCAM_RESPONSE[4].DATA_OUT_reg[4]/Q
+                         net (fo=3, routed)           0.124     3.382    ENCODER_INST/RESULTS_FROM_TCAMS[1][4]
+    SLICE_X35Y389        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][0][2][0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock sys_clk rise edge)    0.000     0.000 r  
@@ -1482,16 +1426,144 @@ Slack (MET) :             0.033ns  (arrival time - required time)
                          net (fo=1, routed)           0.204     1.292    CLK_IBUF
     BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
                                                       0.028     1.320 r  CLK_IBUF_BUFG_inst/O
-    X2Y6 (CLOCK_ROOT)    net (fo=497, routed)         2.341     3.661    ENCODER_INST/CLK
-    SLICE_X48Y386        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][0][1][0]/C
-                         clock pessimism             -0.723     2.938    
-    SLICE_X48Y386        FDRE (Hold_AFF2_SLICEL_C_D)
-                                                      0.062     3.000    ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][0][1][0]
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.731     4.051    ENCODER_INST/CLK
+    SLICE_X35Y389        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][0][2][0]/C
+                         clock pessimism             -0.755     3.296    
+    SLICE_X35Y389        FDRE (Hold_EFF_SLICEM_C_D)
+                                                      0.060     3.356    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][0][2][0]
   -------------------------------------------------------------------
-                         required time                         -3.000    
-                         arrival time                           3.032    
+                         required time                         -3.356    
+                         arrival time                           3.382    
   -------------------------------------------------------------------
-                         slack                                  0.033    
+                         slack                                  0.026    
+
+Slack (MET) :             0.029ns  (arrival time - required time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][0][2][2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][1][1][2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.157ns  (logic 0.092ns (58.599%)  route 0.065ns (41.401%))
+  Logic Levels:           1  (LUT4=1)
+  Clock Path Skew:        0.066ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    4.059ns
+    Source Clock Delay      (SCD):    3.189ns
+    Clock Pessimism Removal (CPR):    0.803ns
+  Clock Net Delay (Source):      2.416ns (routing 1.722ns, distribution 0.694ns)
+  Clock Net Delay (Destination): 2.739ns (routing 1.895ns, distribution 0.844ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.580     0.580 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.580    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.580 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.169     0.749    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.024     0.773 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.416     3.189    ENCODER_INST/CLK
+    SLICE_X33Y395        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][0][2][2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y395        FDRE (Prop_BFF2_SLICEL_C_Q)
+                                                      0.060     3.249 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][0][2][2]/Q
+                         net (fo=4, routed)           0.056     3.305    ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg_n_0_[2][0][2][2]
+    SLICE_X33Y397        LUT4 (Prop_H5LUT_SLICEL_I2_O)
+                                                      0.032     3.337 r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d[2][1][1][2]_i_1/O
+                         net (fo=1, routed)           0.009     3.346    ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d[2][1][1][2]_i_1_n_0
+    SLICE_X33Y397        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][1][1][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      1.088     1.088 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     1.088    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     1.088 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.204     1.292    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.028     1.320 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         2.739     4.059    ENCODER_INST/CLK
+    SLICE_X33Y397        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][1][1][2]/C
+                         clock pessimism             -0.803     3.255    
+    SLICE_X33Y397        FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     3.317    ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][1][1][2]
+  -------------------------------------------------------------------
+                         required time                         -3.317    
+                         arrival time                           3.346    
+  -------------------------------------------------------------------
+                         slack                                  0.029    
+
+Slack (MET) :             0.030ns  (arrival time - required time)
+  Source:                 ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][1][0][2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sys_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk rise@0.000ns - sys_clk rise@0.000ns)
+  Data Path Delay:        0.095ns  (logic 0.053ns (55.789%)  route 0.042ns (44.211%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.019ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.528ns
+    Source Clock Delay      (SCD):    2.026ns
+    Clock Pessimism Removal (CPR):    0.483ns
+  Clock Net Delay (Source):      1.497ns (routing 1.036ns, distribution 0.461ns)
+  Clock Net Delay (Destination): 1.686ns (routing 1.154ns, distribution 0.532ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.421     0.421 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.421    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.421 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.091     0.512    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.017     0.529 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         1.497     2.026    ENCODER_INST/CLK
+    SLICE_X34Y388        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y388        FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.039     2.065 f  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][0][0][1]/Q
+                         net (fo=3, routed)           0.026     2.091    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg_n_0_[1][0][0][1]
+    SLICE_X34Y387        LUT3 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.014     2.105 r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d[1][1][0][2]_i_1/O
+                         net (fo=1, routed)           0.016     2.121    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d[1][1][0][2]_i_1_n_0
+    SLICE_X34Y387        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][1][0][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk rise edge)    0.000     0.000 r  
+    C6                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK_IBUF_inst/I
+    C6                   INBUF (Prop_INBUF_HDIOB_M_PAD_O)
+                                                      0.710     0.710 r  CLK_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.710    CLK_IBUF_inst/OUT
+    C6                   IBUFCTRL (Prop_IBUFCTRL_HDIOB_M_I_O)
+                                                      0.000     0.710 r  CLK_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.113     0.823    CLK_IBUF
+    BUFGCE_HDIO_X1Y6     BUFGCE (Prop_BUFCE_BUFGCE_HDIO_I_O)
+                                                      0.019     0.842 r  CLK_IBUF_BUFG_inst/O
+    X1Y6 (CLOCK_ROOT)    net (fo=894, routed)         1.686     2.528    ENCODER_INST/CLK
+    SLICE_X34Y387        FDRE                                         r  ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][1][0][2]/C
+                         clock pessimism             -0.483     2.045    
+    SLICE_X34Y387        FDRE (Hold_GFF_SLICEL_C_D)
+                                                      0.046     2.091    ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][1][0][2]
+  -------------------------------------------------------------------
+                         required time                         -2.091    
+                         arrival time                           2.121    
+  -------------------------------------------------------------------
+                         slack                                  0.030    
 
 
 
@@ -1505,36 +1577,36 @@ Period(ns):         5.000
 Sources:            { CLK }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y164  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y165  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y154  ENCODER_INST/GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y155  ENCODER_INST/GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y158  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y166  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y162  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X4Y161  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y166  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y162  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y164  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y165  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y158  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y158  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y162  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y161  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y165  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y154  ENCODER_INST/GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y155  ENCODER_INST/GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y166  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y164  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y164  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y158  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
-High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X4Y162  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y155  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y157  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X2Y155  ENCODER_INST/GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X2Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y158  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X2Y154  ENCODER_INST/GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X2Y156  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y162  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Min Period        n/a     RAMB18E2/CLKARDCLK  n/a            1.569         5.000       3.431      RAMB18_X3Y156  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y157  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y156  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y156  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y155  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y157  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y158  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+Low Pulse Width   Fast    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y162  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y155  ENCODER_INST/GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y158  ENCODER_INST/GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y156  ENCODER_INST/GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y162  ENCODER_INST/GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y156  ENCODER_INST/GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y157  ENCODER_INST/GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y155  ENCODER_INST/GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y157  ENCODER_INST/GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X3Y163  ENCODER_INST/GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
+High Pulse Width  Slow    RAMB18E2/CLKARDCLK  n/a            0.542         2.500       1.958      RAMB18_X2Y154  ENCODER_INST/GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_bram_0/CLKARDCLK
 
 
 

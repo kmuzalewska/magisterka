@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu17eg-ffvc1760-2-e" LaunchTime="1560707480">
+<GenRun Id="synth_1" LaunchPart="xczu17eg-ffvc1760-2-e" LaunchTime="1561060139">
   <File Type="VDS-TIMING-PB" Name="main_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="main.dcp"/>
@@ -102,13 +102,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen8.mem">
+    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen9.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen9.mem">
+    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen8.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -138,14 +138,11 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2018"/>
+    <StratHandle Name="Flow_RuntimeOptimized" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design">
-      <Option Id="KeepEquivalentRegisters">1</Option>
-      <Option Id="ShregMinSize">5</Option>
-      <Option Id="FsmExtraction">1</Option>
-      <Option Id="ResourceSharing">2</Option>
-      <Option Id="RepFanoutThreshold">400</Option>
-      <Option Id="NoCombineLuts">1</Option>
+      <Option Id="Directive">0</Option>
+      <Option Id="FsmExtraction">0</Option>
+      <Option Id="FlattenHierarchy">1</Option>
     </Step>
   </Strategy>
 </GenRun>

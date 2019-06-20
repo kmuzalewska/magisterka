@@ -9,20 +9,47 @@
     ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 
 source main.tcl -notrace
-Command: synth_design -top main -part xczu17eg-ffvc1760-2-e -fanout_limit 400 -fsm_extraction one_hot -keep_equivalent_registers -resource_sharing off -no_lc -shreg_min_size 5
+Command: synth_design -top main -part xczu17eg-ffvc1760-2-e -flatten_hierarchy none -directive RuntimeOptimized -fsm_extraction off
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xczu17eg'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu17eg'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 27686 
+INFO: Helper process launched with PID 15735 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1421.273 ; gain = 37.000 ; free physical = 8572 ; free virtual = 19004
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1422.266 ; gain = 29.000 ; free physical = 4541 ; free virtual = 20608
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'main' [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:21]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/klara/magisterka/magisterka.srcs/sources_1/new/main.vhd:23]
 INFO: [Synth 8-638] synthesizing module 'array_of_tcam' [/home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd:16]
-INFO: [Synth 8-638] synthesizing module 'tcam' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'tcam' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'tcam' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized0' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized0' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized1' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized1' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized2' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized2' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized3' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized3' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized4' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized4' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized5' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized5' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized6' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized6' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized7' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized7' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+INFO: [Synth 8-638] synthesizing module 'tcam__parameterized8' [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
+	Parameter tcam_nr bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'tcam__parameterized8' (1#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/tcam.vhd:17]
 INFO: [Synth 8-256] done synthesizing module 'array_of_tcam' (2#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/array_of_tcam.vhd:16]
 INFO: [Synth 8-638] synthesizing module 'encoder' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:17]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
@@ -43,7 +70,7 @@ INFO: [Synth 8-638] synthesizing module 'encoder' [/home/klara/magisterka/magist
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -154,7 +181,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram' (4#1) [/home/us
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized1' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -265,7 +292,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized1'
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized3' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -376,7 +403,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized3'
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized5' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -487,7 +514,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized5'
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized7' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -598,7 +625,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized7'
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized9' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -709,7 +736,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized9'
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized11' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -820,7 +847,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized11
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized13' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
@@ -913,10 +940,10 @@ WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pi
 INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized6' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized13' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
-	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_SIZE bound to: 800 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
@@ -926,17 +953,17 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized13
 	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
-	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
 	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized15' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
-	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_SIZE bound to: 800 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
@@ -946,7 +973,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized15' [/h
 	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
-	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
 	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
@@ -959,11 +986,11 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized15' [/h
 	Parameter P_MEMORY_OPTIMIZATION bound to: 1 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 	Parameter MEMORY_TYPE bound to: 0 - type: integer 
-	Parameter MEMORY_SIZE bound to: 400 - type: integer 
+	Parameter MEMORY_SIZE bound to: 800 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
 	Parameter CLOCKING_MODE bound to: 0 - type: integer 
 	Parameter ECC_MODE bound to: 0 - type: integer 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
@@ -975,7 +1002,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/hom
 	Parameter WRITE_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter READ_DATA_WIDTH_A bound to: 4 - type: integer 
 	Parameter BYTE_WRITE_WIDTH_A bound to: 4 - type: integer 
-	Parameter ADDR_WIDTH_A bound to: 7 - type: integer 
+	Parameter ADDR_WIDTH_A bound to: 8 - type: integer 
 	Parameter READ_RESET_VALUE_A bound to: 0 - type: string 
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: 1 - type: integer 
@@ -983,7 +1010,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/hom
 	Parameter WRITE_DATA_WIDTH_B bound to: 4 - type: integer 
 	Parameter READ_DATA_WIDTH_B bound to: 4 - type: integer 
 	Parameter BYTE_WRITE_WIDTH_B bound to: 4 - type: integer 
-	Parameter ADDR_WIDTH_B bound to: 7 - type: integer 
+	Parameter ADDR_WIDTH_B bound to: 8 - type: integer 
 	Parameter READ_RESET_VALUE_B bound to: 0 - type: string 
 	Parameter READ_LATENCY_B bound to: 2 - type: integer 
 	Parameter WRITE_MODE_B bound to: 1 - type: integer 
@@ -993,7 +1020,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/hom
 	Parameter P_MIN_WIDTH_DATA_B bound to: 4 - type: integer 
 	Parameter P_MIN_WIDTH_DATA bound to: 4 - type: integer 
 	Parameter P_MIN_WIDTH_DATA_ECC bound to: 4 - type: integer 
-	Parameter P_MAX_DEPTH_DATA bound to: 100 - type: integer 
+	Parameter P_MAX_DEPTH_DATA bound to: 200 - type: integer 
 	Parameter P_ECC_MODE bound to: no_ecc - type: string 
 	Parameter P_MEMORY_OPT bound to: yes - type: string 
 	Parameter P_WIDTH_COL_WRITE_A bound to: 4 - type: integer 
@@ -1004,10 +1031,10 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/hom
 	Parameter P_NUM_ROWS_WRITE_B bound to: 1 - type: integer 
 	Parameter P_NUM_ROWS_READ_A bound to: 1 - type: integer 
 	Parameter P_NUM_ROWS_READ_B bound to: 1 - type: integer 
-	Parameter P_WIDTH_ADDR_WRITE_A bound to: 7 - type: integer 
-	Parameter P_WIDTH_ADDR_WRITE_B bound to: 7 - type: integer 
-	Parameter P_WIDTH_ADDR_READ_A bound to: 7 - type: integer 
-	Parameter P_WIDTH_ADDR_READ_B bound to: 7 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_A bound to: 8 - type: integer 
+	Parameter P_WIDTH_ADDR_WRITE_B bound to: 8 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_A bound to: 8 - type: integer 
+	Parameter P_WIDTH_ADDR_READ_B bound to: 8 - type: integer 
 	Parameter P_WIDTH_ADDR_LSB_WRITE_A bound to: 0 - type: integer 
 	Parameter P_WIDTH_ADDR_LSB_WRITE_B bound to: 0 - type: integer 
 	Parameter P_WIDTH_ADDR_LSB_READ_A bound to: 0 - type: integer 
@@ -1019,7 +1046,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized7' [/hom
 	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
 	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
 	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
-INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen9.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen8.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
 WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
 INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized7' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
@@ -1027,7 +1054,7 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized15
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
@@ -1042,12 +1069,12 @@ INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized15
 	Parameter READ_LATENCY_A bound to: 2 - type: integer 
 	Parameter WRITE_MODE_A bound to: read_first - type: string 
 	Parameter RST_MODE_A bound to: SYNC - type: string 
-INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:86]
+INFO: [Synth 8-3491] module 'xpm_memory_spram' declared at '/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527' bound to instance 'DECODER_OUT_MEM' of component 'xpm_memory_spram' [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:95]
 INFO: [Synth 8-6157] synthesizing module 'xpm_memory_spram__parameterized17' [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 	Parameter MEMORY_SIZE bound to: 40 - type: integer 
 	Parameter MEMORY_PRIMITIVE bound to: block - type: string 
 	Parameter ECC_MODE bound to: no_ecc - type: string 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter WAKEUP_TIME bound to: disable_sleep - type: string 
@@ -1074,7 +1101,7 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized8' [/hom
 	Parameter MEMORY_PRIMITIVE bound to: 2 - type: integer 
 	Parameter CLOCKING_MODE bound to: 0 - type: integer 
 	Parameter ECC_MODE bound to: 0 - type: integer 
-	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen8.mem - type: string 
+	Parameter MEMORY_INIT_FILE bound to: mem_seq_readout_gen9.mem - type: string 
 	Parameter MEMORY_INIT_PARAM bound to: 0 - type: string 
 	Parameter USE_MEM_INIT bound to: 1 - type: integer 
 	Parameter MEMORY_OPTIMIZATION bound to: true - type: string 
@@ -1130,103 +1157,103 @@ INFO: [Synth 8-6157] synthesizing module 'xpm_memory_base__parameterized8' [/hom
 	Parameter MAX_NUM_CHAR bound to: 0 - type: integer 
 	Parameter P_MIN_WIDTH_DATA_SHFT bound to: 5 - type: integer 
 	Parameter P_MIN_WIDTH_DATA_LDW bound to: 4 - type: integer 
-INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen8.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
+INFO: [Synth 8-3876] $readmem data file 'mem_seq_readout_gen9.mem' is read successfully [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:1153]
 WARNING: [Synth 8-6014] Unused sequential element gen_rd_a.gen_douta_pipe.ena_pipe_reg[0] was removed.  [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:2245]
 INFO: [Synth 8-5772] Detected attribute (* ram_ecc = "no_ecc" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_base__parameterized8' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:57]
 INFO: [Synth 8-6155] done synthesizing module 'xpm_memory_spram__parameterized17' (4#1) [/home/user/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv:8527]
 WARNING: [Synth 8-5856] 3D RAM inst_tcam_encoder_array_2d_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
 WARNING: [Synth 8-5856] 3D RAM inst_choosen_switch_output_array_2d_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[0][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[0][0][5] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[0][0][6] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[7].inst_tcam_encoder_array_2d_reg[0][0][7] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[0][0][8] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[0][0][9] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[0][0][10] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[0][0][11] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[0][0][12] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[0][0][13] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[0][0][14] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[15].inst_tcam_encoder_array_2d_reg[0][0][15] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[0][0][16] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[0][0][17] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[0][0][18] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[0][0][19] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[0][0][20] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[0][0][21] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[0][0][22] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[23].inst_tcam_encoder_array_2d_reg[0][0][23] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[0][0][24] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[0][0][25] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[0][0][26] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[0][0][27] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[0][0][28] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[0][0][29] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[0][0][30] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[0][0][31] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[0][0][32] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[0][0][33] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[0][0][34] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[0][0][35] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[0][0][36] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[0][0][37] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[0][0][38] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[0][0][39] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[0][0][40] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[0][0][41] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[0][0][42] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[0][0][43] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[0][0][44] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[0][0][45] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[0][0][46] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[0][0][47] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[0][0][48] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[0][0][49] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[0][1][3] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[0][1][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[0][1][5] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[0][1][6] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[7].inst_tcam_encoder_array_2d_reg[0][1][7] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[0][1][8] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[0][1][9] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[0][1][10] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[0][1][11] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[0][1][12] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[0][1][13] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[0][1][14] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[15].inst_tcam_encoder_array_2d_reg[0][1][15] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[0][1][16] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[0][1][17] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[0][1][18] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[0][1][19] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[0][1][20] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[0][1][21] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[0][1][22] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[23].inst_tcam_encoder_array_2d_reg[0][1][23] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[0][1][24] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[0][1][25] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[0][1][26] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[0][1][27] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[0][1][28] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[0][1][29] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[0][1][30] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[0][1][31] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[0][1][32] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[0][1][33] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[0][1][34] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[0][1][35] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[0][1][36] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[0][1][37] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[0][1][38] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[0][1][39] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[0][1][40] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[0][1][41] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[0][1][42] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[0][1][43] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[0][1][44] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[0][1][45] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[0][1][46] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[0][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[0][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[0][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[0].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[1][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[1].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[1].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[2][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[2].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[2].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[3][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[3].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[3].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[4][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[4][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[4].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[4].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[5][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[5].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[6].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[6][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[6].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[6][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[6].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[6][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[6].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[6][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[6].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[6][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[7].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[7][0][4] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[7].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[7][1][2] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[7].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[7][2][1] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[7].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[7][3][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[7].FOR_DEPTH[4].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[7][4][0] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[64].inst_tcam_encoder_array_2d_reg[8][0][64] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[65].inst_tcam_encoder_array_2d_reg[8][0][65] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[66].inst_tcam_encoder_array_2d_reg[8][0][66] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[67].inst_tcam_encoder_array_2d_reg[8][0][67] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[68].inst_tcam_encoder_array_2d_reg[8][0][68] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[69].inst_tcam_encoder_array_2d_reg[8][0][69] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[70].inst_tcam_encoder_array_2d_reg[8][0][70] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[71].inst_tcam_encoder_array_2d_reg[8][0][71] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[72].inst_tcam_encoder_array_2d_reg[8][0][72] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[73].inst_tcam_encoder_array_2d_reg[8][0][73] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[74].inst_tcam_encoder_array_2d_reg[8][0][74] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[75].inst_tcam_encoder_array_2d_reg[8][0][75] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[76].inst_tcam_encoder_array_2d_reg[8][0][76] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[77].inst_tcam_encoder_array_2d_reg[8][0][77] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[78].inst_tcam_encoder_array_2d_reg[8][0][78] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[79].inst_tcam_encoder_array_2d_reg[8][0][79] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[80].inst_tcam_encoder_array_2d_reg[8][0][80] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[81].inst_tcam_encoder_array_2d_reg[8][0][81] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[82].inst_tcam_encoder_array_2d_reg[8][0][82] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[83].inst_tcam_encoder_array_2d_reg[8][0][83] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[84].inst_tcam_encoder_array_2d_reg[8][0][84] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[85].inst_tcam_encoder_array_2d_reg[8][0][85] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[86].inst_tcam_encoder_array_2d_reg[8][0][86] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[87].inst_tcam_encoder_array_2d_reg[8][0][87] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[88].inst_tcam_encoder_array_2d_reg[8][0][88] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[89].inst_tcam_encoder_array_2d_reg[8][0][89] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[90].inst_tcam_encoder_array_2d_reg[8][0][90] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[91].inst_tcam_encoder_array_2d_reg[8][0][91] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[92].inst_tcam_encoder_array_2d_reg[8][0][92] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[93].inst_tcam_encoder_array_2d_reg[8][0][93] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[94].inst_tcam_encoder_array_2d_reg[8][0][94] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[95].inst_tcam_encoder_array_2d_reg[8][0][95] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[96].inst_tcam_encoder_array_2d_reg[8][0][96] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[97].inst_tcam_encoder_array_2d_reg[8][0][97] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[98].inst_tcam_encoder_array_2d_reg[8][0][98] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[99].inst_tcam_encoder_array_2d_reg[8][0][99] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:51]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[8][1][32] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][1][33] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][1][34] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][1][35] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][1][36] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][1][37] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][1][38] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][1][39] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][1][40] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][1][41] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][1][42] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][1][43] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][1][44] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-6014] Unused sequential element FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][1][45] was removed.  [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
 INFO: [Common 17-14] Message 'Synth 8-6014' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
@@ -1238,39 +1265,24 @@ INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM g
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[0][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[0][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[1][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[2][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[3][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[4][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[5][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[6].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[6][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[6].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[6][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[6].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[6][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[7].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[7][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[7].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[7][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[7].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[7][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[6].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][6][0]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[8][3][3]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][2][4]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][1][5]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[9].FOR_DEPTH[3].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[9][3][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[9].FOR_DEPTH[2].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[9][2][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
-WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[9].FOR_DEPTH[1].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[9][1][2]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[0][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[0].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[0][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[1][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[1].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[1][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[2][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[2].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[2][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[3][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[3].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[3][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[4][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[4].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[4][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[5][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[5].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[5][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[6].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[6][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[6].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[6][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[7].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[7][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[7].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[7][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[9].FOR_DEPTH[2].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[9][2][0]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
+WARNING: [Synth 8-3936] Found unconnected internal register 'FOR_MEMORIES[9].FOR_DEPTH[1].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[9][1][1]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:63]
 INFO: [Synth 8-256] done synthesizing module 'encoder' (5#1) [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:17]
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
 INFO: [Synth 8-5772] Detected attribute (* rw_addr_collision = "yes" *) on RAM gen_wr_a.gen_word_narrow.mem_reg 
@@ -1309,6 +1321,7 @@ WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected p
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port enb
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port regceb
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port web[0]
+WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[7]
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[6]
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[5]
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized7 has unconnected port addrb[4]
@@ -1382,10 +1395,9 @@ WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected p
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected port clkb
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected port rstb
 WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected port enb
-WARNING: [Synth 8-3331] design xpm_memory_base__parameterized3 has unconnected port regceb
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:02:43 ; elapsed = 00:02:45 . Memory (MB): peak = 2361.609 ; gain = 977.336 ; free physical = 7709 ; free virtual = 18156
+Finished RTL Elaboration : Time (s): cpu = 00:04:23 ; elapsed = 00:04:26 . Memory (MB): peak = 2447.727 ; gain = 1054.461 ; free physical = 3572 ; free virtual = 19806
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1398,10 +1410,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:59 ; elapsed = 00:03:02 . Memory (MB): peak = 2361.609 ; gain = 977.336 ; free physical = 8004 ; free virtual = 18451
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:50 ; elapsed = 00:04:53 . Memory (MB): peak = 2447.727 ; gain = 1054.461 ; free physical = 3993 ; free virtual = 20076
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:02:59 ; elapsed = 00:03:02 . Memory (MB): peak = 2361.609 ; gain = 977.336 ; free physical = 8004 ; free virtual = 18451
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:04:50 ; elapsed = 00:04:53 . Memory (MB): peak = 2447.727 ; gain = 1054.461 ; free physical = 3993 ; free virtual = 20076
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xczu17eg-ffvc1760-2-e
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -1412,47 +1424,55 @@ Parsing XDC File [/home/klara/magisterka/magisterka.srcs/constrs_1/new/constrain
 Finished Parsing XDC File [/home/klara/magisterka/magisterka.srcs/constrs_1/new/constraints.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3345.750 ; gain = 0.000 ; free physical = 6711 ; free virtual = 17232
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3371.109 ; gain = 0.000 ; free physical = 2847 ; free virtual = 18931
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3345.750 ; gain = 0.000 ; free physical = 6711 ; free virtual = 17232
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.28 ; elapsed = 00:00:00.26 . Memory (MB): peak = 3345.750 ; gain = 0.000 ; free physical = 6711 ; free virtual = 17232
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3371.109 ; gain = 0.000 ; free physical = 2847 ; free virtual = 18929
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 3371.109 ; gain = 0.000 ; free physical = 2847 ; free virtual = 18929
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:04:04 ; elapsed = 00:04:17 . Memory (MB): peak = 3345.750 ; gain = 1961.477 ; free physical = 6933 ; free virtual = 17455
+Finished Constraint Validation : Time (s): cpu = 00:06:25 ; elapsed = 00:06:40 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 3084 ; free virtual = 19166
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:06:16 ; elapsed = 00:06:32 . Memory (MB): peak = 3345.750 ; gain = 1961.477 ; free physical = 2454 ; free virtual = 13002
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:08:21 ; elapsed = 00:08:57 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 385 ; free virtual = 14824
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |tcam          |          10|     25632|
-|2     |main__GC0     |           1|      2078|
-+------+--------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |array_of_tcam__GB0 |           1|     53824|
+|2     |array_of_tcam__GB1 |           1|     20736|
+|3     |encoder            |           1|      2561|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 85    
-	                7 Bit    Registers := 6     
-	                4 Bit    Registers := 47    
-	                1 Bit    Registers := 1000  
+	                8 Bit    Registers := 73    
+	                7 Bit    Registers := 32    
+	                6 Bit    Registers := 16    
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 51    
+	                3 Bit    Registers := 20    
+	                2 Bit    Registers := 10    
+	                1 Bit    Registers := 290   
 +---RAMs : 
-	              400 Bit         RAMs := 1     
+	              800 Bit         RAMs := 1     
 	               40 Bit         RAMs := 9     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 42    
-	   2 Input      7 Bit        Muxes := 6     
-	   2 Input      4 Bit        Muxes := 38    
+	   2 Input      8 Bit        Muxes := 72    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 32    
+	   3 Input      6 Bit        Muxes := 16    
+	   3 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 29    
 	   3 Input      4 Bit        Muxes := 13    
 	   3 Input      3 Bit        Muxes := 20    
 	   3 Input      2 Bit        Muxes := 10    
-	   2 Input      1 Bit        Muxes := 31000 
+	   2 Input      1 Bit        Muxes := 8990  
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -1460,12 +1480,66 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module tcam__parameterized8 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized7 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 200   
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 6200  
+Module tcam__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized5 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized6 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
+Module tcam__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 310   
 Module tcam 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 100   
+	                1 Bit    Registers := 10    
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 3100  
+	   2 Input      1 Bit        Muxes := 310   
 Module xpm_memory_base 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1519,7 +1593,7 @@ Detailed RTL Component Info :
 +---Registers : 
 	                4 Bit    Registers := 2     
 +---RAMs : 
-	              400 Bit         RAMs := 1     
+	              800 Bit         RAMs := 1     
 Module xpm_memory_base__parameterized8 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -1529,13 +1603,20 @@ Detailed RTL Component Info :
 Module encoder 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 85    
-	                7 Bit    Registers := 6     
-	                4 Bit    Registers := 27    
+	                8 Bit    Registers := 73    
+	                7 Bit    Registers := 32    
+	                6 Bit    Registers := 16    
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 31    
+	                3 Bit    Registers := 20    
+	                2 Bit    Registers := 10    
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 42    
-	   2 Input      7 Bit        Muxes := 6     
-	   2 Input      4 Bit        Muxes := 38    
+	   2 Input      8 Bit        Muxes := 72    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      7 Bit        Muxes := 32    
+	   3 Input      6 Bit        Muxes := 16    
+	   3 Input      5 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 29    
 	   3 Input      4 Bit        Muxes := 13    
 	   3 Input      3 Bit        Muxes := 20    
 	   3 Input      2 Bit        Muxes := 10    
@@ -1555,37 +1636,210 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[6].inst_tcam_encoder_array_2d_reg[8][0][6]' and it is trimmed from '8' to '7' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[9].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[9][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[6].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[6][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[7].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[7][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[4].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[4][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[5].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[5][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[2].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[2][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[3].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[3][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[0].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[0][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-WARNING: [Synth 8-3936] Found unconnected internal register 'ENCODER_INST/FOR_MEMORIES[1].FOR_DEPTH[0].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[1][0][3]' and it is trimmed from '8' to '4' bits. [/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd:48]
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][0][4][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][1][5][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][1][5][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[5].inst_tcam_encoder_array_2d_reg[8][1][5][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][2][4][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][2][4][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[2].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][2][4][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[8][3][3][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[8][3][3][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[3].FOR_INDEXES[3].inst_tcam_encoder_array_2d_reg[8][3][3][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[4].FOR_INDEXES[2].inst_tcam_encoder_array_2d_reg[8][4][2][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[5].FOR_INDEXES[1].inst_tcam_encoder_array_2d_reg[8][5][1][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[6].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][6][0][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[6].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][6][0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[6].FOR_INDEXES[0].inst_tcam_encoder_array_2d_reg[8][6][0][6] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][0]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][1]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[63].inst_tcam_encoder_array_2d_reg[8][0][63][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[62].inst_tcam_encoder_array_2d_reg[8][0][62][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[61].inst_tcam_encoder_array_2d_reg[8][0][61][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[60].inst_tcam_encoder_array_2d_reg[8][0][60][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[59].inst_tcam_encoder_array_2d_reg[8][0][59][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[58].inst_tcam_encoder_array_2d_reg[8][0][58][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[57].inst_tcam_encoder_array_2d_reg[8][0][57][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[56].inst_tcam_encoder_array_2d_reg[8][0][56][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[55].inst_tcam_encoder_array_2d_reg[8][0][55][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[54].inst_tcam_encoder_array_2d_reg[8][0][54][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[53].inst_tcam_encoder_array_2d_reg[8][0][53][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[52].inst_tcam_encoder_array_2d_reg[8][0][52][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[51].inst_tcam_encoder_array_2d_reg[8][0][51][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][6]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[50].inst_tcam_encoder_array_2d_reg[8][0][50][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[49].inst_tcam_encoder_array_2d_reg[8][0][49][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[8][0][48][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[8][0][48][6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[8][0][48][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[8][0][48][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[48].inst_tcam_encoder_array_2d_reg[8][0][48][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[47].inst_tcam_encoder_array_2d_reg[8][0][47][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[46].inst_tcam_encoder_array_2d_reg[8][0][46][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[45].inst_tcam_encoder_array_2d_reg[8][0][45][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[44].inst_tcam_encoder_array_2d_reg[8][0][44][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[43].inst_tcam_encoder_array_2d_reg[8][0][43][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[42].inst_tcam_encoder_array_2d_reg[8][0][42][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[41].inst_tcam_encoder_array_2d_reg[8][0][41][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][0][40][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][0][40][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][0][40][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][0][40][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[40].inst_tcam_encoder_array_2d_reg[8][0][40][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[39].inst_tcam_encoder_array_2d_reg[8][0][39][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[38].inst_tcam_encoder_array_2d_reg[8][0][38][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[37].inst_tcam_encoder_array_2d_reg[8][0][37][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][0][36][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][0][36][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][0][36][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][0][36][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[36].inst_tcam_encoder_array_2d_reg[8][0][36][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][4] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[35].inst_tcam_encoder_array_2d_reg[8][0][35][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][5] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][6]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[34].inst_tcam_encoder_array_2d_reg[8][0][34][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][0][33][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][0][33][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][0][33][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][0][33][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[33].inst_tcam_encoder_array_2d_reg[8][0][33][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[8][0][32][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[8][0][32][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[8][0][32][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[32].inst_tcam_encoder_array_2d_reg[8][0][32][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[31].inst_tcam_encoder_array_2d_reg[8][0][31][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][3]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][0][30][2]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][3]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][0][29][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][0][28][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][0][28][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][0][28][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][0][28][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][0][28][2] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][4]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][2]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][1]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][0][27][0]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][0][26][4]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][0][26][5]'
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][0][26][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][0][26][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][0][26][3] )
+INFO: [Synth 8-3886] merging instance 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[8][0][25][5]' (FD) to 'ENCODER_INST/FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[8][0][25][4]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[8][0][25][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[8][0][24][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[8][0][24][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[8][0][22][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[8][0][21][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[8][0][20][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[8][0][20][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[8][0][19][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[8][0][18][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[8][0][18][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[8][0][17][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[8][0][17][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][0][16][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][0][16][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][0][16][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[8][0][12][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[8][0][10][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][0][9][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][0][8][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[8].inst_tcam_encoder_array_2d_reg[8][0][8][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[0].FOR_INDEXES[4].inst_tcam_encoder_array_2d_reg[8][0][4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[30].inst_tcam_encoder_array_2d_reg[8][1][30][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[29].inst_tcam_encoder_array_2d_reg[8][1][29][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[28].inst_tcam_encoder_array_2d_reg[8][1][28][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[27].inst_tcam_encoder_array_2d_reg[8][1][27][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[26].inst_tcam_encoder_array_2d_reg[8][1][26][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[25].inst_tcam_encoder_array_2d_reg[8][1][25][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[24].inst_tcam_encoder_array_2d_reg[8][1][24][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[23].inst_tcam_encoder_array_2d_reg[8][1][23][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[22].inst_tcam_encoder_array_2d_reg[8][1][22][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[21].inst_tcam_encoder_array_2d_reg[8][1][21][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[20].inst_tcam_encoder_array_2d_reg[8][1][20][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[19].inst_tcam_encoder_array_2d_reg[8][1][19][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[18].inst_tcam_encoder_array_2d_reg[8][1][18][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[17].inst_tcam_encoder_array_2d_reg[8][1][17][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[16].inst_tcam_encoder_array_2d_reg[8][1][16][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[15].inst_tcam_encoder_array_2d_reg[8][1][15][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[8][1][14][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[14].inst_tcam_encoder_array_2d_reg[8][1][14][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[8][1][13][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[13].inst_tcam_encoder_array_2d_reg[8][1][13][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[8][1][12][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[12].inst_tcam_encoder_array_2d_reg[8][1][12][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][1][11][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[11].inst_tcam_encoder_array_2d_reg[8][1][11][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[8][1][10][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[10].inst_tcam_encoder_array_2d_reg[8][1][10][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][1][9][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (ENCODER_INST/\FOR_MEMORIES[8].FOR_DEPTH[1].FOR_INDEXES[9].inst_tcam_encoder_array_2d_reg[8][1][9][7] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:06:49 ; elapsed = 00:07:05 . Memory (MB): peak = 3345.750 ; gain = 1961.477 ; free physical = 2259 ; free virtual = 12911
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:08:49 ; elapsed = 00:09:30 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 200 ; free virtual = 14763
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1603,7 +1857,7 @@ Block RAM: Preliminary Mapping  Report (see note below)
 |xpm_memory_base__parameterized4: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized5: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized6: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
-|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 256 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized8: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 +---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
@@ -1613,24 +1867,18 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |tcam          |           9|       768|
-|2     |main__GC0     |           1|      1359|
-|3     |tcam__1       |           1|      1344|
-+------+--------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |array_of_tcam__GB0 |           1|      1739|
+|2     |array_of_tcam__GB1 |           1|      1299|
+|3     |encoder            |           1|      1767|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:07:13 ; elapsed = 00:07:52 . Memory (MB): peak = 3373.938 ; gain = 1989.664 ; free physical = 1751 ; free virtual = 12402
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:07:15 ; elapsed = 00:07:55 . Memory (MB): peak = 3471.672 ; gain = 2087.398 ; free physical = 1725 ; free virtual = 12377
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:09:14 ; elapsed = 00:10:38 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 157 ; free virtual = 14231
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1648,7 +1896,7 @@ Block RAM: Final Mapping  Report
 |xpm_memory_base__parameterized4: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized5: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized6: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
-|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 128 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
+|xpm_memory_base__parameterized7: | gen_wr_a.gen_word_narrow.mem_reg | 256 x 4(READ_FIRST)    | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 |xpm_memory_base__parameterized8: | gen_wr_a.gen_word_narrow.mem_reg | 16 x 4(READ_FIRST)     | W | R |                        |   |   | Port A           | 1      | 0      |                 | 
 +---------------------------------+----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
 
@@ -1657,18 +1905,18 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
-+------+--------------+------------+----------+
-|      |RTL Partition |Replication |Instances |
-+------+--------------+------------+----------+
-|1     |tcam          |           9|       768|
-|2     |main__GC0     |           1|      1358|
-|3     |tcam__1       |           1|      1344|
-+------+--------------+------------+----------+
++------+-------------------+------------+----------+
+|      |RTL Partition      |Replication |Instances |
++------+-------------------+------------+----------+
+|1     |array_of_tcam__GB0 |           1|      1739|
+|2     |array_of_tcam__GB1 |           1|      1299|
+|3     |encoder            |           1|      1767|
++------+-------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:07:31 ; elapsed = 00:08:11 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1694 ; free virtual = 12346
+Finished Technology Mapping : Time (s): cpu = 00:09:20 ; elapsed = 00:11:02 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 195 ; free virtual = 14270
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1680,19 +1928,13 @@ Report RTL Partitions:
 Start IO Insertion
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:07:32 ; elapsed = 00:08:12 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1721 ; free virtual = 12373
+Finished IO Insertion : Time (s): cpu = 00:09:21 ; elapsed = 00:11:07 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 168 ; free virtual = 14287
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1705,7 +1947,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:07:32 ; elapsed = 00:08:13 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1721 ; free virtual = 12373
+Finished Renaming Generated Instances : Time (s): cpu = 00:09:21 ; elapsed = 00:11:07 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 164 ; free virtual = 14287
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1714,28 +1956,10 @@ Report RTL Partitions:
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
 ---------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:07:33 ; elapsed = 00:08:14 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1726 ; free virtual = 12378
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:07:33 ; elapsed = 00:08:14 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1726 ; free virtual = 12378
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:07:35 ; elapsed = 00:08:16 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1783 ; free virtual = 12435
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:07:35 ; elapsed = 00:08:16 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1796 ; free virtual = 12448
+Finished Handling Custom Attributes : Time (s): cpu = 00:09:21 ; elapsed = 00:11:07 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 157 ; free virtual = 14287
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1752,91 +1976,89 @@ Report Cell Usage:
 |      |Cell        |Count |
 +------+------------+------+
 |1     |BUFG        |     1|
-|2     |LUT1        | 64000|
-|3     |LUT2        |    56|
-|4     |LUT3        |   116|
-|5     |LUT4        |   272|
-|6     |LUT5        |    75|
-|7     |LUT6        |  1560|
-|8     |RAMB18E2_10 |     1|
-|9     |RAMB18E2_11 |     1|
-|10    |RAMB18E2_12 |     1|
-|11    |RAMB18E2_13 |     1|
-|12    |RAMB18E2_14 |     1|
-|13    |RAMB18E2_15 |     1|
-|14    |RAMB18E2_16 |     1|
-|15    |RAMB18E2_17 |     1|
-|16    |RAMB18E2_18 |     1|
-|17    |RAMB18E2_19 |     1|
-|18    |FDRE        |   487|
-|19    |IBUF        |    33|
-|20    |OBUF        |    32|
+|2     |LUT2        |   268|
+|3     |LUT3        |   149|
+|4     |LUT4        |   311|
+|5     |LUT5        |   162|
+|6     |LUT6        |   622|
+|7     |RAMB18E2_10 |     1|
+|8     |RAMB18E2_11 |     1|
+|9     |RAMB18E2_12 |     1|
+|10    |RAMB18E2_13 |     1|
+|11    |RAMB18E2_14 |     1|
+|12    |RAMB18E2_15 |     1|
+|13    |RAMB18E2_16 |     1|
+|14    |RAMB18E2_17 |     1|
+|15    |RAMB18E2_18 |     1|
+|16    |RAMB18E2_19 |     1|
+|17    |FDRE        |   884|
+|18    |IBUF        |    33|
+|19    |OBUF        |    32|
 +------+------------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------------+----------------------------------+------+
 |      |Instance                                   |Module                            |Cells |
 +------+-------------------------------------------+----------------------------------+------+
-|1     |top                                        |                                  | 66642|
-|2     |  ARRAY_OF_TCAM_INST                       |array_of_tcam                     |  1860|
-|3     |    \GEN_TCAM_MEMORIES[0].TCAM_INST        |tcam                              |   173|
-|4     |    \GEN_TCAM_MEMORIES[1].TCAM_INST        |tcam_0                            |   173|
-|5     |    \GEN_TCAM_MEMORIES[2].TCAM_INST        |tcam_1                            |   173|
-|6     |    \GEN_TCAM_MEMORIES[3].TCAM_INST        |tcam_2                            |   173|
-|7     |    \GEN_TCAM_MEMORIES[4].TCAM_INST        |tcam_3                            |   173|
-|8     |    \GEN_TCAM_MEMORIES[5].TCAM_INST        |tcam_4                            |   173|
-|9     |    \GEN_TCAM_MEMORIES[6].TCAM_INST        |tcam_5                            |   173|
-|10    |    \GEN_TCAM_MEMORIES[7].TCAM_INST        |tcam_6                            |   173|
-|11    |    \GEN_TCAM_MEMORIES[8].TCAM_INST        |tcam_7                            |   303|
-|12    |    \GEN_TCAM_MEMORIES[9].TCAM_INST        |tcam_8                            |   173|
-|13    |  ENCODER_INST                             |encoder                           |   716|
-|14    |    \GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM  |xpm_memory_spram                  |    19|
+|1     |top                                        |                                  |  2472|
+|2     |  ARRAY_OF_TCAM_INST                       |array_of_tcam                     |  1086|
+|3     |    \GEN_TCAM_MEMORIES[9].TCAM_INST        |tcam__parameterized8              |    55|
+|4     |    \GEN_TCAM_MEMORIES[8].TCAM_INST        |tcam__parameterized7              |   615|
+|5     |    \GEN_TCAM_MEMORIES[2].TCAM_INST        |tcam__parameterized1              |    49|
+|6     |    \GEN_TCAM_MEMORIES[3].TCAM_INST        |tcam__parameterized2              |    50|
+|7     |    \GEN_TCAM_MEMORIES[4].TCAM_INST        |tcam__parameterized3              |    54|
+|8     |    \GEN_TCAM_MEMORIES[5].TCAM_INST        |tcam__parameterized4              |    52|
+|9     |    \GEN_TCAM_MEMORIES[6].TCAM_INST        |tcam__parameterized5              |    54|
+|10    |    \GEN_TCAM_MEMORIES[7].TCAM_INST        |tcam__parameterized6              |    58|
+|11    |    \GEN_TCAM_MEMORIES[1].TCAM_INST        |tcam__parameterized0              |    49|
+|12    |    \GEN_TCAM_MEMORIES[0].TCAM_INST        |tcam                              |    50|
+|13    |  ENCODER_INST                             |encoder                           |  1320|
+|14    |    \GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM  |xpm_memory_spram                  |     1|
 |15    |      xpm_memory_base_inst                 |xpm_memory_base                   |     1|
 |16    |    \GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM  |xpm_memory_spram__parameterized1  |     1|
 |17    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized0   |     1|
-|18    |    \GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM  |xpm_memory_spram__parameterized3  |     2|
+|18    |    \GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM  |xpm_memory_spram__parameterized3  |     1|
 |19    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized1   |     1|
 |20    |    \GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM  |xpm_memory_spram__parameterized5  |     1|
 |21    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized2   |     1|
-|22    |    \GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM  |xpm_memory_spram__parameterized7  |    11|
+|22    |    \GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM  |xpm_memory_spram__parameterized7  |     1|
 |23    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized3   |     1|
 |24    |    \GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM  |xpm_memory_spram__parameterized9  |     1|
 |25    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized4   |     1|
-|26    |    \GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM  |xpm_memory_spram__parameterized11 |     2|
+|26    |    \GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM  |xpm_memory_spram__parameterized11 |     1|
 |27    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized5   |     1|
 |28    |    \GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM  |xpm_memory_spram__parameterized13 |     1|
 |29    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized6   |     1|
-|30    |    \GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM  |xpm_memory_spram__parameterized15 |     5|
+|30    |    \GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM  |xpm_memory_spram__parameterized15 |     1|
 |31    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized7   |     1|
 |32    |    \GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM  |xpm_memory_spram__parameterized17 |     1|
 |33    |      xpm_memory_base_inst                 |xpm_memory_base__parameterized8   |     1|
 +------+-------------------------------------------+----------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:07:35 ; elapsed = 00:08:16 . Memory (MB): peak = 3905.727 ; gain = 2521.453 ; free physical = 1796 ; free virtual = 12448
+Finished Writing Synthesis Report : Time (s): cpu = 00:09:21 ; elapsed = 00:11:08 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 166 ; free virtual = 14287
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:06:44 ; elapsed = 00:07:21 . Memory (MB): peak = 3909.637 ; gain = 1541.223 ; free physical = 6500 ; free virtual = 17152
-Synthesis Optimization Complete : Time (s): cpu = 00:07:36 ; elapsed = 00:08:21 . Memory (MB): peak = 3909.637 ; gain = 2525.363 ; free physical = 6500 ; free virtual = 17152
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:08:12 ; elapsed = 00:10:16 . Memory (MB): peak = 3371.109 ; gain = 1054.461 ; free physical = 4664 ; free virtual = 18932
+Synthesis Optimization Complete : Time (s): cpu = 00:09:21 ; elapsed = 00:11:35 . Memory (MB): peak = 3371.109 ; gain = 1977.844 ; free physical = 4629 ; free virtual = 18931
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 34 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'main' is not ideal for floorplanning, since the cellview 'main' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3909.637 ; gain = 0.000 ; free physical = 6412 ; free virtual = 17064
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3421.895 ; gain = 0.000 ; free physical = 4390 ; free virtual = 18780
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 34 instances were transformed.
   BUFG => BUFGCE: 1 instances
   IBUF => IBUF (IBUFCTRL, INBUF): 33 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-133 Infos, 246 Warnings, 0 Critical Warnings and 0 Errors encountered.
+333 Infos, 220 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:07:44 ; elapsed = 00:08:29 . Memory (MB): peak = 3909.637 ; gain = 2533.367 ; free physical = 6568 ; free virtual = 17219
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3909.637 ; gain = 0.000 ; free physical = 6568 ; free virtual = 17220
+synth_design: Time (s): cpu = 00:09:55 ; elapsed = 00:12:16 . Memory (MB): peak = 3421.895 ; gain = 2036.633 ; free physical = 4490 ; free virtual = 18883
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3421.895 ; gain = 0.000 ; free physical = 4489 ; free virtual = 18883
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/klara/magisterka/magisterka.runs/synth_1/main.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 3913.730 ; gain = 4.094 ; free physical = 6549 ; free virtual = 17206
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 3445.906 ; gain = 24.012 ; free physical = 4446 ; free virtual = 18851
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jun 16 20:00:07 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 20 22:01:32 2019...

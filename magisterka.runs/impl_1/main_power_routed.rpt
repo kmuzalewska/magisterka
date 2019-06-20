@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
-| Date             : Sun Jun 16 20:05:43 2019
+| Date             : Thu Jun 20 22:06:07 2019
 | Host             : T3 running 64-bit Ubuntu 18.04.2 LTS
 | Command          : report_power -file main_power_routed.rpt -pb main_power_summary_routed.pb -rpx main_power_routed.rpx
 | Design           : main
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.148        |
+| Total On-Chip Power (W)  | 1.146        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.043        |
+| Dynamic (W)              | 0.041        |
 | Device Static (W)        | 1.105        |
 | Effective TJA (C/W)      | 0.7          |
 | Max Ambient (C)          | 99.2         |
@@ -52,16 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.010 |        3 |       --- |             --- |
-| CLB Logic      |     0.005 |    66621 |       --- |             --- |
-|   LUT as Logic |     0.005 |    38649 |    423403 |            9.13 |
-|   Register     |    <0.001 |      487 |    846806 |            0.06 |
-|   Others       |     0.000 |       55 |       --- |             --- |
-| Signals        |     0.006 |     7732 |       --- |             --- |
+| Clocks         |     0.011 |        3 |       --- |             --- |
+| CLB Logic      |     0.003 |     2450 |       --- |             --- |
+|   LUT as Logic |     0.003 |     1187 |    423403 |            0.28 |
+|   Register     |    <0.001 |      884 |    846806 |            0.10 |
+|   Others       |     0.000 |       54 |       --- |             --- |
+| Signals        |     0.005 |     1684 |       --- |             --- |
 | Block RAM      |     0.012 |        5 |       796 |            0.63 |
 | I/O            |     0.010 |       65 |       512 |           12.70 |
 | Static Power   |     1.105 |          |           |                 |
-| Total          |     1.148 |          |           |                 |
+| Total          |     1.146 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------------+-------------+-----------+-------------+------------+
-| Vccint          |       0.850 |     0.336 |       0.038 |      0.298 |
+| Vccint          |       0.850 |     0.334 |       0.035 |      0.298 |
 | Vccint_io       |       0.850 |     0.096 |       0.000 |      0.096 |
 | Vccbram         |       0.850 |     0.005 |       0.001 |      0.004 |
 | Vccaux          |       1.800 |     0.338 |       0.000 |      0.338 |
@@ -161,10 +161,10 @@ Table of Contents
 +------------------------------------------+-----------+
 | Name                                     | Power (W) |
 +------------------------------------------+-----------+
-| main                                     |     0.043 |
-|   ARRAY_OF_TCAM_INST                     |     0.008 |
-|     GEN_TCAM_MEMORIES[8].TCAM_INST       |     0.001 |
-|   ENCODER_INST                           |     0.020 |
+| main                                     |     0.041 |
+|   ARRAY_OF_TCAM_INST                     |     0.007 |
+|     GEN_TCAM_MEMORIES[8].TCAM_INST       |     0.004 |
+|   ENCODER_INST                           |     0.021 |
 |     GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM |     0.001 |
 |       xpm_memory_base_inst               |     0.001 |
 |     GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM |     0.001 |
