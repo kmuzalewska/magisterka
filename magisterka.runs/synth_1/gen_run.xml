@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu17eg-ffvc1760-2-e" LaunchTime="1561060139">
+<GenRun Id="synth_1" LaunchPart="xczu17eg-ffvc1760-2-e" LaunchTime="1561110195">
   <File Type="VDS-TIMING-PB" Name="main_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="main_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="main.dcp"/>
@@ -102,13 +102,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen9.mem">
+    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen8.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen8.mem">
+    <File Path="$PPRDIR/generation_MEM_files/mem_seq_readout_gen9.mem">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>

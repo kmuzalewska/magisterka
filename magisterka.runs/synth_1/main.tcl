@@ -45,8 +45,8 @@ read_mem {
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen4.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen1.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen7.mem
-  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen9.mem
   /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen8.mem
+  /home/klara/magisterka/generation_MEM_files/mem_seq_readout_gen9.mem
 }
 read_vhdl -vhdl2008 -library xil_defaultlib {
   /home/klara/magisterka/magisterka.srcs/sources_1/new/types.vhd

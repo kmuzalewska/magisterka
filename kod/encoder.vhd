@@ -27,52 +27,61 @@ architecture Behavioral of encoder is
 begin
 
 FOR_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate -- ona has to adjust clock frequency
-   -- assert 2<1 report "for memories" & integer'image(i) severity error;
-    FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
---        assert 2<1 report "for depth" & integer'image(depth) severity error;
-        FOR_INDEXES: for pair in 0 to (TCAM_MAX_SIZE/2-1) generate --499 generate
---                assert 2<1 report "for pair" & integer'image(pair) severity error;
 
+    FOR_DEPTH: for depth in 0 to log2_int(TCAM_SIZES(i)) generate  
+
+        FOR_INDEXES: for pair in 0 to division(TCAM_SIZES(i), depth)-1 generate --499 generate
+            
             SEARCH_FOR_INDEX: process(all)
 --            variable depth : integer:= 0;
 --            variable pair : integer:= 0;
+             
                 begin
+           
                 if rising_edge(CLK) then  
+--                report "pair" & integer'image(pair);
                --  assert 2<1 report integer'image(depth) severity error;
-
+--        for depth in 0 to log2_int(TCAM_SIZES(i))-1 loop
+--            for pair in 0 to log2_int((TCAM_SIZES(i))) loop
                 if depth = 0 then
 
-                    if RESULTS_FROM_TCAMS(i)(pair*2) /= '0' then --moze stworzyc component ktory sie tworzy w locie i wyrzuca on array do kolejnego przeszukania
+                    if RESULTS_FROM_TCAMS(i)(pair*2) = '1' then --and RESULTS_FROM_TCAMS(i)(pair*2) /= 'U' then --moze stworzyc component ktory sie tworzy w locie i wyrzuca on array do kolejnego przeszukania
                      --  wpisac tu do nowego array port nastepny
                    --  assert 2<1 report "RESULTS_FROM_TCAMS(i)(pair*2) /= '0'" & integer'image(pair) severity error;
-                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1, 10));  
-                    elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
---                       --wpisac tu do nowego array aktualny port
-                     --   assert 2<1 report "RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0'" & integer'image(pair) severity error;
-                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
+                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+1, log2_int(TCAM_MAX_SIZE)));  
+                    elsif RESULTS_FROM_TCAMS(i)(pair*2+1) = '1' then --and RESULTS_FROM_TCAMS(i)(pair*2) /= 'U' then  
+                       inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, log2_int(TCAM_MAX_SIZE)));                          
+
+--   elsif RESULTS_FROM_TCAMS(i)(pair*2+1) /= '0' then 
+----                       --wpisac tu do nowego array aktualny port
+--                        inst_tcam_encoder_array_2d(i)(depth)(pair) <= std_logic_vector(to_unsigned(pair*2+2, 10));                          
                     else    
-                       -- assert 2<1 report "else" & integer'image(pair) severity error;
+--                       -- assert 2<1 report "else" & integer'image(pair) severity error;
                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= (others =>'0');--"0000000000";  
                     end if;                     
                 else                
-                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= (inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0') and depth > 0 then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania [Synth 8-211] could not evaluate expression: OTHERS in array aggregate without constraining context ["/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd":56](inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0')
+                     if inst_tcam_encoder_array_2d(i)(depth-1)(pair*2) /= (inst_tcam_encoder_array_2d(i)(depth)(pair)'range => '0') then --moze stworzyc componet ktory sie tworzy w locie i eyrzuca on array do kolejnego przeszukania [Synth 8-211] could not evaluate expression: OTHERS in array aggregate without constraining context ["/home/klara/magisterka/magisterka.srcs/sources_1/new/encoder.vhd":56](inst_tcam_encoder_array_2d(i)(depth-1)(pair)'range => '0')
 
 --                         --wpisac tu do nowego array port nastepny
-                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair);    
+                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair*2);    
                          -- assert 2<1 report "inst_tcam_encoder_array_2d(i)(depth-1)(pair) /= '0000000000'" & integer'image(pair) severity error;
          
                      else    
-                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair+1);  
+                         inst_tcam_encoder_array_2d(i)(depth)(pair) <= inst_tcam_encoder_array_2d(i)(depth-1)(pair*2+1);  
                          --assert 2<1 report "else inst_tcam_encoder_array_2d(i)(depth-1)(pair) = '0000000000' " & integer'image(pair) severity error;
  
                      end if;
                 end if;
-                end if;                                    
-             end process SEARCH_FOR_INDEX;    
+                                                
+               
 --                         assert 2<1 report  inst_tcam_encoder_array_2d(i)(depth)(pair) severity error;
-              
-        end generate FOR_INDEXES;
-
+             end if;   
+        
+--        end loop;
+--    end loop;
+      
+    end process SEARCH_FOR_INDEX; 
+     end generate FOR_INDEXES;
     end generate FOR_DEPTH;
 end generate FOR_MEMORIES;
     
@@ -113,7 +122,7 @@ GEN_PMAP_MEMORIES: for i in 0 to NUMBER_OF_MEMORIES-1 generate
 
       --addra => std_logic_vector(to_unsigned(inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0), TCAM_ADDR_SIZES(i) )),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
      -- addra => std_logic_vector(to_unsigned(0, 10)),                   -- ADDR_WIDTH_A-bit input: Address for port A write and read operations.
-      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-1)(0)(log2_int(TCAM_SIZES(i))-1 downto 0),       
+      addra => inst_tcam_encoder_array_2d(i)(log2_int(TCAM_SIZES(i))-2)(0)(log2_int(TCAM_SIZES(i))-1 downto 0),       
       clka => CLK,                     -- 1-bit input: Clock signal for port A.
       dina => x"0",                     -- WRITE_DATA_WIDTH_A-bit input: Data input for port A write operations.
       ena => '1',                       -- 1-bit input: Memory enable signal for port A. Must be high on clock

@@ -30,7 +30,7 @@ def create_random(max_nr_of_x):
 		nr = list(nr)
 		nr[pos] = 'Y'
 		nr = ''.join(nr)
-		print(nr)
+		# print(nr)
 	for i in nr:
 		if i=='0':
 			change_format_of_data.append('00')
