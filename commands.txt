@@ -1,0 +1,6 @@
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+refresh_design
+report_utilization -hierarchical -file /home/klara/magisterka/seriaPomiarow/100/100_hierarchical.txt
+report_utilization -hierarchical_percentages -hierarchical -file /home/klara/magisterka/seriaPomiarow/100/100_hierarchical_percentage.txt
+report_utilization -file /home/klara/magisterka/seriaPomiarow/100/report_utilization100.txt
