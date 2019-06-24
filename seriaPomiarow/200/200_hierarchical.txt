@@ -1,0 +1,62 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (lin64) Build 2405991 Thu Dec  6 23:36:41 MST 2018
+| Date         : Mon Jun 24 20:15:42 2019
+| Host         : T3 running 64-bit Ubuntu 18.04.2 LTS
+| Command      : report_utilization -hierarchical -file /home/klara/magisterka/seriaPomiarow/200/200_hierarchical.txt
+| Design       : main
+| Device       : xcvu9pflga2104-3
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++------------------------------------------+-----------------------------------+------------+------------+---------+------+-------+--------+--------+------+--------------+
+|                 Instance                 |               Module              | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs  | RAMB36 | RAMB18 | URAM | DSP48 Blocks |
++------------------------------------------+-----------------------------------+------------+------------+---------+------+-------+--------+--------+------+--------------+
+| main                                     |                             (top) |      10512 |      10512 |       0 |    0 | 10300 |      0 |     10 |    0 |            0 |
+|   (main)                                 |                             (top) |          0 |          0 |       0 |    0 |     0 |      0 |      0 |    0 |            0 |
+|   ARRAY_OF_TCAM_INST                     |                     array_of_tcam |       5669 |       5669 |       0 |    0 |  2000 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[0].TCAM_INST       |                              tcam |        587 |        587 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[1].TCAM_INST       |                           tcam__1 |        580 |        580 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[2].TCAM_INST       |                           tcam__2 |        581 |        581 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[3].TCAM_INST       |                           tcam__3 |        577 |        577 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[4].TCAM_INST       |                           tcam__4 |        586 |        586 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[5].TCAM_INST       |                           tcam__5 |        593 |        593 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[6].TCAM_INST       |                           tcam__6 |        555 |        555 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[7].TCAM_INST       |                           tcam__7 |        557 |        557 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[8].TCAM_INST       |                           tcam__8 |        534 |        534 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|     GEN_TCAM_MEMORIES[9].TCAM_INST       |                           tcam__9 |        519 |        519 |       0 |    0 |   200 |      0 |      0 |    0 |            0 |
+|   ENCODER_INST                           |                           encoder |       4843 |       4843 |       0 |    0 |  8300 |      0 |     10 |    0 |            0 |
+|     (ENCODER_INST)                       |                           encoder |       4843 |       4843 |       0 |    0 |  8300 |      0 |      0 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[0].DECODER_OUT_MEM |                  xpm_memory_spram |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |                   xpm_memory_base |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[1].DECODER_OUT_MEM |  xpm_memory_spram__parameterized1 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized0 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[2].DECODER_OUT_MEM |  xpm_memory_spram__parameterized3 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized1 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[3].DECODER_OUT_MEM |  xpm_memory_spram__parameterized5 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized2 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[4].DECODER_OUT_MEM |  xpm_memory_spram__parameterized7 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized3 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[5].DECODER_OUT_MEM |  xpm_memory_spram__parameterized9 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized4 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[6].DECODER_OUT_MEM | xpm_memory_spram__parameterized11 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized5 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[7].DECODER_OUT_MEM | xpm_memory_spram__parameterized13 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized6 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[8].DECODER_OUT_MEM | xpm_memory_spram__parameterized15 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized7 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|     GEN_PMAP_MEMORIES[9].DECODER_OUT_MEM | xpm_memory_spram__parameterized17 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
+|       xpm_memory_base_inst               |   xpm_memory_base__parameterized8 |          0 |          0 |       0 |    0 |     0 |      0 |      1 |    0 |            0 |
++------------------------------------------+-----------------------------------+------------+------------+---------+------+-------+--------+--------+------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
