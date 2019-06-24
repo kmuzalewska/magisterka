@@ -92,7 +92,7 @@ whole_vhd =''
 #write content to file
 whole_vhd = header + content + ");\n"
 whole_vhd = whole_vhd + "end data_to_tcam;\n" + body
-mem = open('data_to_tcam.vhd','w')
+mem = open('/home/klara/magisterka/magisterka.srcs/sources_1/new/data_to_tcam.vhd','w')
 mem.write(whole_vhd)
 mem.close()
 sys.exit
