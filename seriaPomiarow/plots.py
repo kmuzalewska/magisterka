@@ -2,12 +2,15 @@
 
 
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import numpy as np
 
 X_number = [0,1,2,3,4,5,6,7,8,9]
 X_number = np.arange(len(X_number))
 memory_sizes_arr=[10, 50, 100, 200, 300, 400, 500, 1000]
 memory_sizes=np.arange(len(memory_sizes_arr))
+memory_sizes_np=np.array(memory_sizes_arr)
+# print(memory_sizes_np)
 lut=[
 [ 45, 45, 46, 49, 50, 48, 49, 51, 50, 50],
 [ 198 , 183 , 189 , 191 , 197 , 195 , 192 , 196 , 196 , 194],
@@ -26,7 +29,10 @@ ff_average=[10, 50, 100, 200, 300, 400, 500, 1000]
 ff_encoder=[370, 2000, 4090, 8300, 12400, 16793, 20975, 42141]
 ff_for_all_project=[470, 2500, 5090,10300, 15400,20793, 25975, 52141]
 
-
+percentage_usage_LUT=[0.06, 0.26,0.49, 0.89,1.41 , 3.17, 4.04,  8.11]
+percentage_usage_FF=[0.02, 0.11, 0.22 , 0.44,0.65, 0.88, 1.10, 2.21]
+lut_50_10=[193, 52, 51, 51, 48, 48, 47, 46, 44, 43]
+memory_sizes_50_10=[50,10,10,10,10,10,10,10,10,10]
 
 def bars_for_all_sizes_LUT():
     for i in xrange(len(lut)):
@@ -155,7 +161,7 @@ def bar_for_FFencder():
 
     ax.bar(memory_sizes, ff_encoder, width, color="purple")
     ax.axis([0, 8, 0, max(ff_encoder)+4000])
-    ax.set_xticks(memory_sizes + width/2)
+    ax.set_xticks(memory_sizes_np + 10)
     ax.set_xticklabels(memory_sizes_arr)
     for j, v in enumerate(ff_encoder):
         ax.text(j, v + 200, str(v), color='green', fontweight='bold')
@@ -171,19 +177,87 @@ def bar_for_FFencder():
 
 def bar_for_FF():  
     fig, ax = plt.subplots()    
-    width = 0.75 # the width of the bars 
+    width = 50 # the width of the bars 
       # the x locations for the groups
 
-    ax.bar(memory_sizes, ff_average, width, color="grey")
-    ax.axis([0, 8, 0, max(ff_average)+60])
-    ax.set_xticks(memory_sizes + width/2)
-    ax.set_xticklabels(memory_sizes_arr)
+    ax.bar(memory_sizes_np, ff_average, width, color="grey")
+    ax.axis([0, max(memory_sizes_arr)+70, 0, max(ff_average)+60])
+    # ax.set_xticks(memory_sizes + width/2)
+    # ax.set_xticklabels(memory_sizes_arr)
     for j, v in enumerate(ff_average):
-        ax.text(j, v + 10, str(v), color='green', fontweight='bold')
+        ax.text(memory_sizes_np[j], v + 10, str(v), color='green', fontweight='bold')
     plt.title("Use of FF for project for different memory size")
     plt.xlabel("Memory sizes")
     plt.ylabel('Use of FF')
     plt.grid(True)
+    
+    y=memory_sizes_np
+    plt.plot(memory_sizes_np,y,'-r')
     # plt.show()
+
     plt.savefig('FF_for_all_project.png')
-bar_for_FF()
+# bar_for_FF()
+
+def percentage_usage_of_FF():
+    bar_width=0.3
+    
+    FF=plt.bar(memory_sizes, percentage_usage_FF, width=bar_width, color='orange', label='FF', zorder=2)
+    # LUT=plt.bar(memory_sizes+bar_width, percentage_usage_LUT, width=bar_width,color='purple',label='LUT',zorder=2)
+    
+    plt.xlabel("Memory sizes")
+    plt.ylabel('Percentage use of FF')
+    plt.grid(axis='y')
+    plt.title("Percentage use of FF for project for different memory size")
+
+    plt.axis([-0.5, 8, 0, max(percentage_usage_FF)+0.3])
+    plt.xticks(memory_sizes+bar_width/2, memory_sizes_arr)
+
+    for rect in FF:
+        h = rect.get_height()
+        plt.text(rect.get_x()+rect.get_width()/1.5, h, "{}%".format(h),
+                ha='center', va='bottom',  fontweight='bold')
+    plt.savefig('FF_percentage_for_all_project.png')
+
+# percentage_usage_of_FF()
+
+
+def percentage_usage_of_LUT():
+    bar_width=0.3
+    
+    FF=plt.bar(memory_sizes, percentage_usage_LUT, width=bar_width, color='purple', label='LUT', zorder=2)
+    # LUT=plt.bar(memory_sizes+bar_width, percentage_usage_LUT, width=bar_width,color='purple',label='LUT',zorder=2)
+    
+    plt.xlabel("Memory sizes")
+    plt.ylabel('Percentage use of LUT')
+    plt.grid(axis='y')
+    plt.title("Percentage use of LUT for project for different memory size")
+
+    plt.axis([-0.5, 8, 0, max(percentage_usage_LUT)+0.6])
+    plt.xticks(memory_sizes+bar_width/2, memory_sizes_arr)
+
+    for rect in FF:
+        h = rect.get_height()
+        plt.text(rect.get_x()+rect.get_width()/1.5, h, "{}%".format(h),
+                ha='center', va='bottom',  fontweight='bold')
+    plt.savefig('LUT_percentage_for_all_project.png')
+    # plt.show()
+# percentage_usage_of_LUT()
+
+def bars_for_10_50_sizes_LUT():
+    fig, ax = plt.subplots()    
+    width = 0.75 # the width of the bars 
+      # the x locations for the groups
+    ax.bar(X_number, lut_50_10, width, color="blue")
+    ax.axis([0, 10, min(lut_50_10)-10, max(lut_50_10)+7])
+    ax.set_xticks(X_number + width/2)
+    ax.set_xticklabels(X_number)
+    for j, v in enumerate(lut_50_10):
+        ax.text(j+ width/4, v + .3, str(v), color='red', fontweight='bold')
+    plt.title("Memory with {} addresses".format(memory_sizes_50_10))
+    plt.xlabel("Number of 'don't care' bits")
+    plt.ylabel('Use of LUT')
+    plt.grid(True)
+    # plt.show()
+    plt.savefig('LUT_50_10.png')
+
+bars_for_10_50_sizes_LUT()
